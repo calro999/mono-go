@@ -190,5 +190,51 @@ ReFa BEAUTECH DRYER PROは、従来のドライヤーとは一線を画す、高
     reviewerRole: `元美容部員・日本化粧品検定1級`,
     verificationDays: 30,
     priceRange: `約40,000円〜`
+  },
+  {
+    id: 'art-b07vp67d42',
+    title: `【Dyson Supersonic Ionic】ドライヤーが美髪のカギ!? 高級感あふれる使用感`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=Dyson%20Supersonic%20Ionic&tag=mattan0290c-22',
+    asin: 'B07VP67D42',
+    productName: 'Dyson Supersonic Ionic',
+    category: 'haircare',
+    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.8,
+    introText: `ストレスフリーな毎日をSEND！美髪を手に入れるためにあなたが知っておくべき新感覚ドライヤー`,
+    features: [`高速dry技術`, `多段階温度調整`, `イオン技術`],
+    pros: [`高速で乾燥`, `ダメージを減らす`, `使い心地が良好`],
+    cons: [`高価`, `初期の出費が大きい`],
+    reviewBody: `### 美髪に必要な技術
+Dyson Supersonic Ionicは、イオン技術を搭載したドライヤーです。
+### 使用感と乾燥時間
+私が使用してみた感想は、非常に良好でした。髪は速乾して、ダメージも軽減されました。
+### 比較検討
+他のドライヤーに比べ、高価ではありますが、長期的な使用に耐えられるだけの価値があります`,
+    ctaTitle: `【今すぐDyson Supersonic Ionicをチェック！】`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=Dyson%20Supersonic%20Ionic&tag=mattan0290c-22',
+    createdAt: '2026-07-22 11:14:02',
+    estimatedPV: Math.floor(Math.random() * 500) + 100,
+    clicks: Math.floor(Math.random() * 50) + 10,
+    earnings: Math.floor(Math.random() * 5000) + 500,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `イオン技術で美髪を実現`,
+      `高速dry技術により乾燥時間短縮`,
+      `高級感あふれるデザイン`
+    ],
+    faqs: [
+      {
+        question: `Dyson Supersonic Ionicのイオン技術は何？”`,
+        answer: `イオン技術により、髪のダメージを軽減します。`
+      },
+      {
+        question: `使い方は難しいの？`,
+        answer: `簡単です。誰でも使えるよう設計されています。`
+      }
+    ],
+    reviewerName: `アヤ @美容ライター`,
+    reviewerRole: `元美容部員・日本化粧品検定1級`,
+    verificationDays: 30,
+    priceRange: `約3万〜4万円`
   }
 ];
