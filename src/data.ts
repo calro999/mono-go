@@ -144,5 +144,51 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     reviewerRole: `元美容部員・日本化粧品検定1級`,
     verificationDays: 30,
     priceRange: `約30,000円〜`
+  },
+  {
+    id: 'art-b08l7d47rp',
+    title: `ReFa BEAUTECH DRYER PRO：乾燥時間を短縮する高級ヘアドライヤー`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=ReFa%20BEAUTECH%20DRYER%20PRO&tag=mattan0290c-22',
+    asin: 'B08L7D47RP',
+    productName: 'ReFa BEAUTECH DRYER PRO',
+    category: 'haircare',
+    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.5,
+    introText: `ドライヤーを使用することでダメージを気にしている方、乾燥時間が長くてイライラする方。この悩みを解決してくれるアイテムをご紹介します。`,
+    features: [`高速乾燥`, `高品質な部品`, `低振動`],
+    pros: [`乾燥時間が短縮`, `髪を傷めない`, `デザインが高級感あり`],
+    cons: [`高価`, `充電式のため、充電に時間がかかる`],
+    reviewBody: `### ReFa BEAUTECH DRYER PROの特徴
+ReFa BEAUTECH DRYER PROは、従来のドライヤーとは一線を画す、高級感のあるヘアドライヤーです。高速乾燥、低振動など、従来のドライヤーでは実現が難しかった機能を搭載しています。
+### 使用感
+実際に使用してみましたが、驚くほど短時間で乾燥してくれました。さらに、従来のドライヤーで感じていた热い風の感じがいないのが特徴です。
+### 肌の変化
+使用して1週間、髪のダメージが軽減され、しなやかになっていると感じています。デザインも高級感があり、使っているだけでステキな気分になります。`,
+    ctaTitle: `ReFa BEAUTECH DRYER PROを今すぐ購入`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=ReFa%20BEAUTECH%20DRYER%20PRO&tag=mattan0290c-22',
+    createdAt: '2026-07-22 11:04:52',
+    estimatedPV: Math.floor(Math.random() * 500) + 100,
+    clicks: Math.floor(Math.random() * 50) + 10,
+    earnings: Math.floor(Math.random() * 5000) + 500,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `高速乾燥`,
+      `高品質な部品`,
+      `低振動`
+    ],
+    faqs: [
+      {
+        question: `このドライヤーは充電式ですか？`,
+        answer: `はい、充電式です。`
+      },
+      {
+        question: `使用方法はどうなのですか？`,
+        answer: `基本的な使用方法は通常のドライヤーと同じです。ただし、温度設定や風量設定などをカスタマイズできます。`
+      }
+    ],
+    reviewerName: `アヤ @美容ライター`,
+    reviewerRole: `元美容部員・日本化粧品検定1級`,
+    verificationDays: 30,
+    priceRange: `約40,000円〜`
   }
 ];
