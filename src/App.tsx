@@ -74,18 +74,36 @@ export default function App() {
   const [authLoading, setAuthLoading] = useState(true);
 
   // Core App states
+  const STORAGE_KEY = 'monogo_app_state_v4'; // v4: affiliate ID migration
+  const CORRECT_TAG = 'mattan0290c-22';
+
+  // 古いaffililate IDを修正するヘルパー
+  const fixAffiliateLinks = (articles: AmazonProductArticle[]): AmazonProductArticle[] => {
+    return articles.map(art => {
+      if (!art.affiliateLink || art.affiliateLink.includes(CORRECT_TAG)) return art;
+      // amazongo-22 など旧タグがあれば置換
+      const fixedLink = art.affiliateLink.replace(/tag=[^&]+/, `tag=${CORRECT_TAG}`);
+      return { ...art, affiliateLink: fixedLink };
+    });
+  };
+
   const [state, setState] = useState<AmazonGoState>(() => {
     try {
-      const saved = localStorage.getItem('amazongo_app_state_v3');
+      // 旧キーのデータをクリアしてv4へ移行
+      localStorage.removeItem('amazongo_app_state_v3');
+      const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
+        const articles = Array.isArray(parsed.articles)
+          ? fixAffiliateLinks(parsed.articles)
+          : INITIAL_ARTICLES;
         return {
-          associateId: parsed.associateId || 'mattan0290c-22',
+          associateId: CORRECT_TAG, // 常に正しいIDに強制上書き
           fallbackAdUrl: parsed.fallbackAdUrl || 'https://www.amazon.co.jp',
           activeCategorySlug: parsed.activeCategorySlug || 'all',
-          articles: Array.isArray(parsed.articles) ? parsed.articles : INITIAL_ARTICLES,
+          articles,
           systemLogs: Array.isArray(parsed.systemLogs) ? parsed.systemLogs : [],
-          showAdminPanel: false, // Override to use URL state instead
+          showAdminPanel: false,
           simulatedCronActive: !!parsed.simulatedCronActive
         };
       }
@@ -94,7 +112,7 @@ export default function App() {
     }
 
     return {
-      associateId: 'mattan0290c-22',
+      associateId: CORRECT_TAG,
       fallbackAdUrl: 'https://www.amazon.co.jp',
       activeCategorySlug: 'all',
       articles: INITIAL_ARTICLES,
@@ -208,7 +226,7 @@ export default function App() {
   // Persist local state for logs + category slug
   useEffect(() => {
     try {
-      localStorage.setItem('amazongo_app_state_v3', JSON.stringify(state));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     } catch (e) {
       console.error('Failed to sync to local storage:', e);
     }
@@ -1678,22 +1696,14 @@ jobs:
         {/* ==================================================================== */}
         {/* ======================= COMPREHENSIVE FOOTER COMPONENT ============ */}
         {/* ==================================================================== */}
-        <div className="border-t border-zinc-900 pt-5 mt-4 flex flex-col md:flex-row items-center justify-between px-1 text-[10px] text-zinc-500 gap-4">
-          <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center md:justify-start">
-            <span>ENGINE: <span className="text-zinc-300">GEMINI 3.5 FLASH (AI SECURED SYSTEM SERVER)</span></span>
-            <span>ASSOCIATE TAG: <span className="text-orange-400 font-mono font-semibold">{state.associateId}</span></span>
-            <span>DATA STORAGE: <span className="text-emerald-500 font-semibold">{isDbLoaded ? "FIREBASE FIRESTORE SYNC" : "OFFLINE MEMORY BACKUP"}</span></span>
-          </div>
-          <div className="flex gap-4 items-center">
-            <span 
-              onClick={() => navigateTo(isAdminRoute ? '/' : '/host')}
-              className="text-zinc-450 hover:text-orange-400 tracking-wider font-bold transition-all cursor-pointer hover:underline"
-            >
-              {isAdminRoute ? "公開ページへ移動" : "管理者ゲートウェイ"}
-            </span>
-            <span className="text-zinc-800">|</span>
-            <span>© 2026 もの-GO PORTFOLIO CO., LTD.</span>
-          </div>
+        <div className="border-t border-zinc-900 pt-5 mt-4 flex items-center justify-between px-1 text-[10px] text-zinc-500">
+          <span>© 2026 もの-GO</span>
+          <span
+            onClick={() => navigateTo(isAdminRoute ? '/' : '/host')}
+            className="text-zinc-600 hover:text-orange-400 transition-all cursor-pointer hover:underline"
+          >
+            {isAdminRoute ? "公開ページへ" : "管理"}
+          </span>
         </div>
 
       </div>
