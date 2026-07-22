@@ -54,7 +54,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B082T2J21W',
     productName: 'ビオレUV アクアリッチ ウォータリーエッセンス 110g',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/P/B082T2J21W.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.7,
     introText: '日焼け止め特有の重さやキシキシ感が苦手で毎年夏が憂鬱だった私が出会った救世主。塗った瞬間水のようにすーっと溶け込む「ビオレUV アクアリッチ」のガチ体験記をお届けします。',
     features: [
@@ -111,7 +111,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B09V1F1948',
     productName: 'エリクシール デーケアレボリューション SP+',
     category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B09V1F1948.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「朝のスキンケアに時間をかけられないけれど、紫外線をしっかり防いでエイジングケアもしたい」そんな忙しい朝の悩みを一発で解決してくれた一本。',
     features: [
@@ -168,7 +168,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B085VTZ91P',
     productName: '紫外線予報 UVプロテクトスプレー',
     category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B085VTZ91P.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.6,
     introText: '「せっかくメイクしたのに手で日焼け止めを塗り直すと崩れる」「頭皮のうっかり日焼けを防ぎたい」そんな悩みを一気に吹き飛ばしてくれたスプレーです。',
     features: [
@@ -225,7 +225,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0842QZ19P',
     productName: '8×4 パウダースプレー フレッシュフローラル',
     category: 'deodorant',
-    imageUrl: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B0842QZ19P.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.6,
     introText: '「満員電車やオフィスで自分の汗のニオイが周りに伝わっていないか不安…」猛暑の季節に長年頼り続けている8×4の防臭・制汗パワーを試した本音レビュー。',
     features: [
@@ -282,7 +282,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B083PWN7C4',
     productName: 'デオナチュレ 薬用ソフトストーンW',
     category: 'deodorant',
-    imageUrl: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B083PWN7C4.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.9,
     introText: '「何を塗っても時間の経過とともに脇のニオイが気になってしまう…」そんな深刻な汗とニオイの悩みに終止符を打ってくれた殿堂入りスティック。',
     features: [
@@ -339,7 +339,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0794F6HNK',
     productName: 'エージーデオ24 プレミアム デオドラントスプレー',
     category: 'deodorant',
-    imageUrl: 'https://m.media-amazon.com/images/I/61F0O3f7W1L._AC_SL1500_.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/P/B0794F6HNK.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「普通の制汗スプレーだと年齢特有のニオイや緊張汗が防ぎきれない」と感じ始めた大人のための最高峰デオドラントスプレー。',
     features: [
@@ -396,7 +396,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B00113W3I4',
     productName: 'ウエルテック コンクールF 100ml',
     category: 'oralcare',
-    imageUrl: 'https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B00113W3I4.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.9,
     introText: '「朝起きたときのお口のネバつきが気になる」「会話中の自分の息に自信が持てない」歯科医院で勧められて使い始めてから手放せなくなった神洗口液。',
     features: [
@@ -453,7 +453,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B087N979T6',
     productName: 'NONIO 舌専用クリーニングジェル',
     category: 'oralcare',
-    imageUrl: 'https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B087N979T6.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.7,
     introText: '口臭の原因の大部分を占める舌の白い汚れ「舌苔」。歯ブラシでガシガシ擦って舌を痛めていた過去の自分に教えたい専用クリーナー。',
     features: [
@@ -508,7 +508,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B09919YFCM',
     productName: 'プリマヴィスタ スキンプロテクトベース SPF50',
     category: 'makeup',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B09919YFCM.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「夏場は家を出て10分で小鼻がドロドロになる」「汗でファンデが毛穴落ちする」そんな夏の地獄のメイク崩れを防ぐ鉄壁の下地。',
     features: [
@@ -563,7 +563,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B07BG8XMSJ',
     productName: 'ビオレ 冷シート 無香性',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71b2lE7z5yL._AC_SL1500_.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/P/B07BG8XMSJ.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「屋外を歩いて身体が熱を帯びて汗が止まらない」「一刻も早く涼みたい」時に肌を滑らせるだけで体感温度がぐっと下がるボディシート。',
     features: [
@@ -618,7 +618,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B07B9Q6S3D',
     productName: 'ラ ロッシュ ポゼ UVイデア XL プロテクショントーンアップ',
     category: 'makeup',
-    imageUrl: 'https://m.media-amazon.com/images/I/61PZ8jD1YUL._AC_SL1500_.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/P/B07B9Q6S3D.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.9,
     introText: '「夏の日焼け止めは荒れやすい」「肌をきれいに見せつつ最高レベルの紫外線カットがほしい」敏感肌の私が行き着いた王道UV下地。',
     features: [
@@ -673,7 +673,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B07CS1Z9S2',
     productName: 'ダイアン パーフェクトビューティー ドライシャンプー',
     category: 'haircare',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B07CS1Z9S2.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.7,
     introText: '「汗で前髪が皮脂で濡れて束になる」「夕方に頭皮のベタつきや皮脂臭が気になる」時に1秒でリセットできるドライシャンプー。',
     features: [
@@ -726,7 +726,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B09KBZCS6Y',
     productName: 'ファンケル マイルドクレンジング オイル',
     category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B09KBZCS6Y.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.9,
     introText: '「夏場の日焼け止めやウォータープルーフメイクが落としきれず肌荒れする」お悩みを綺麗さっぱり解決する定番オイルクレンジング。',
     features: [
@@ -779,7 +779,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B08BRVCFMN',
     productName: 'ケイト アイブロウ パウダリーペンシル',
     category: 'makeup',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B08BRVCFMN.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.7,
     introText: '「汗をかくと夕方に眉尻が消えて麻呂（まろ）になる」夏場の眉落ち恐怖をゼロにしてくれた高密着アイブロウ。',
     features: [
@@ -832,7 +832,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B005VK0TMC',
     productName: 'サクセス 薬用育毛トニック 無香料',
     category: 'haircare',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B005VK0TMC.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「夏のドライヤー中に頭皮から汗が噴き出る」お風呂上がりや帰宅後の火照った頭皮を直撃クールダウンしてくれる爽快トニック。',
     features: [
@@ -885,7 +885,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B099RNK661',
     productName: 'イニスフリー ノーセバム ミネラルパウダー N',
     category: 'makeup',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B099RNK661.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.9,
     introText: '「真夏のTゾーンや額の脂浮きがひどい」「前髪が汗で張り付くのを防ぎたい」世界中でヒットを続ける皮脂コントロールパウダー。',
     features: [
@@ -938,7 +938,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0836N824G',
     productName: 'suisai ビューティクリア パウダーウォッシュN',
     category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B0836N824G.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「夏になると小鼻の黒ずみが気になる」「皮脂で角栓が固まる」酵素の力でザラつきをごっそり分解する洗顔パウダー。',
     features: [
@@ -991,7 +991,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B073XBJ98J',
     productName: 'メンソレータム メルティクリームリップ',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/P/B073XBJ98J.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '忘れがちな唇の日焼けとエアコン乾燥をこれ一本でダブルガードする極上とろけるリップ。',
     features: [
@@ -1044,7 +1044,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0842RKG3F',
     productName: 'シーブリーズ デオ&ウォーター A',
     category: 'deodorant',
-    imageUrl: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B0842RKG3F.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.7,
     introText: '「火照った身体を速攻冷やしたい」「汗をかいた肌をバシャバシャ爽快に整えたい」夏の青春・定番ローション。',
     features: [
@@ -1097,7 +1097,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0080E534S',
     productName: 'ネイチャーリパブリック アロエベラ 92% スージングジェル',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/P/B0080E534S.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「日焼けして肌が赤く火照る」「お風呂上がりに冷たいジェルで全身水分補給したい」時の神ジェル。',
     features: [
@@ -1150,7 +1150,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B09M3H1Z89',
     productName: 'ルルルンプレシャス GREEN (バランス)',
     category: 'beauty',
-    imageUrl: 'https://images.unsplash.com/photo-1615397323214-cb904a259c40?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B09M3H1Z89.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「夏のエアコンで肌がごわつく」「手軽に大人肌のケアを始めたい」そんな大人のバランス肌に向けた王道シートマスク。',
     features: [
@@ -1205,7 +1205,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B018V5066K',
     productName: 'ヒロインメイク ロング＆カールマスカラ アドバンストフィルム',
     category: 'makeup',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B018V5066K.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.9,
     introText: '「パンダ目になりたくない」「夏場汗をかくとマスカラが下まぶたに移る」最強のウォータープルーフと洗顔料オフを兼ね備えた大ヒットマスカラ。',
     features: [
@@ -1258,7 +1258,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B08HCDK9W9',
     productName: 'ユースキン シソラ ローション 110ml',
     category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B08HCDK9W9.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「汗をかくと首筋や肘の内側がかゆくなる」「紫外線で皮膚がヒリつく」敏感肌や子供の夏肌トラブルを防ぐしそエキス配合の薬用保湿ローション。',
     features: [
@@ -1311,7 +1311,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B08J3T6Z6R',
     productName: 'スカルプD 薬用スカルプシャンプー オイリー (脂性肌用)',
     category: 'haircare',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B08J3T6Z6R.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「夏になると夕方に頭皮がギラつく」「枕のニオイが気になる」夏の過剰な頭皮皮脂を濃密泡で洗浄し健やかな育毛環境を整える脂性肌用シャンプー。',
     features: [
@@ -1364,7 +1364,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0842QS23P',
     productName: 'バブ クール ひんやり涼やかパック 12錠入',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg',
+    imageUrl: 'https://m.media-amazon.com/images/P/B0842QS23P.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.7,
     introText: '「夏にお風呂に入ると上がった後に汗が止まらない」「でも湯船に入って疲れを取りたい」悩みを叶える炭酸クール入浴剤。',
     features: [
@@ -1417,7 +1417,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0058N7Q1M',
     productName: 'ドクターショール 消臭・抗菌 靴スプレー',
     category: 'deodorant',
-    imageUrl: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B0058N7Q1M.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「夏場革靴やスニーカーを脱ぐと猛烈な足のニオイがする」「靴にニオイが染み付いている」足病学の権威ブランドが誇る最強消臭スプレー。',
     features: [
@@ -1472,7 +1472,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0857V6V2P',
     productName: 'メラノCC 薬用しみ対策 美白乳液',
     category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B0857V6V2P.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「夏の日差しで日焼けしてシミが心配」「ベタつかない美白乳液がほしい」メラニン生成を抑えて透明感ある肌へ導くプチプラ最強乳液。',
     features: [
@@ -1525,7 +1525,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B06XGBYQ9S',
     productName: 'ミーファ フレグランスUVスプレー (マグノリア)',
     category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B06XGBYQ9S.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.8,
     introText: '「紫外線で髪がカラー退色する・パサつく」「いい香りを纏いながら UV カットしたい」美容室でも大人気の香る日焼け止めスプレー。',
     features: [
@@ -1578,7 +1578,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B07B4V48Z1',
     productName: 'メンズビオレ 薬用デオドラントボディウォッシュ',
     category: 'deodorant',
-    imageUrl: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B07B4V48Z1.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.7,
     introText: '「夏場帰宅して身体が汗臭い」「胸元や背中のニオイやニキビを防ぎたい」ニオイの原因菌を殺菌してすっきり洗い流す薬用ボディソープ。',
     features: [
@@ -1629,7 +1629,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B08S324BZS',
     productName: 'アネッサ パーフェクトUV スキンケアミルク N',
     category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://m.media-amazon.com/images/P/B08S324BZS.01._SCLZZZZZZZ_SX522_.jpg',
     starRating: 4.5,
     introText: `日々のスキンケアで重要なUVケア。日焼けやシミ対策には、優れたUVケアアイテムが必要です。`,
     features: [`ハイブリッドUVケア`, `美容成分配合`, `軽やかなミルク状テクスチャ`],

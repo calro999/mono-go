@@ -15,11 +15,6 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
 
   React.useEffect(() => {
     if (post) {
-      updateSeoGeoMetadata({
-        title: `${post.title} | Lumière 夏コスメ2026`,
-        description: post.introText,
-        urlPath: `/blogs/${post.id}`
-      });
       const jsonLd = generateBlogJsonLd(post, window.location.origin);
       updateSeoGeoMetadata({
         title: `${post.title} | Lumière 夏コスメ2026`,
