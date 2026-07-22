@@ -96,5 +96,53 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     reviewerRole: '元大手化粧品メーカー勤務・美容ライター歴7年',
     verificationDays: 90,
     priceRange: '約50,000円〜55,000円'
+  },
+  {
+    id: 'art-b0ch321sgn',
+    title: `【Panasonicヘアードライヤー ナノケア EH-NA0J】`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=Panasonic%20%E3%83%98%E3%82%A2%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%A4%E3%83%BC%20%E3%83%8A%E3%83%8E%E3%82%B1%E3%82%A2%20EH-NA0J&tag=mattan0290c-22',
+    asin: 'B0CH321SGN',
+    productName: 'Panasonic ヘアードライヤー ナノケア EH-NA0J',
+    category: 'haircare',
+    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.5,
+    introText: `ドライヤーから出る熱風が髪を傷めてしまう、という経験はありませんか？`,
+    features: [`ナノケア技術で髪を守る`, `高熱対策の冷風モード`, `静音設計で安心`],
+    pros: [`髪のダメージを最小限に抑える`, `速乾性と使い勝手が良い`, `静かで使いやすい`],
+    cons: [`価格がやや高め`, `重さが若干ある`],
+    reviewBody: `### まさに私が探していたドライヤー！
+私の髪は細くて傷みやすいタイプです。そのため、ドライヤーを使うときはいつも気がかりでした。しかし、Panasonicヘアードライヤー ナノケア EH-NA0Jを使い始めてから、気になる髪の痛みが減ったような気がします。
+### ナノケア技術の効果
+ナノケア技術が髪のキューティクルを守り、ダメージを防いでくれるような気がします。ドライヤーを使うたびに、熱風で髪が痛むという心配が少し和らぎました。
+### 乾燥の速さと静音性
+乾燥の速さも良く、時間を短縮することができました。さらに、静音設計なので、早朝や夜遅くに使用しても周囲を気にしなくてよくなりました。
+### 使用感
+使用している間、热風で髪が痛むという感覚が減少し、乾燥後も髪のサラサラ感が保てました。若干重いと感じましたが、全体的には優れた製品です。`,
+    ctaTitle: `今すぐこの商品を見てみる`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=Panasonic%20%E3%83%98%E3%82%A2%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%A4%E3%83%BC%20%E3%83%8A%E3%83%8E%E3%82%B1%E3%82%A2%20EH-NA0J&tag=mattan0290c-22',
+    createdAt: '2026-07-22 10:54:27',
+    estimatedPV: Math.floor(Math.random() * 500) + 100,
+    clicks: Math.floor(Math.random() * 50) + 10,
+    earnings: Math.floor(Math.random() * 5000) + 500,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `ナノケア技術で髪のダメージを最小限に抑える`,
+      `乾燥の速さと静音性が優れている`,
+      `若干重さがあり価格が高め`
+    ],
+    faqs: [
+      {
+        question: `ナノケア技術とは？`,
+        answer: `髪のキューティクルを守り、ドライヤーの熱風によるダメージを軽減する技術です。`
+      },
+      {
+        question: `静音モードはどのように使うの？`,
+        answer: `ドライヤー本体のボタンで簡単に静音モードをオン・オフできます。`
+      }
+    ],
+    reviewerName: `アヤ @美容ライター`,
+    reviewerRole: `元美容部員・日本化粧品検定1級`,
+    verificationDays: 30,
+    priceRange: `約30,000円〜`
   }
 ];
