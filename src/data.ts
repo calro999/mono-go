@@ -339,7 +339,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0794F6HNK',
     productName: 'エージーデオ24 プレミアム デオドラントスプレー',
     category: 'deodorant',
-    imageUrl: 'https://m.media-amazon.com/images/I/71k4n4Fk-KL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600',
     starRating: 4.8,
     introText: '「普通の制汗スプレーだと年齢特有のニオイや緊張汗が防ぎきれない」と感じ始めた大人のための最高峰デオドラントスプレー。',
     features: [
@@ -563,7 +563,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B07BG8XMSJ',
     productName: 'ビオレ 冷シート 無香性',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71k4n4Fk-KL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600',
     starRating: 4.8,
     introText: '「屋外を歩いて身体が熱を帯びて汗が止まらない」「一刻も早く涼みたい」時に肌を滑らせるだけで体感温度がぐっと下がるボディシート。',
     features: [
@@ -618,7 +618,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B07B9Q6S3D',
     productName: 'ラ ロッシュ ポゼ UVイデア XL プロテクショントーンアップ',
     category: 'makeup',
-    imageUrl: 'https://m.media-amazon.com/images/I/71k4n4Fk-KL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600',
     starRating: 4.9,
     introText: '「夏の日焼け止めは荒れやすい」「肌をきれいに見せつつ最高レベルの紫外線カットがほしい」敏感肌の私が行き着いた王道UV下地。',
     features: [
@@ -991,7 +991,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B073XBJ98J',
     productName: 'メンソレータム メルティクリームリップ',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71k4n4Fk-KL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600',
     starRating: 4.8,
     introText: '忘れがちな唇の日焼けとエアコン乾燥をこれ一本でダブルガードする極上とろけるリップ。',
     features: [
@@ -1097,7 +1097,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0080E534S',
     productName: 'ネイチャーリパブリック アロエベラ 92% スージングジェル',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71k4n4Fk-KL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600',
     starRating: 4.8,
     introText: '「日焼けして肌が赤く火照る」「お風呂上がりに冷たいジェルで全身水分補給したい」時の神ジェル。',
     features: [
@@ -1364,7 +1364,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0842QS23P',
     productName: 'バブ クール ひんやり涼やかパック 12錠入',
     category: 'skincare',
-    imageUrl: 'https://m.media-amazon.com/images/I/71k4n4Fk-KL._AC_SL1500_.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=600',
     starRating: 4.7,
     introText: '「夏にお風呂に入ると上がった後に汗が止まらない」「でも湯船に入って疲れを取りたい」悩みを叶える炭酸クール入浴剤。',
     features: [

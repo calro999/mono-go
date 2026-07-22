@@ -135,6 +135,9 @@ export function ProductListPage({ articles, onNavigate }: ProductListPageProps) 
                     <img
                       src={art.imageUrl}
                       alt={art.productName || art.title}
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600';
+                      }}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute top-3 left-3 px-2.5 py-1 bg-slate-900/90 text-white text-[11px] font-extrabold rounded-md backdrop-blur-sm">

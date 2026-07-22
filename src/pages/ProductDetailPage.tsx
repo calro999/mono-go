@@ -109,6 +109,9 @@ export function ProductDetailPage({ articleId, articles, onNavigate }: ProductDe
             <img
               src={article.imageUrl}
               alt={article.productName || article.title}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600';
+              }}
               className="w-full h-full object-cover"
             />
           </div>

@@ -112,6 +112,9 @@ export function AuthorDetailPage({ authorId, onNavigate }: AuthorDetailPageProps
                   <img
                     src={art.imageUrl}
                     alt={art.productName || art.title}
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600';
+                    }}
                     className="w-16 h-16 rounded-xl object-cover flex-shrink-0 bg-white border border-slate-200"
                   />
                   <div className="flex-1 min-w-0">
