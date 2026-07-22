@@ -194,7 +194,7 @@ export default function App() {
 
     // Seed introductory log
     if (state.systemLogs.length === 0) {
-      pushLog("あまぞん GO!! 管理セキュアエンジン起動完了。", "success");
+      pushLog("もの-GO 管理セキュアエンジン起動完了。", "success");
       pushLog("Google Gemini 3.5 AIアフィリエイトプロセッサー通信確立済み。", "ai");
     }
 
@@ -517,7 +517,7 @@ ${art.affiliateLink}
 
   // Copy YAML workflows
   const handleCopyYaml = () => {
-    const yamlTemplate = `name: "あまぞん GO!! 定刻自動巡回レビュー自動配信"
+    const yamlTemplate = `name: "もの-GO 定刻自動巡回レビュー自動配信"
 
 on:
   schedule:
@@ -589,14 +589,14 @@ jobs:
   // Dynamically set meta description, OGP, and JSON-LD schema markup for active page/article (Automated SEO & GEO)
   useEffect(() => {
     // 1. Update Document Title dynamically
-    let titleText = "あまぞん GO!! | 専門バイヤーの徹底本音レビューブログ";
+    let titleText = "もの-GO | 専門バイヤーの徹底本音レビューブログ";
     if (selectedArticle && !isAdminRoute) {
-      titleText = `${selectedArticle.title} | あまぞん GO!!`;
+      titleText = `${selectedArticle.title} | もの-GO`;
     } else if (state.activeCategorySlug !== 'all' && !isAdminRoute) {
       const cat = AMAZON_CATEGORIES.find(c => c.slug === state.activeCategorySlug);
-      if (cat) titleText = `${cat.name}のおすすめ・本音レビューまとめ | あまぞん GO!!`;
+      if (cat) titleText = `${cat.name}のおすすめ・本音レビューまとめ | もの-GO`;
     } else if (isAdminRoute) {
-      titleText = "管理者コンソール | あまぞん GO!!";
+      titleText = "管理者コンソール | もの-GO";
     }
     document.title = titleText;
 
@@ -664,7 +664,7 @@ jobs:
           },
           "author": {
             "@type": "Person",
-            "name": selectedArticle.reviewerName || "あまぞん GO!! 専門バイヤー"
+            "name": selectedArticle.reviewerName || "もの-GO 専門バイヤー"
           },
           "reviewBody": cleanMarkdownHeaders(selectedArticle.reviewBody)
         },
@@ -688,12 +688,12 @@ jobs:
         "datePublished": selectedArticle.createdAt ? new Date(selectedArticle.createdAt).toISOString() : new Date().toISOString(),
         "author": {
           "@type": "Person",
-          "name": selectedArticle.reviewerName || "あまぞん GO!! 専門バイヤー",
+          "name": selectedArticle.reviewerName || "もの-GO 専門バイヤー",
           "jobTitle": selectedArticle.reviewerRole || "家電・ガジェット実機検証バイヤー"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "あまぞん GO!!",
+          "name": "もの-GO",
           "logo": {
             "@type": "ImageObject",
             "url": selectedArticle.imageUrl
@@ -776,7 +776,7 @@ jobs:
                 onClick={() => navigateTo('/')}
                 className="bg-zinc-900 text-amber-500 border border-zinc-800/80 font-black text-xl sm:text-2xl px-3.5 py-1 rounded-lg tracking-tighter flex items-center gap-1.5 hover:border-amber-500/40 cursor-pointer shadow-inner transition-all"
               >
-                あまぞん GO!!
+                もの-GO
               </div>
               <span className="text-zinc-700 text-base font-normal hidden sm:inline">|</span>
               <p className="text-xs text-zinc-400 font-medium">
@@ -1225,7 +1225,7 @@ jobs:
                   </div>
                   <h2 className="text-base sm:text-lg font-black text-white">ホスト管理者アクセス制限</h2>
                   <p className="text-xs text-zinc-400">
-                    「あまぞん GO!!」管理コンソールへ入るには、Googleログイン認証を通過する必要があります。
+                    「もの-GO」管理コンソールへ入るには、Googleログイン認証を通過する必要があります。
                   </p>
                 </div>
 
@@ -1414,7 +1414,7 @@ jobs:
                       <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
                         <Sparkles className="text-orange-500 w-5 h-5 flex-shrink-0" />
                         <div>
-                          <h3 className="font-black text-white text-xs sm:text-sm">あまぞん GO!! 高機能AIレビュー執筆執動</h3>
+                          <h3 className="font-black text-white text-xs sm:text-sm">もの-GO 高機能AIレビュー執筆執動</h3>
                           <p className="text-[10px] text-zinc-500">Google Gemini 3.5 Flashを安全に経由し、レビューカタログを随時自動量産</p>
                         </div>
                       </div>
@@ -1509,10 +1509,10 @@ jobs:
                               const v = e.target.value.trim() || 'mattan0290c-22';
                               // Update local config
                               setState(p => {
-                                const updated = p.articles.map(art => ({
-                                  ...art,
-                                  affiliateLink: `https://www.amazon.co.jp/dp/${art.asin}?tag=${v}`
-                                }));
+                                const updated = p.articles.map(art => {
+                                  const searchQuery = encodeURIComponent(art.title.replace(/【.*?】/g, '').trim() || art.asin);
+                                  return { ...art, affiliateLink: `https://www.amazon.co.jp/s?k=${searchQuery}&tag=${v}` };
+                                });
                                 return { ...p, associateId: v, articles: updated };
                               });
                               // Save to database
@@ -1692,7 +1692,7 @@ jobs:
               {isAdminRoute ? "公開ページへ移動" : "管理者ゲートウェイ"}
             </span>
             <span className="text-zinc-800">|</span>
-            <span>© 2026 あまぞん GO!! PORTFOLIO CO., LTD.</span>
+            <span>© 2026 もの-GO PORTFOLIO CO., LTD.</span>
           </div>
         </div>
 

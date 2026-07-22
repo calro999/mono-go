@@ -159,7 +159,7 @@ function buildPrompt(category, product) {
 {
   "id": "art-${product.asin.toLowerCase()}",
   "title": "【徹底レビュー】または【比較検証】から始まる70文字以内の魅力的なタイトル",
-  "originalUrl": "https://www.amazon.co.jp/dp/${product.asin}",
+  "originalUrl": "https://www.amazon.co.jp/s?k=${encodeURIComponent(product.name)}&tag=mattan0290c-22",
   "asin": "${product.asin}",
   "category": "${category.id}",
   "imageUrl": "https://images.unsplash.com/photo-XXXXXXX?auto=format&fit=crop&q=80&w=600",
@@ -170,7 +170,7 @@ function buildPrompt(category, product) {
   "cons": ["デメリット1（正直に）", "デメリット2"],
   "reviewBody": "### H3見出し付きのMarkdown形式レビュー本文（600文字以上）。感情に訴えかける書き出し、具体的なユースケース、競合比較を含めること",
   "ctaTitle": "緊急性・限定性を含む購入を促すCTAテキスト（例：＼ 今なら○○！Amazonで最安値をチェック ／）",
-  "affiliateLink": "https://www.amazon.co.jp/dp/${product.asin}?tag=mattan0290c-22",
+  "affiliateLink": "https://www.amazon.co.jp/s?k=${encodeURIComponent(product.name)}&tag=mattan0290c-22",
   "createdAt": "${new Date().toISOString().replace('T', ' ').slice(0, 19)}",
   "estimatedPV": 100〜600のランダムな整数,
   "clicks": 10〜80のランダムな整数,
@@ -432,9 +432,10 @@ function validateArticle(article) {
   // starRating の範囲チェック
   if (article.starRating < 1.0 || article.starRating > 5.0) article.starRating = 4.5;
 
-  // affiliateLinkにアソシエイトIDがなければ付与
+  // affiliateLinkにアソシエイトIDがなければ付与（検索URL形式に統一）
   if (!article.affiliateLink.includes('tag=')) {
-    article.affiliateLink += (article.affiliateLink.includes('?') ? '&' : '?') + 'tag=mattan0290c-22';
+    const searchQuery = encodeURIComponent(article.title?.replace(/【.*?】/g, '').trim() || article.asin);
+    article.affiliateLink = `https://www.amazon.co.jp/s?k=${searchQuery}&tag=mattan0290c-22`;
   }
 
   return article;

@@ -201,10 +201,11 @@ app.post("/api/generate-amazon-review", async (req, res) => {
     detectedAsin = (inputUrl || "").trim().toUpperCase();
   }
 
-  // PA-API は利用条件未達のため使用しない。アフィリエイトリンクとモック画像を直接生成する。
-  const finalAffLink = `https://www.amazon.co.jp/dp/${detectedAsin}?tag=${userTag}`;
+  // 検索URL形式でアフィリエイトリンクを生成（/dp/ASINは404になるため検索結果ページを使用）
+  const searchQuery = encodeURIComponent(userCustomTitle || detectedAsin);
+  const finalAffLink = `https://www.amazon.co.jp/s?k=${searchQuery}&tag=${userTag}`;
   const finalImg = selectProductMockImage(targetCategory, userCustomTitle || detectedAsin);
-  console.log(`[Review API] ASIN: ${detectedAsin}, Tag: ${userTag}, Category: ${targetCategory}`);
+  console.log(`[Review API] ASIN: ${detectedAsin}, Tag: ${userTag}, Category: ${targetCategory}, SearchQuery: ${searchQuery}`);
 
   if (!ai) {
     // Generate lovely mock response when API key is missing
@@ -222,7 +223,7 @@ app.post("/api/generate-amazon-review", async (req, res) => {
     return res.json({
       id: "art_" + Math.random().toString(36).substring(2, 11),
       title: targetTitle,
-      originalUrl: inputUrl || `https://www.amazon.co.jp/dp/${detectedAsin}`,
+      originalUrl: inputUrl || `https://www.amazon.co.jp/s?k=${encodeURIComponent(userCustomTitle || detectedAsin)}&tag=${userTag}`,
       asin: detectedAsin,
       category: targetCategory,
       imageUrl: finalImg,
@@ -329,7 +330,7 @@ Always output your entire response formatted as a strict single JSON object foll
     res.json({
       id: "art_" + Math.random().toString(36).substring(2, 11),
       title: outputJson.title || "【今こそ買い】話題のAmazonベストセラー徹底個別レビュー",
-      originalUrl: inputUrl || `https://www.amazon.co.jp/dp/${detectedAsin}`,
+      originalUrl: inputUrl || `https://www.amazon.co.jp/s?k=${encodeURIComponent(userCustomTitle || detectedAsin)}&tag=${userTag}`,
       asin: detectedAsin,
       category: targetCategory,
       imageUrl: finalImg,
