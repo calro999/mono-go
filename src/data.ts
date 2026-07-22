@@ -39,7 +39,7 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     asin: 'B0CXKZRYPQ',
     productName: 'YA-MAN フォトプラス EX プレミアム',
     category: 'device',
-    imageUrl: 'https://images.unsplash.com/photo-1598452963314-b09f397a5c48?auto=format&fit=crop&q=80&w=600',
+    imageUrl: 'https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=600',
     starRating: 4.8,
     introText: '「もっと早く買えばよかった…」SNSで話題沸騰のヤーマン最高峰美顔器。エステサロンさながらの本格ケアがこれ1台で完結します。',
     features: [

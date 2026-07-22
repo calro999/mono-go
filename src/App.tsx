@@ -225,7 +225,7 @@ export default function App() {
     // Seed introductory log
     if (state.systemLogs.length === 0) {
       pushLog("Lumière 管理セキュアエンジン起動完了。", "success");
-      pushLog("Google Gemini 3.5 AIアフィリエイトプロセッサー通信確立済み。", "ai");
+      pushLog("Lumière AI美容ライティングシステム通信確立済み。", "ai");
     }
 
     return () => {
@@ -719,7 +719,7 @@ jobs:
         "author": {
           "@type": "Person",
           "name": selectedArticle.reviewerName || "Lumière 専門バイヤー",
-          "jobTitle": selectedArticle.reviewerRole || "家電・ガジェット実機検証バイヤー"
+          "jobTitle": selectedArticle.reviewerRole || "美容・コスメ検証エディター"
         },
         "publisher": {
           "@type": "Organization",
@@ -777,39 +777,39 @@ jobs:
   }, [selectedArticle, state.activeCategorySlug, isAdminRoute]);
 
   return (
-    <div className="min-h-screen bg-[#070708] text-zinc-100 flex items-center justify-center p-2 sm:p-5 font-sans overflow-x-hidden relative selection:bg-orange-500 selection:text-white">
+    <div className="min-h-screen bg-[#FAF9F6] text-stone-800 flex items-center justify-center p-2 sm:p-5 font-sans overflow-x-hidden relative selection:bg-stone-700 selection:text-stone-900">
       {/* Glow ambient meshes */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-orange-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-stone-600/5 blur-[140px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-stone-700/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-      <div className="w-full max-w-[1240px] bg-[#0c0c0e] border border-zinc-900 rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col gap-6 relative shadow-[0_24px_80px_rgba(0,0,0,0.85)] max-h-none">
+      <div className="w-full max-w-[1240px] bg-white border border-stone-200 rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col gap-6 relative shadow-[0_20px_60px_rgba(150,140,130,0.15)] max-h-none">
         
         {/* ==================================================================== */}
         {/* ================ HEADER COMPONENT: PATHWAY ROUTER ================= */}
         {/* ==================================================================== */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-zinc-900 pb-5 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-stone-200 pb-5 gap-4">
           
           {/* Logo & Category Slogan */}
           <div className="space-y-1">
             <div className="flex items-center gap-1.5">
               <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-stone-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-stone-700"></span>
               </span>
-              <span className="text-[9px] tracking-[0.25em] text-orange-400 font-bold uppercase font-mono">
-                {isAdminRoute ? "AMAZON GO HOST MANAGER SECURITY CORE" : "CURATED SHOPPING EXPERT REVIEWS"}
+              <span className="text-[9px] tracking-[0.25em] text-stone-600 font-bold uppercase font-mono">
+                {isAdminRoute ? "LUMIÈRE BEAUTY MANAGER" : "CURATED BEAUTY EXPERT REVIEWS"}
               </span>
             </div>
             
             <div className="flex flex-wrap items-center gap-3">
               <div 
                 onClick={() => navigateTo('/')}
-                className="bg-zinc-900 text-amber-500 border border-zinc-800/80 font-black text-xl sm:text-2xl px-3.5 py-1 rounded-lg tracking-tighter flex items-center gap-1.5 hover:border-amber-500/40 cursor-pointer shadow-inner transition-all"
+                className="bg-stone-50 text-stone-800 border border-stone-300/80 font-black text-xl sm:text-2xl px-3.5 py-1 rounded-lg tracking-tighter flex items-center gap-1.5 hover:border-amber-500/40 cursor-pointer shadow-inner transition-all"
               >
                 Lumière
               </div>
-              <span className="text-zinc-700 text-base font-normal hidden sm:inline">|</span>
-              <p className="text-xs text-zinc-400 font-medium">
+              <span className="text-stone-300 text-base font-normal hidden sm:inline">|</span>
+              <p className="text-xs text-stone-500 font-medium">
                 {isAdminRoute ? "管理者コンソール・アフィリエイト設定" : "バイヤーが徹底検証。本当に買ってよかったモノだけを紹介する本音ブログ"}
               </p>
             </div>
@@ -820,7 +820,7 @@ jobs:
             {isAdminRoute && (
               <button
                 onClick={() => navigateTo('/')}
-                className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 text-black shadow-md hover:brightness-110 transition-all cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-lg bg-gradient-to-r from-stone-500 to-stone-700 text-black shadow-md hover:brightness-110 transition-all cursor-pointer"
               >
                 <Store className="w-3.5 h-3.5" />
                 公開サイトへ戻る
@@ -840,18 +840,18 @@ jobs:
               
               {/* Refinement Search input */}
               <div className="relative">
-                <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-2.5" />
+                <Search className="w-4 h-4 text-stone-400 absolute left-3 top-2.5" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="カテゴリーを検索する..."
-                  className="w-full bg-zinc-900/50 hover:bg-zinc-900 border border-zinc-800 focus:border-orange-500 focus:outline-none rounded-lg pl-9 pr-4 py-2.5 text-xs text-white placeholder-zinc-500 transition-all"
+                  className="w-full bg-stone-50 hover:bg-stone-50 border border-stone-300 focus:border-orange-500 focus:outline-none rounded-lg pl-9 pr-4 py-2.5 text-xs text-stone-900 placeholder-zinc-500 transition-all"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-2 text-zinc-400 hover:text-white text-xs font-bold"
+                    className="absolute right-3 top-2 text-stone-500 hover:text-stone-900 text-xs font-bold"
                   >
                     ×
                   </button>
@@ -859,8 +859,8 @@ jobs:
               </div>
 
               {/* Sidebar Category Selection */}
-              <div className="bg-zinc-900/30 border border-zinc-900 rounded-xl p-3 flex flex-col gap-1 text-left">
-                <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest px-2.5 pb-2 border-b border-zinc-900/60 mb-2 block">
+              <div className="bg-stone-50/30 border border-stone-200 rounded-xl p-3 flex flex-col gap-1 text-left">
+                <span className="text-[9px] font-bold text-stone-400 uppercase tracking-widest px-2.5 pb-2 border-b border-stone-200/60 mb-2 block">
                   カテゴリー
                 </span>
 
@@ -868,15 +868,15 @@ jobs:
                   onClick={() => setState(prev => ({ ...prev, activeCategorySlug: 'all' }))}
                   className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-bold transition-all cursor-pointer text-left
                     ${state.activeCategorySlug === 'all'
-                      ? 'bg-orange-500/10 text-orange-400 border-l-[3px] border-orange-500'
-                      : 'text-zinc-400 hover:bg-zinc-900/40 hover:text-zinc-200'
+                      ? 'bg-stone-700/10 text-stone-600 border-l-[3px] border-orange-500'
+                      : 'text-stone-500 hover:bg-stone-50/40 hover:text-zinc-200'
                     }`}
                 >
                   <div className="flex items-center gap-2">
                     <Store className="w-3.5 h-3.5" />
                     <span>すべてのカテゴリー ({resolvedArticles.length})</span>
                   </div>
-                  <ChevronRight className="w-3 h-3 text-zinc-700" />
+                  <ChevronRight className="w-3 h-3 text-stone-300" />
                 </button>
 
                 {AMAZON_CATEGORIES.map((cat) => {
@@ -887,8 +887,8 @@ jobs:
                       onClick={() => setState(prev => ({ ...prev, activeCategorySlug: cat.slug }))}
                       className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold transition-all cursor-pointer text-left
                         ${state.activeCategorySlug === cat.slug
-                          ? 'bg-orange-500/10 text-orange-400 border-l-[3px] border-orange-500'
-                          : 'text-zinc-400 hover:bg-zinc-900/40 hover:text-zinc-200'
+                          ? 'bg-stone-700/10 text-stone-600 border-l-[3px] border-orange-500'
+                          : 'text-stone-500 hover:bg-stone-50/40 hover:text-zinc-200'
                         }`}
                       title={cat.description}
                     >
@@ -897,7 +897,7 @@ jobs:
                         <span className="truncate">{cat.name}</span>
                       </div>
                       <div className="flex items-center gap-1 flex-shrink-0">
-                        <span className="text-[9px] bg-zinc-900 px-1.5 py-0.5 rounded text-zinc-550 font-mono">
+                        <span className="text-[9px] bg-stone-50 px-1.5 py-0.5 rounded text-zinc-550 font-mono">
                           {countInCat}
                         </span>
                         <ChevronRight className="w-3 h-3 text-zinc-750" />
@@ -908,12 +908,12 @@ jobs:
               </div>
 
               {/* Secure Editorial Quality Statement */}
-              <div className="bg-zinc-950/40 border border-zinc-900 p-4 rounded-xl text-left space-y-2">
+              <div className="bg-zinc-950/40 border border-stone-200 p-4 rounded-xl text-left space-y-2">
                 <h4 className="text-xs font-bold text-zinc-200 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
                   本音と透明性を最優先
                 </h4>
-                <p className="text-[10px] text-zinc-500 leading-normal">
+                <p className="text-[10px] text-stone-400 leading-normal">
                   紹介しているアイテムはすべて専門バイヤーによる詳細調査に基づいています。メリットだけでなくデメリットも正直に隠さず記述。
                 </p>
               </div>
@@ -925,16 +925,16 @@ jobs:
               
               {/* LIST FEED AREA (Left panel of sub division) */}
               <div className={`${selectedArticleId ? 'md:col-span-4' : 'md:col-span-12'} flex flex-col gap-4 overflow-y-auto max-h-[680px] pr-1 custom-scrollbar`}>
-                <div className="flex justify-between items-center bg-zinc-950/30 p-2.5 rounded-lg border border-zinc-900/50">
+                <div className="flex justify-between items-center bg-zinc-950/30 p-2.5 rounded-lg border border-stone-200/50">
                   <h3 className="text-xs font-black text-zinc-300 uppercase tracking-wider flex items-center gap-1.5">
                     <span>レビュー一覧</span>
-                    <span className="text-[10px] bg-zinc-900 px-2 py-0.5 rounded text-zinc-500 font-mono">
+                    <span className="text-[10px] bg-stone-50 px-2 py-0.5 rounded text-stone-400 font-mono">
                       {filteredArticles.length}
                     </span>
                   </h3>
                   
                   {state.activeCategorySlug !== 'all' && (
-                    <span className="text-[9px] text-orange-400 font-bold bg-orange-500/5 px-2 py-0.5 rounded border border-orange-500/10">
+                    <span className="text-[9px] text-stone-600 font-bold bg-stone-700/5 px-2 py-0.5 rounded border border-orange-500/10">
                       {AMAZON_CATEGORIES.find(c => c.slug === state.activeCategorySlug)?.name}
                     </span>
                   )}
@@ -950,31 +950,31 @@ jobs:
                           onClick={() => setSelectedArticleId(art.id)}
                           className={`p-3 rounded-xl border text-left cursor-pointer transition-all flex gap-3 relative overflow-hidden group
                             ${isCurrent
-                              ? 'bg-zinc-900 border-amber-500/40 shadow-[0_4px_22px_rgba(249,115,22,0.06)]'
-                              : 'bg-[#0a0a0c] border-[#131317] hover:bg-[#0e0e11] hover:border-zinc-800'
+                              ? 'bg-stone-50 border-amber-500/40 shadow-[0_4px_22px_rgba(249,115,22,0.06)]'
+                              : 'bg-[#0a0a0c] border-[#131317] hover:bg-[#0e0e11] hover:border-stone-300'
                             }`}
                         >
-                          <div className="w-16 h-16 bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800/80 flex-shrink-0 relative">
+                          <div className="w-16 h-16 bg-stone-50 rounded-lg overflow-hidden border border-stone-300/80 flex-shrink-0 relative">
                             <img
                               src={art.imageUrl}
                               alt={art.title}
                               className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                               referrerPolicy="no-referrer"
                             />
-                            <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-orange-400 font-mono font-bold flex items-center gap-0.5">
-                              <Star className="w-2 h-2 text-orange-500 fill-orange-500" />
+                            <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-stone-600 font-mono font-bold flex items-center gap-0.5">
+                              <Star className="w-2 h-2 text-stone-700 fill-orange-500" />
                               {art.starRating}
                             </span>
                           </div>
 
                           <div className="min-w-0 flex-1 flex flex-col justify-between py-0.5">
                             <div>
-                              <span className="text-[8px] text-[#FF9900] font-mono px-1.5 py-0.2 bg-orange-500/5 border border-orange-500/10 rounded uppercase tracking-wider mb-1 inline-block">
+                              <span className="text-[8px] text-[#FF9900] font-mono px-1.5 py-0.2 bg-stone-700/5 border border-orange-500/10 rounded uppercase tracking-wider mb-1 inline-block">
                                 {AMAZON_CATEGORIES.find(c => c.slug === art.category)?.name}
                               </span>
                               
                               <h4 className={`text-xs font-bold leading-snug line-clamp-2 transition-colors
-                                ${isCurrent ? 'text-orange-400' : 'text-zinc-300 group-hover:text-white'}`}>
+                                ${isCurrent ? 'text-stone-600' : 'text-zinc-300 group-hover:text-stone-900'}`}>
                                 {art.title}
                               </h4>
                             </div>
@@ -987,9 +987,9 @@ jobs:
                     })}
                   </div>
                 ) : (
-                  <div className="border border-dashed border-zinc-900 rounded-xl p-10 text-center opacity-60">
-                    <BookOpen className="w-8 h-8 mx-auto text-zinc-500 mb-2" />
-                    <p className="text-xs text-zinc-400">
+                  <div className="border border-dashed border-stone-200 rounded-xl p-10 text-center opacity-60">
+                    <BookOpen className="w-8 h-8 mx-auto text-stone-400 mb-2" />
+                    <p className="text-xs text-stone-500">
                       該当カテゴリーのレビュー記事は現在スタンバイ中です。
                     </p>
                   </div>
@@ -998,28 +998,28 @@ jobs:
 
               {/* ARTICLE FULL SPECIFICATION DEMONSTRATOR LIST (Right pane of sub division) */}
               {selectedArticle ? (
-                <article className="col-span-1 md:col-span-8 bg-zinc-900/30 border border-[#131317] rounded-xl p-5 md:p-6 flex flex-col text-left justify-between min-h-[500px]">
+                <article className="col-span-1 md:col-span-8 bg-stone-50/30 border border-[#131317] rounded-xl p-5 md:p-6 flex flex-col text-left justify-between min-h-[500px]">
                   
                   <div className="space-y-4">
                     
                     {/* Breadcrumbs Navigation UI for UX & SEO */}
-                    <nav className="flex items-center gap-1.5 text-[10px] text-zinc-500 font-sans border-b border-zinc-900/80 pb-2.5 overflow-x-auto">
+                    <nav className="flex items-center gap-1.5 text-[10px] text-stone-400 font-sans border-b border-stone-200/80 pb-2.5 overflow-x-auto">
                       <span className="hover:text-amber-400 cursor-pointer transition-colors" onClick={() => setState(prev => ({ ...prev, activeCategorySlug: 'all' }))}>ホーム</span>
-                      <ChevronRight className="w-3 h-3 text-zinc-700 flex-shrink-0" />
+                      <ChevronRight className="w-3 h-3 text-stone-300 flex-shrink-0" />
                       <span className="hover:text-amber-400 cursor-pointer transition-colors" onClick={() => setState(prev => ({ ...prev, activeCategorySlug: selectedArticle.category }))}>
                         {AMAZON_CATEGORIES.find(c => c.slug === selectedArticle.category)?.name}
                       </span>
-                      <ChevronRight className="w-3 h-3 text-zinc-700 flex-shrink-0" />
+                      <ChevronRight className="w-3 h-3 text-stone-300 flex-shrink-0" />
                       <span className="text-zinc-300 font-bold truncate max-w-[200px]">{selectedArticle.title}</span>
                     </nav>
 
                     {/* Header meta badges & E-E-A-T Trust snippet */}
-                    <div className="flex flex-wrap items-center justify-between gap-2 bg-zinc-950/60 p-2.5 rounded-lg border border-zinc-900">
+                    <div className="flex flex-wrap items-center justify-between gap-2 bg-zinc-950/60 p-2.5 rounded-lg border border-stone-200">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-[9px] bg-orange-500/10 text-orange-400 font-mono font-bold px-2 py-0.5 rounded border border-orange-500/20">
+                        <span className="text-[9px] bg-stone-700/10 text-stone-600 font-mono font-bold px-2 py-0.5 rounded border border-orange-500/20">
                           {AMAZON_CATEGORIES.find(c => c.slug === selectedArticle.category)?.name}
                         </span>
-                        <span className="text-[9px] text-zinc-500 font-mono">
+                        <span className="text-[9px] text-stone-400 font-mono">
                           ASIN: {selectedArticle.asin}
                         </span>
                         {selectedArticle.priceRange && (
@@ -1030,7 +1030,7 @@ jobs:
                       </div>
 
                       {/* E-E-A-T Verification Tag */}
-                      <div className="flex items-center gap-1.5 text-[9px] text-amber-400 font-mono bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
+                      <div className="flex items-center gap-1.5 text-[9px] text-amber-400 font-mono bg-stone-600/10 px-2 py-0.5 rounded border border-amber-500/20">
                         <Shield className="w-3 h-3 text-amber-400" />
                         <span>{selectedArticle.verificationDays || 30}日間実機検証済み</span>
                       </div>
@@ -1039,10 +1039,10 @@ jobs:
                     {/* Title display */}
                     <header className="space-y-1.5">
                       <div className="flex items-start gap-3 justify-between">
-                        <h1 className="text-base sm:text-xl font-bold text-white tracking-tight leading-snug">
+                        <h1 className="text-base sm:text-xl font-bold text-stone-900 tracking-tight leading-snug">
                           {selectedArticle.title}
                         </h1>
-                        <div className="flex items-center gap-1 bg-zinc-900 px-2.5 py-1 rounded border border-zinc-800 text-amber-400 font-extrabold text-xs flex-shrink-0 mt-0.5">
+                        <div className="flex items-center gap-1 bg-stone-50 px-2.5 py-1 rounded border border-stone-300 text-amber-400 font-extrabold text-xs flex-shrink-0 mt-0.5">
                           <Star className="w-3.5 h-3.5 fill-amber-400" />
                           <span>{selectedArticle.starRating}</span>
                         </div>
@@ -1050,7 +1050,7 @@ jobs:
                       
                       {/* E-E-A-T Author & Date info */}
                       <div className="flex flex-wrap items-center gap-3 text-[10px] text-zinc-450 font-mono pt-1">
-                        <span className="text-orange-400 font-bold flex items-center gap-1">
+                        <span className="text-stone-600 font-bold flex items-center gap-1">
                           <UserIcon className="w-3 h-3" />
                           {selectedArticle.reviewerName || "タカハシ @専門バイヤー"}
                         </span>
@@ -1080,7 +1080,7 @@ jobs:
                     {/* Image and intro block */}
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-5 pt-1">
                       <div className="md:col-span-4 flex flex-col gap-2">
-                        <div className="w-full aspect-square bg-zinc-950 rounded-xl overflow-hidden border border-zinc-900 shadow-md">
+                        <div className="w-full aspect-square bg-zinc-950 rounded-xl overflow-hidden border border-stone-200 shadow-md">
                           <img
                             src={selectedArticle.imageUrl}
                             alt={`${selectedArticle.title} の実機画像`}
@@ -1092,19 +1092,19 @@ jobs:
                       </div>
 
                       <div className="md:col-span-8 flex flex-col justify-between gap-3">
-                        <div className="bg-gradient-to-r from-zinc-950 to-zinc-900/40 p-3.5 rounded-xl border border-zinc-900/60 font-sans italic text-zinc-300 leading-relaxed text-xs sm:text-sm">
+                        <div className="bg-gradient-to-r from-zinc-950 to-zinc-900/40 p-3.5 rounded-xl border border-stone-200/60 font-sans italic text-zinc-300 leading-relaxed text-xs sm:text-sm">
                           「 {selectedArticle.introText} 」
                         </div>
 
                         {/* Bullet key highlights */}
                         <div className="space-y-1.5 text-left">
-                          <h3 className="text-[9px] font-black text-orange-400 uppercase tracking-widest block">
+                          <h3 className="text-[9px] font-black text-stone-600 uppercase tracking-widest block">
                             🔑 主な製品仕様・売りポイント
                           </h3>
-                          <ul className="text-xs space-y-1 text-zinc-400 font-sans">
+                          <ul className="text-xs space-y-1 text-stone-500 font-sans">
                             {selectedArticle.features.map((feat, idx) => (
                               <li key={idx} className="flex items-start gap-1.5">
-                                <span className="text-orange-500 font-bold">✓</span>
+                                <span className="text-stone-700 font-bold">✓</span>
                                 <span>{feat}</span>
                               </li>
                             ))}
@@ -1147,27 +1147,27 @@ jobs:
                     </div>
 
                     {/* Markdown Body reviews details */}
-                    <div className="border-t border-zinc-900 pt-5 mt-4 space-y-3">
-                      <h3 className="text-[10px] text-zinc-500 font-mono font-bold uppercase tracking-widest block">
+                    <div className="border-t border-stone-200 pt-5 mt-4 space-y-3">
+                      <h3 className="text-[10px] text-stone-400 font-mono font-bold uppercase tracking-widest block">
                         実機レビュー検証記録
                       </h3>
-                      <div className="text-xs sm:text-sm text-zinc-350 leading-relaxed space-y-4 pr-1 border-l border-zinc-900/60 pl-3 whitespace-pre-line font-sans">
+                      <div className="text-xs sm:text-sm text-zinc-350 leading-relaxed space-y-4 pr-1 border-l border-stone-200/60 pl-3 whitespace-pre-line font-sans">
                         {cleanMarkdownHeaders(selectedArticle.reviewBody)}
                       </div>
                     </div>
 
                     {/* GEO / AI-SEO STRUCTURED FAQ SECTION */}
                     {selectedArticle.faqs && selectedArticle.faqs.length > 0 && (
-                      <section className="border-t border-zinc-900 pt-5 mt-6 space-y-3">
+                      <section className="border-t border-stone-200 pt-5 mt-6 space-y-3">
                         <h3 className="text-xs font-black text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
                           <AlertCircle className="w-4 h-4 text-amber-400" />
                           <span>❓ よくある質問と回答（FAQ）</span>
                         </h3>
                         <div className="space-y-2.5">
                           {selectedArticle.faqs.map((faq, fIdx) => (
-                            <div key={fIdx} className="bg-zinc-950/80 border border-zinc-900 p-3.5 rounded-xl space-y-1.5 text-xs text-left">
+                            <div key={fIdx} className="bg-zinc-950/80 border border-stone-200 p-3.5 rounded-xl space-y-1.5 text-xs text-left">
                               <h4 className="font-bold text-amber-300 flex items-start gap-2">
-                                <span className="bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded font-mono text-[10px] flex-shrink-0">Q</span>
+                                <span className="bg-stone-600/20 text-amber-400 px-1.5 py-0.5 rounded font-mono text-[10px] flex-shrink-0">Q</span>
                                 <span>{faq.question}</span>
                               </h4>
                               <p className="text-zinc-300 pl-6 leading-relaxed font-sans">
@@ -1182,10 +1182,10 @@ jobs:
                   </div>
 
                   {/* HIGH CTA ACTION BAR */}
-                  <div className="mt-8 pt-6 border-t border-zinc-900 space-y-3">
+                  <div className="mt-8 pt-6 border-t border-stone-200 space-y-3">
                     <div className="bg-gradient-to-r from-orange-600/10 via-amber-500/10 to-orange-500/10 border border-orange-500/20 p-4 rounded-xl text-center shadow-md relative overflow-hidden group">
                       
-                      <span className="text-[11px] text-amber-500 font-sans font-black tracking-widest block mb-2 px-1">
+                      <span className="text-[11px] text-stone-800 font-sans font-black tracking-widest block mb-2 px-1">
                         {selectedArticle.ctaTitle}
                       </span>
 
@@ -1209,7 +1209,7 @@ jobs:
                             return { ...prev, articles: updated };
                           });
                         }}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:brightness-110 text-black font-extrabold text-xs sm:text-sm tracking-wider px-8 py-3.5 rounded-lg transition-all shadow-[0_4px_18px_rgba(249,115,22,0.15)] cursor-pointer"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-stone-500 to-stone-700 hover:brightness-110 text-black font-extrabold text-xs sm:text-sm tracking-wider px-8 py-3.5 rounded-lg transition-all shadow-[0_4px_18px_rgba(249,115,22,0.15)] cursor-pointer"
                       >
                         Amazon 公式サイトで詳細と最安値をチェックする
                         <ArrowUpRight className="w-4 h-4 text-black font-extrabold" />
@@ -1223,9 +1223,9 @@ jobs:
 
                 </article>
               ) : (
-                <div className="col-span-1 md:col-span-8 bg-zinc-900/10 border border-dashed border-zinc-900 rounded-xl p-12 text-center flex flex-col items-center justify-center min-h-[500px]">
-                  <BookOpen className="w-12 h-12 text-zinc-700 mb-2 animate-bounce" />
-                  <p className="text-sm text-zinc-500">
+                <div className="col-span-1 md:col-span-8 bg-stone-50/10 border border-dashed border-stone-200 rounded-xl p-12 text-center flex flex-col items-center justify-center min-h-[500px]">
+                  <BookOpen className="w-12 h-12 text-stone-300 mb-2 animate-bounce" />
+                  <p className="text-sm text-stone-400">
                     表示するレビュー記事が選択されていません。
                   </p>
                 </div>
@@ -1244,30 +1244,30 @@ jobs:
             {/* SUB-FLOW: GOOGLE AUTH REQUIREMENT SCREEN */}
             {authLoading ? (
               <div className="py-20 text-center flex flex-col items-center justify-center gap-4">
-                <RefreshCw className="w-10 h-10 text-orange-500 animate-spin" />
-                <p className="text-xs text-zinc-400 font-mono">管理者セッションを検証中...</p>
+                <RefreshCw className="w-10 h-10 text-stone-700 animate-spin" />
+                <p className="text-xs text-stone-500 font-mono">管理者セッションを検証中...</p>
               </div>
             ) : !authUser ? (
-              <div className="max-w-md mx-auto my-12 bg-zinc-950 border border-zinc-900 p-6 sm:p-8 rounded-2xl text-center space-y-6 shadow-2xl">
+              <div className="max-w-md mx-auto my-12 bg-zinc-950 border border-stone-200 p-6 sm:p-8 rounded-2xl text-center space-y-6 shadow-2xl">
                 <div className="space-y-2">
-                  <div className="w-12 h-12 bg-orange-500/10 text-orange-500 rounded-full flex items-center justify-center mx-auto border border-orange-500/20">
+                  <div className="w-12 h-12 bg-stone-700/10 text-stone-700 rounded-full flex items-center justify-center mx-auto border border-orange-500/20">
                     <Shield className="w-6 h-6" />
                   </div>
-                  <h2 className="text-base sm:text-lg font-black text-white">ホスト管理者アクセス制限</h2>
-                  <p className="text-xs text-zinc-400">
+                  <h2 className="text-base sm:text-lg font-black text-stone-900">ホスト管理者アクセス制限</h2>
+                  <p className="text-xs text-stone-500">
                     「Lumière」管理コンソールへ入るには、Googleログイン認証を通過する必要があります。
                   </p>
                 </div>
 
-                <div className="border border-dashed border-zinc-850 p-4 rounded-xl text-left bg-zinc-900/20">
-                  <span className="text-[9px] font-bold text-orange-400 block mb-1 uppercase tracking-wider">
+                <div className="border border-dashed border-zinc-850 p-4 rounded-xl text-left bg-stone-50/20">
+                  <span className="text-[9px] font-bold text-stone-600 block mb-1 uppercase tracking-wider">
                     ※ 許可されたアクセス用アカウント
                   </span>
                   <p className="text-xs text-zinc-200 font-bold flex items-center gap-1.5">
                     <UserIcon className="w-3.5 h-3.5 text-zinc-450" />
                     ご指定の特権管理者アカウントのみ
                   </p>
-                  <p className="text-[10px] text-zinc-500 mt-1.5 leading-normal">
+                  <p className="text-[10px] text-stone-400 mt-1.5 leading-normal">
                     ご指定の管理者アカウント以外のメールアドレスでログインされた場合、記事の書き込みやダッシュボード編集操作などはブロックされます。
                   </p>
                 </div>
@@ -1281,19 +1281,19 @@ jobs:
                 </button>
               </div>
             ) : authUser.email !== 'mattan029@gmail.com' ? (
-              <div className="max-w-md mx-auto my-12 bg-zinc-950 border border-zinc-900 p-8 rounded-2xl text-center space-y-6">
+              <div className="max-w-md mx-auto my-12 bg-zinc-950 border border-stone-200 p-8 rounded-2xl text-center space-y-6">
                 <div className="space-y-2">
                   <div className="w-12 h-12 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto border border-red-500/20">
                     <AlertCircle className="w-6 h-6" />
                   </div>
-                  <h2 className="text-base sm:text-lg font-black text-white">アクセスが拒否されました</h2>
-                  <p className="text-xs text-zinc-400">
+                  <h2 className="text-base sm:text-lg font-black text-stone-900">アクセスが拒否されました</h2>
+                  <p className="text-xs text-stone-500">
                     申し訳ありませんが、入力されたアカウントには管理権限がありません。
                   </p>
                 </div>
 
                 <div className="border border-[#1f0f0f] p-4 rounded-xl text-left bg-[#150a0a]">
-                  <p className="text-xs text-zinc-400">
+                  <p className="text-xs text-stone-500">
                     現在ログイン中のアドレス:
                   </p>
                   <p className="text-xs text-red-400 font-mono font-bold mt-1">
@@ -1304,13 +1304,13 @@ jobs:
                 <div className="flex flex-col gap-2.5">
                   <button
                     onClick={handleSignOut}
-                    className="w-full bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 font-bold text-xs py-2.5 rounded-lg transition-all cursor-pointer"
+                    className="w-full bg-stone-50 border border-stone-300 hover:border-zinc-700 text-zinc-300 font-bold text-xs py-2.5 rounded-lg transition-all cursor-pointer"
                   >
                     アカウントを変更する
                   </button>
                   <button
                     onClick={() => navigateTo('/')}
-                    className="w-full bg-orange-500 text-black font-black text-xs py-2.5 rounded-lg transition-all cursor-pointer"
+                    className="w-full bg-stone-700 text-black font-black text-xs py-2.5 rounded-lg transition-all cursor-pointer"
                   >
                     一般公開サイトに戻る
                   </button>
@@ -1322,18 +1322,18 @@ jobs:
               <div className="space-y-6">
                 
                 {/* Host User status block */}
-                <div className="bg-zinc-900/40 border border-zinc-900 rounded-xl p-4 flex flex-wrap justify-between items-center gap-4 text-xs font-sans">
+                <div className="bg-stone-50/40 border border-stone-200 rounded-xl p-4 flex flex-wrap justify-between items-center gap-4 text-xs font-sans">
                   <div className="flex items-center gap-3">
                     {authUser.photoURL ? (
                       <img src={authUser.photoURL} alt="Avatar" className="w-8 h-8 rounded-full border border-orange-500/30" referrerPolicy="no-referrer" />
                     ) : (
-                      <div className="w-8 h-8 rounded-full bg-orange-500/10 text-orange-500 flex items-center justify-center font-bold">
+                      <div className="w-8 h-8 rounded-full bg-stone-700/10 text-stone-700 flex items-center justify-center font-bold">
                         A
                       </div>
                     )}
                     <div>
-                      <p className="text-zinc-400 font-mono">
-                        ログイン管理者: <strong className="text-white font-mono">{authUser.email}</strong>
+                      <p className="text-stone-500 font-mono">
+                        ログイン管理者: <strong className="text-stone-900 font-mono">{authUser.email}</strong>
                       </p>
                       <span className="text-[10px] text-emerald-400 font-mono font-bold uppercase flex items-center gap-1">
                         <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
@@ -1344,7 +1344,7 @@ jobs:
 
                   <button
                     onClick={handleSignOut}
-                    className="ml-auto bg-zinc-950 border border-zinc-900 hover:border-zinc-800 text-zinc-400 hover:text-white px-3.5 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1.5 cursor-pointer shadow-inner"
+                    className="ml-auto bg-zinc-950 border border-stone-200 hover:border-stone-300 text-stone-500 hover:text-stone-900 px-3.5 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1.5 cursor-pointer shadow-inner"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     ログアウト
@@ -1354,47 +1354,47 @@ jobs:
                 {/* Dashboard Metrics Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
                   
-                  <div className="bg-zinc-950 border border-zinc-900 p-4 rounded-xl flex items-center gap-3.5">
-                    <div className="p-2.5 bg-orange-500/10 text-orange-400 rounded-lg">
+                  <div className="bg-zinc-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
+                    <div className="p-2.5 bg-stone-700/10 text-stone-600 rounded-lg">
                       <DollarSign className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[9px] text-zinc-500 uppercase tracking-wider block font-bold">推定成果（シミュレーション）</span>
-                      <span className="text-lg font-mono font-black text-white">
+                      <span className="text-[9px] text-stone-400 uppercase tracking-wider block font-bold">推定成果（シミュレーション）</span>
+                      <span className="text-lg font-mono font-black text-stone-900">
                         ¥{resolvedArticles.reduce((sum, item) => sum + item.earnings, 0).toLocaleString()}
                       </span>
                     </div>
                   </div>
 
-                  <div className="bg-zinc-950 border border-zinc-900 p-4 rounded-xl flex items-center gap-3.5">
+                  <div className="bg-zinc-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
                     <div className="p-2.5 bg-[#0080ff]/10 text-blue-400 rounded-lg">
                       <ChevronRight className="w-5 h-5 rotate-45" />
                     </div>
                     <div>
-                      <span className="text-[9px] text-zinc-500 uppercase tracking-wider block font-bold">総アフィクリック（シミュレーション）</span>
+                      <span className="text-[9px] text-stone-400 uppercase tracking-wider block font-bold">総アフィクリック（シミュレーション）</span>
                       <span className="text-lg font-mono font-black text-zinc-200">
-                        {resolvedArticles.reduce((sum, item) => sum + item.clicks, 0).toLocaleString()} <em className="text-xs text-zinc-400 not-italic">回</em>
+                        {resolvedArticles.reduce((sum, item) => sum + item.clicks, 0).toLocaleString()} <em className="text-xs text-stone-500 not-italic">回</em>
                       </span>
                     </div>
                   </div>
 
-                  <div className="bg-zinc-950 border border-zinc-900 p-4 rounded-xl flex items-center gap-3.5">
+                  <div className="bg-zinc-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
                     <div className="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-lg">
                       <FileText className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[9px] text-zinc-500 uppercase tracking-wider block font-bold">データベース蓄積記事</span>
-                      <span className="text-lg font-mono font-black text-white">
-                        {resolvedArticles.length} <em className="text-xs text-zinc-400 not-italic">記事</em>
+                      <span className="text-[9px] text-stone-400 uppercase tracking-wider block font-bold">データベース蓄積記事</span>
+                      <span className="text-lg font-mono font-black text-stone-900">
+                        {resolvedArticles.length} <em className="text-xs text-stone-500 not-italic">記事</em>
                       </span>
                     </div>
                   </div>
 
                   {/* Active Simulator Control widget */}
-                  <div className="bg-[#121115] border border-zinc-900 px-4 py-3 rounded-xl flex items-center justify-between gap-3">
+                  <div className="bg-[#121115] border border-stone-200 px-4 py-3 rounded-xl flex items-center justify-between gap-3">
                     <div className="min-w-0">
                       <span className="text-[9px] text-purple-400 font-bold tracking-widest block uppercase">定刻自動配信シミュレーター</span>
-                      <span className="text-[10px] text-zinc-500 block leading-normal pt-0.5 truncate">Actions自動追加の擬似再現</span>
+                      <span className="text-[10px] text-stone-400 block leading-normal pt-0.5 truncate">Actions自動追加の擬似再現</span>
                     </div>
                     <button
                       onClick={() => {
@@ -1404,8 +1404,8 @@ jobs:
                       }}
                       className={`font-black text-[10px] px-3 py-1.5 rounded uppercase tracking-wider cursor-pointer flex-shrink-0 transition-all
                         ${state.simulatedCronActive
-                          ? 'bg-amber-500 text-black shadow'
-                          : 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800'
+                          ? 'bg-stone-600 text-black shadow'
+                          : 'bg-stone-50 text-stone-500 hover:bg-stone-100'
                         }`}
                     >
                       {state.simulatedCronActive ? '稼働中' : '停止中'}
@@ -1425,10 +1425,10 @@ jobs:
                       </div>
                     </div>
                     <div className="flex items-center gap-2 min-w-[140px]">
-                      <div className="h-1.5 bg-zinc-900 w-full rounded-full overflow-hidden">
-                        <div className="h-full bg-amber-500 transition-all duration-300" style={{ width: `${autoGenProgress}%` }}></div>
+                      <div className="h-1.5 bg-stone-50 w-full rounded-full overflow-hidden">
+                        <div className="h-full bg-stone-600 transition-all duration-300" style={{ width: `${autoGenProgress}%` }}></div>
                       </div>
-                      <span className="font-mono text-[9px] text-zinc-400 flex-shrink-0">{autoGenProgress}%</span>
+                      <span className="font-mono text-[9px] text-stone-500 flex-shrink-0">{autoGenProgress}%</span>
                     </div>
                   </div>
                 )}
@@ -1440,19 +1440,19 @@ jobs:
                   <div className="lg:col-span-6 flex flex-col gap-6">
                     
                     {/* Review Generator Form */}
-                    <div className="bg-zinc-950 border border-zinc-900 p-5 sm:p-6 rounded-xl text-left space-y-4">
-                      <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
-                        <Sparkles className="text-orange-500 w-5 h-5 flex-shrink-0" />
+                    <div className="bg-zinc-950 border border-stone-200 p-5 sm:p-6 rounded-xl text-left space-y-4">
+                      <div className="flex items-center gap-2 border-b border-stone-200 pb-3">
+                        <Sparkles className="text-stone-700 w-5 h-5 flex-shrink-0" />
                         <div>
-                          <h3 className="font-black text-white text-xs sm:text-sm">Lumière 高機能AIレビュー執筆執動</h3>
-                          <p className="text-[10px] text-zinc-500">Google Gemini 3.5 Flashを安全に経由し、レビューカタログを随時自動量産</p>
+                          <h3 className="font-black text-stone-900 text-xs sm:text-sm">Lumière 高機能AIレビュー執筆執動</h3>
+                          <p className="text-[10px] text-stone-400">Google Gemini 3.5 Flashを安全に経由し、レビューカタログを随時自動量産</p>
                         </div>
                       </div>
 
                       <form onSubmit={handleCreateNewArticle} className="space-y-4 text-xs">
                         
                         <div className="space-y-1.5">
-                          <label className="text-[9px] text-zinc-400 uppercase tracking-widest font-black block">
+                          <label className="text-[9px] text-stone-500 uppercase tracking-widest font-black block">
                             Amazon 製品URL または 10桁のASIN識別子
                           </label>
                           <input
@@ -1460,19 +1460,19 @@ jobs:
                             value={inputUrl}
                             onChange={(e) => setInputUrl(e.target.value)}
                             placeholder="例: B09Y29G7B2 もしくは 製品個別URLを入力"
-                            className="w-full bg-zinc-900 border border-zinc-800 px-3.5 py-2.5 rounded-lg text-white font-mono placeholder-zinc-700 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20"
+                            className="w-full bg-stone-50 border border-stone-300 px-3.5 py-2.5 rounded-lg text-stone-900 font-mono placeholder-zinc-700 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20"
                           />
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="space-y-1.5">
-                            <label className="text-[9px] text-zinc-400 uppercase tracking-widest font-black block">
+                            <label className="text-[9px] text-stone-500 uppercase tracking-widest font-black block">
                               配置宛先カテゴリー
                             </label>
                             <select
                               value={inputCategory}
                               onChange={(e) => setInputCategory(e.target.value)}
-                              className="w-full bg-zinc-900 border border-zinc-800 px-3 py-2.5 rounded-lg text-white focus:outline-none focus:border-orange-500 cursor-pointer"
+                              className="w-full bg-stone-50 border border-stone-300 px-3 py-2.5 rounded-lg text-stone-900 focus:outline-none focus:border-orange-500 cursor-pointer"
                             >
                               {AMAZON_CATEGORIES.map(cat => (
                                 <option key={cat.id} value={cat.slug}>
@@ -1491,7 +1491,7 @@ jobs:
                               value={customTitle}
                               onChange={(e) => setCustomTitle(e.target.value)}
                               placeholder="例: 特別限定モデルなど"
-                              className="w-full bg-zinc-900 border border-zinc-800 px-3 py-2.5 rounded-lg text-white placeholder-zinc-700 focus:outline-none focus:border-orange-500"
+                              className="w-full bg-stone-50 border border-stone-300 px-3 py-2.5 rounded-lg text-stone-900 placeholder-zinc-700 focus:outline-none focus:border-orange-500"
                             />
                           </div>
                         </div>
@@ -1499,7 +1499,7 @@ jobs:
                         <button
                           type="submit"
                           disabled={generationLoading}
-                          className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:brightness-110 text-black font-black py-3 rounded-lg uppercase tracking-widest shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                          className="w-full bg-gradient-to-r from-stone-500 to-stone-700 hover:brightness-110 text-black font-black py-3 rounded-lg uppercase tracking-widest shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                         >
                           {generationLoading ? (
                             <>
@@ -1517,19 +1517,19 @@ jobs:
                     </div>
 
                     {/* ID Control Settings & Reset Panel */}
-                    <div className="bg-zinc-950 border border-zinc-900 p-5 sm:p-6 rounded-xl text-left space-y-4">
+                    <div className="bg-zinc-950 border border-stone-200 p-5 sm:p-6 rounded-xl text-left space-y-4">
                       
-                      <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
-                        <Settings className="text-orange-500 w-5 h-5 flex-shrink-0" />
+                      <div className="flex items-center gap-2 border-b border-stone-200 pb-3">
+                        <Settings className="text-stone-700 w-5 h-5 flex-shrink-0" />
                         <div>
-                          <h3 className="font-black text-white text-xs sm:text-sm">トラッキングID（アソシエイト）設定</h3>
-                          <p className="text-[10px] text-zinc-500">全ての成果獲得誘導URLをご自身のアフィロゴタグに自動署名</p>
+                          <h3 className="font-black text-stone-900 text-xs sm:text-sm">トラッキングID（アソシエイト）設定</h3>
+                          <p className="text-[10px] text-stone-400">全ての成果獲得誘導URLをご自身のアフィロゴタグに自動署名</p>
                         </div>
                       </div>
 
                       <div className="space-y-4 text-xs">
                         <div className="space-y-1.5">
-                          <label className="text-[9px] text-zinc-400 uppercase tracking-widest font-black block">
+                          <label className="text-[9px] text-stone-500 uppercase tracking-widest font-black block">
                             管理者 Amazon associate-id
                           </label>
                           <input
@@ -1549,15 +1549,15 @@ jobs:
                               saveSettingsToFirestore(v, state.fallbackAdUrl).catch(console.error);
                               pushLog(`アソシエイトIDを [${v}] に書き換え、データベース連動を同期しました。`, "info");
                             }}
-                            className="w-full bg-zinc-900 border border-zinc-800 px-3.5 py-2.5 rounded-lg text-white font-mono focus:outline-none focus:border-orange-500"
+                            className="w-full bg-stone-50 border border-stone-300 px-3.5 py-2.5 rounded-lg text-stone-900 font-mono focus:outline-none focus:border-orange-500"
                             placeholder="mattan0290c-22"
                           />
-                          <p className="text-[9px] text-zinc-500 leading-relaxed">
+                          <p className="text-[9px] text-stone-400 leading-relaxed">
                             ※ここを本物のAmazonアソシエイトIDに変更すると、生成された全記事内のアフィリエイト購入ボタンの追跡コードが即座に同期されます。
                           </p>
                         </div>
 
-                        <div className="pt-2 border-t border-zinc-900/60 pb-1">
+                        <div className="pt-2 border-t border-stone-200/60 pb-1">
                           <button
                             onClick={handleResetCatalog}
                             className="w-full border border-red-500/10 hover:border-red-500/40 hover:bg-red-550/5 text-red-400 py-2.5 rounded-lg text-[10px] uppercase font-black tracking-widest transition-all cursor-pointer text-center"
@@ -1575,18 +1575,18 @@ jobs:
                   <div className="lg:col-span-6 flex flex-col gap-6">
                     
                     {/* Real-time Simulator Console logs panel */}
-                    <div className="bg-zinc-950 border border-zinc-900 rounded-xl p-5 flex flex-col flex-1 min-h-[220px]">
-                      <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block border-b border-zinc-900 pb-2 mb-3 flex justify-between items-center">
+                    <div className="bg-zinc-950 border border-stone-200 rounded-xl p-5 flex flex-col flex-1 min-h-[220px]">
+                      <div className="text-[10px] font-bold text-stone-500 uppercase tracking-widest block border-b border-stone-200 pb-2 mb-3 flex justify-between items-center">
                         <span className="flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+                          <span className="w-1.5 h-1.5 bg-stone-700 rounded-full"></span>
                           システム統合コンソール
                         </span>
-                        <span className="text-orange-500 tracking-wider text-[8px] uppercase">
+                        <span className="text-stone-700 tracking-wider text-[8px] uppercase">
                           SECURE DYNAMIC LINK
                         </span>
                       </div>
 
-                      <div className="flex-1 overflow-y-auto max-h-[190px] text-[10px] font-mono space-y-2 text-zinc-400 custom-scrollbar pr-1">
+                      <div className="flex-1 overflow-y-auto max-h-[190px] text-[10px] font-mono space-y-2 text-stone-500 custom-scrollbar pr-1">
                         {state.systemLogs.map(log => (
                           <p key={log.id} className="leading-relaxed">
                             <span className="text-zinc-650">[{log.timestamp}]</span>{' '}
@@ -1594,7 +1594,7 @@ jobs:
                               ${log.type === 'success' ? 'bg-[#0f1d16] text-emerald-400' : ''}
                               ${log.type === 'warn' ? 'bg-[#220f0f] text-red-400' : ''}
                               ${log.type === 'ai' ? 'bg-[#181126] text-purple-400' : ''}
-                              ${log.type === 'info' ? 'bg-zinc-900 text-zinc-500' : ''}
+                              ${log.type === 'info' ? 'bg-stone-50 text-stone-400' : ''}
                             `}>
                               {log.type.toUpperCase()}
                             </span>{' '}
@@ -1605,16 +1605,16 @@ jobs:
                     </div>
 
                     {/* GitHub Actions YAML Deployment Manual exporter */}
-                    <div className="bg-zinc-950 border border-zinc-900 p-5 rounded-xl space-y-4">
-                      <div className="flex items-center justify-between border-b border-zinc-900 pb-3">
-                        <div className="flex items-center gap-2 font-black text-white text-xs sm:text-sm">
-                          <Github className="text-zinc-400 w-4 h-4" />
+                    <div className="bg-zinc-950 border border-stone-200 p-5 rounded-xl space-y-4">
+                      <div className="flex items-center justify-between border-b border-stone-200 pb-3">
+                        <div className="flex items-center gap-2 font-black text-stone-900 text-xs sm:text-sm">
+                          <Github className="text-stone-500 w-4 h-4" />
                           <span>サーバー代0円：完全自律化マニュアル</span>
                         </div>
 
                         <button
                           onClick={handleCopyYaml}
-                          className="text-orange-400 hover:text-orange-300 font-bold text-[10px] flex items-center gap-1.5 cursor-pointer"
+                          className="text-stone-600 hover:text-orange-300 font-bold text-[10px] flex items-center gap-1.5 cursor-pointer"
                         >
                           {yamlCopied ? (
                             <>
@@ -1630,7 +1630,7 @@ jobs:
 
                       <p className="text-[11px] text-zinc-450 leading-normal text-left font-sans">
                         ローカルまたはGitHubリポジトリに
-                        <code className="text-orange-400 font-mono text-[10px] bg-zinc-900 px-1.5 py-0.5 rounded ml-1">.github/workflows/amazongo-loop.yml</code>
+                        <code className="text-stone-600 font-mono text-[10px] bg-stone-50 px-1.5 py-0.5 rounded ml-1">.github/workflows/amazongo-loop.yml</code>
                         を配置すると、Gemini 3.5 Flashが24時間自動学習＆巡回して1時間に1回勝手に新着レビューを作成する全自動収益型エンジンが実現できます。
                       </p>
                     </div>
@@ -1639,10 +1639,10 @@ jobs:
                 </div>
 
                 {/* Article Catalogue list management (Table format for the admin) */}
-                <div className="bg-zinc-950 border border-zinc-900 rounded-xl p-5 text-left">
-                  <h3 className="font-black text-white text-xs sm:text-sm border-b border-zinc-900 pb-3 mb-4 flex items-center justify-between">
+                <div className="bg-zinc-950 border border-stone-200 rounded-xl p-5 text-left">
+                  <h3 className="font-black text-stone-900 text-xs sm:text-sm border-b border-stone-200 pb-3 mb-4 flex items-center justify-between">
                     <span>格納アフィリエイト記事一覧と削除管理 ({resolvedArticles.length}件)</span>
-                    <span className="text-[9px] text-zinc-500 font-mono uppercase tracking-wider">
+                    <span className="text-[9px] text-stone-400 font-mono uppercase tracking-wider">
                       Firestore Documents database
                     </span>
                   </h3>
@@ -1650,7 +1650,7 @@ jobs:
                   <div className="overflow-x-auto">
                     <table className="w-full text-xs font-mono">
                       <thead>
-                        <tr className="border-b border-zinc-900 text-zinc-500 pb-2 text-[10px] uppercase font-bold text-left">
+                        <tr className="border-b border-stone-200 text-stone-400 pb-2 text-[10px] uppercase font-bold text-left">
                           <th className="py-2.5 pr-4 pl-1">商品名・タイトル</th>
                           <th className="py-2.5 px-3">ASIN</th>
                           <th className="py-2.5 px-3">アクセス数 (PV)</th>
@@ -1660,20 +1660,20 @@ jobs:
                       </thead>
                       <tbody className="divide-y divide-zinc-900">
                         {resolvedArticles.map((art) => (
-                          <tr key={art.id} className="hover:bg-zinc-900/30 text-zinc-300">
+                          <tr key={art.id} className="hover:bg-stone-50/30 text-zinc-300">
                             <td className="py-3 px-1 max-w-sm truncate font-medium">
-                              <span className="text-orange-500 font-sans mr-2 text-[9px] bg-orange-500/5 px-1.5 py-0.5 rounded border border-orange-500/10">
+                              <span className="text-stone-700 font-sans mr-2 text-[9px] bg-stone-700/5 px-1.5 py-0.5 rounded border border-orange-500/10">
                                 {AMAZON_CATEGORIES.find(c => c.slug === art.category)?.name}
                               </span>
                               <span className="font-sans font-bold text-zinc-200">{art.title}</span>
                             </td>
-                            <td className="py-3 px-3 text-zinc-400 truncate max-w-[80px]">{art.asin}</td>
+                            <td className="py-3 px-3 text-stone-500 truncate max-w-[80px]">{art.asin}</td>
                             <td className="py-3 px-3 text-blue-400 font-bold">{art.estimatedPV.toLocaleString()} PV</td>
                             <td className="py-3 px-3 text-green-400 font-bold">¥{art.earnings.toLocaleString()}</td>
                             <td className="py-3 px-3 text-right space-x-2 flex items-center justify-end">
                               <button
                                 onClick={() => handleCopyMarkdown(art)}
-                                className="bg-zinc-900 hover:text-white px-2.5 py-1 rounded text-[10px] transition-all cursor-pointer text-zinc-400 hover:border-zinc-700 border border-zinc-800"
+                                className="bg-stone-50 hover:text-stone-900 px-2.5 py-1 rounded text-[10px] transition-all cursor-pointer text-stone-500 hover:border-zinc-700 border border-stone-300"
                               >
                                 markdown
                               </button>
@@ -1689,7 +1689,7 @@ jobs:
                         ))}
                         {resolvedArticles.length === 0 && (
                           <tr>
-                            <td colSpan={5} className="py-8 text-center text-zinc-500 italic">
+                            <td colSpan={5} className="py-8 text-center text-stone-400 italic">
                               データベース内のレビュー記事は空です。
                             </td>
                           </tr>
@@ -1708,11 +1708,11 @@ jobs:
         {/* ==================================================================== */}
         {/* ======================= COMPREHENSIVE FOOTER COMPONENT ============ */}
         {/* ==================================================================== */}
-        <div className="border-t border-zinc-900 pt-5 mt-4 flex items-center justify-between px-1 text-[10px] text-zinc-500">
+        <div className="border-t border-stone-200 pt-5 mt-4 flex items-center justify-between px-1 text-[10px] text-stone-400">
           <span>© 2026 Lumière</span>
           <span
             onClick={() => navigateTo(isAdminRoute ? '/' : '/host')}
-            className="text-zinc-600 hover:text-orange-400 transition-all cursor-pointer hover:underline"
+            className="text-zinc-600 hover:text-stone-600 transition-all cursor-pointer hover:underline"
           >
             {isAdminRoute ? "公開ページへ" : "管理"}
           </span>
