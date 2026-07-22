@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { AmazonProductArticle } from '../types';
 import { AMAZON_CATEGORIES } from '../data';
 import { updateSeoGeoMetadata, generateProductJsonLd } from '../utils/seoGeo';
+import { MarkdownRenderer } from '../components/MarkdownRenderer';
 import { ArrowLeft, Star, ExternalLink, Check, ShoppingCart, Tag, BookOpen, AlertCircle, Home } from 'lucide-react';
 
 interface ProductDetailPageProps {
@@ -166,9 +167,7 @@ export function ProductDetailPage({ articleId, articles, onNavigate }: ProductDe
             <BookOpen className="w-5 h-5 text-indigo-600" />
             <span>実体験レビュー詳細</span>
           </h2>
-          <div className="prose prose-slate max-w-none text-sm sm:text-base text-slate-800 leading-relaxed whitespace-pre-line">
-            {article.reviewBody}
-          </div>
+          <MarkdownRenderer content={article.reviewBody} />
         </div>
 
         {/* GEO Structured FAQ Section */}

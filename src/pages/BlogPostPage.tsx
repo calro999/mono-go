@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { SPECIAL_BLOG_POSTS, AUTHOR_PROFILES } from '../data';
 import { AmazonProductArticle } from '../types';
 import { updateSeoGeoMetadata, generateBlogJsonLd } from '../utils/seoGeo';
+import { MarkdownRenderer } from '../components/MarkdownRenderer';
 import { ArrowLeft, Star, ExternalLink, Check, Calendar, Clock, ShoppingCart, Home } from 'lucide-react';
 
 interface BlogPostPageProps {
@@ -147,8 +148,8 @@ export function BlogPostPage({ postId, articles, onNavigate }: BlogPostPageProps
         </div>
 
         {/* Markdown Content */}
-        <div className="prose prose-slate max-w-none text-slate-800 leading-relaxed whitespace-pre-line">
-          <div dangerouslySetInnerHTML={{ __html: post.contentMarkdown }} />
+        <div className="prose prose-slate max-w-none text-slate-800 leading-relaxed">
+          <MarkdownRenderer content={post.contentMarkdown} />
         </div>
 
         {/* Recommended Items */}
