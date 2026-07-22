@@ -200,7 +200,9 @@ export default function App() {
     // 3. Real-time Firestore subscription
     const unsubscribeArticles = subscribeToArticles(
       (items) => {
-        setDbArticles(fixAffiliateLinks(items));
+        const validCategoryIds = AMAZON_CATEGORIES.map(c => c.id);
+        const filteredItems = items.filter(item => validCategoryIds.includes(item.category));
+        setDbArticles(fixAffiliateLinks(filteredItems));
         setIsDbLoaded(true);
       },
       (err) => {
@@ -220,7 +222,7 @@ export default function App() {
 
     // Seed introductory log
     if (state.systemLogs.length === 0) {
-      pushLog("もの-GO 管理セキュアエンジン起動完了。", "success");
+      pushLog("Beauty-GO 管理セキュアエンジン起動完了。", "success");
       pushLog("Google Gemini 3.5 AIアフィリエイトプロセッサー通信確立済み。", "ai");
     }
 
@@ -543,7 +545,7 @@ ${art.affiliateLink}
 
   // Copy YAML workflows
   const handleCopyYaml = () => {
-    const yamlTemplate = `name: "もの-GO 定刻自動巡回レビュー自動配信"
+    const yamlTemplate = `name: "Beauty-GO 定刻自動巡回レビュー自動配信"
 
 on:
   schedule:
@@ -615,14 +617,14 @@ jobs:
   // Dynamically set meta description, OGP, and JSON-LD schema markup for active page/article (Automated SEO & GEO)
   useEffect(() => {
     // 1. Update Document Title dynamically
-    let titleText = "もの-GO | 専門バイヤーの徹底本音レビューブログ";
+    let titleText = "Beauty-GO | 専門バイヤーの徹底本音レビューブログ";
     if (selectedArticle && !isAdminRoute) {
-      titleText = `${selectedArticle.title} | もの-GO`;
+      titleText = `${selectedArticle.title} | Beauty-GO`;
     } else if (state.activeCategorySlug !== 'all' && !isAdminRoute) {
       const cat = AMAZON_CATEGORIES.find(c => c.slug === state.activeCategorySlug);
-      if (cat) titleText = `${cat.name}のおすすめ・本音レビューまとめ | もの-GO`;
+      if (cat) titleText = `${cat.name}のおすすめ・本音レビューまとめ | Beauty-GO`;
     } else if (isAdminRoute) {
-      titleText = "管理者コンソール | もの-GO";
+      titleText = "管理者コンソール | Beauty-GO";
     }
     document.title = titleText;
 
@@ -690,7 +692,7 @@ jobs:
           },
           "author": {
             "@type": "Person",
-            "name": selectedArticle.reviewerName || "もの-GO 専門バイヤー"
+            "name": selectedArticle.reviewerName || "Beauty-GO 専門バイヤー"
           },
           "reviewBody": cleanMarkdownHeaders(selectedArticle.reviewBody)
         },
@@ -714,12 +716,12 @@ jobs:
         "datePublished": selectedArticle.createdAt ? new Date(selectedArticle.createdAt).toISOString() : new Date().toISOString(),
         "author": {
           "@type": "Person",
-          "name": selectedArticle.reviewerName || "もの-GO 専門バイヤー",
+          "name": selectedArticle.reviewerName || "Beauty-GO 専門バイヤー",
           "jobTitle": selectedArticle.reviewerRole || "家電・ガジェット実機検証バイヤー"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "もの-GO",
+          "name": "Beauty-GO",
           "logo": {
             "@type": "ImageObject",
             "url": selectedArticle.imageUrl
@@ -802,7 +804,7 @@ jobs:
                 onClick={() => navigateTo('/')}
                 className="bg-zinc-900 text-amber-500 border border-zinc-800/80 font-black text-xl sm:text-2xl px-3.5 py-1 rounded-lg tracking-tighter flex items-center gap-1.5 hover:border-amber-500/40 cursor-pointer shadow-inner transition-all"
               >
-                もの-GO
+                Beauty-GO
               </div>
               <span className="text-zinc-700 text-base font-normal hidden sm:inline">|</span>
               <p className="text-xs text-zinc-400 font-medium">
@@ -1251,7 +1253,7 @@ jobs:
                   </div>
                   <h2 className="text-base sm:text-lg font-black text-white">ホスト管理者アクセス制限</h2>
                   <p className="text-xs text-zinc-400">
-                    「もの-GO」管理コンソールへ入るには、Googleログイン認証を通過する必要があります。
+                    「Beauty-GO」管理コンソールへ入るには、Googleログイン認証を通過する必要があります。
                   </p>
                 </div>
 
@@ -1440,7 +1442,7 @@ jobs:
                       <div className="flex items-center gap-2 border-b border-zinc-900 pb-3">
                         <Sparkles className="text-orange-500 w-5 h-5 flex-shrink-0" />
                         <div>
-                          <h3 className="font-black text-white text-xs sm:text-sm">もの-GO 高機能AIレビュー執筆執動</h3>
+                          <h3 className="font-black text-white text-xs sm:text-sm">Beauty-GO 高機能AIレビュー執筆執動</h3>
                           <p className="text-[10px] text-zinc-500">Google Gemini 3.5 Flashを安全に経由し、レビューカタログを随時自動量産</p>
                         </div>
                       </div>
@@ -1705,7 +1707,7 @@ jobs:
         {/* ======================= COMPREHENSIVE FOOTER COMPONENT ============ */}
         {/* ==================================================================== */}
         <div className="border-t border-zinc-900 pt-5 mt-4 flex items-center justify-between px-1 text-[10px] text-zinc-500">
-          <span>© 2026 もの-GO</span>
+          <span>© 2026 Beauty-GO</span>
           <span
             onClick={() => navigateTo(isAdminRoute ? '/' : '/host')}
             className="text-zinc-600 hover:text-orange-400 transition-all cursor-pointer hover:underline"

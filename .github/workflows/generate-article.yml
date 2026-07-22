@@ -1,9 +1,9 @@
 name: 🤖 Auto Article Generator
 
 on:
-  # 毎日 日本時間 午前9時 (UTC 00:00) に自動実行
+  # 3時間ごとに自動実行
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 */3 * * *'
 
   # 手動でも実行可能
   workflow_dispatch:
