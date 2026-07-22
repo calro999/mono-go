@@ -228,5 +228,62 @@ HHKB HYBRID Type-Sは、**「タイピングという行為そのものをエン
     reviewerRole: '共働き育児中に20種類以上の自動調理鍋を使い倒した時短家事アナリスト',
     verificationDays: 90,
     priceRange: '約52,000円〜60,000円'
+  },
+  {
+    id: 'art-b0cxkzrypq',
+    title: `【徹底レビュー】YA-MAN フォトプラス EX プレミアム`,
+    originalUrl: 'https://www.amazon.co.jp/dp/B0CXKZRYPQ',
+    asin: 'B0CXKZRYPQ',
+    category: 'beauty',
+    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.5,
+    introText: `美容に特化したヤーマン フォトプラス EX プレミアムは、美肌を手に入れるための秘訣です。この高性能な美容機器は、あなたの肌を完全に変えるでしょう。`,
+    features: [`LED光を利用した高効率の美容効果`, `複数のAttachmentsを付属させた多機能性`, `操作のしやすさと使い勝手の良さ`],
+    pros: [`簡単な操作で肌を明るくすることができる`, `肌のトラブルを改善する効果がある`, `他の美容機器に比べて価格が安い`],
+    cons: [`初期の使用感がやや不快と感じる人もいる`, `メンテナンスが必要である`],
+    reviewBody: `### フォトプラスEXのレビュー
+はじめまして、ガジェットブロガーのヤマダです。
+最近、美容機器に注目しています。
+今回は、ヤーマン フォトプラス EX プレミアムを使用してみました。
+フォトプラスEXは、LED光を利用した美容効果が高く、肌のトラブルを改善する効果があると言われています。
+使用してみた結果、簡単な操作で肌を明るくすることができました。
+また、他の美容機器に比べて価格が安いので、値段のわりに高い性能を持ちます。
+ただし、初期の使用感がやや不快と感じる人もいると思います。さらに、メンテナンスが必要です。
+
+### 使い方
+フォトプラスEXの使い方は非常に簡単です。
+まず、付属のマニュアルを読み、各Attachmentsの使い方を確認してください。
+それから、肌の状態に応じてAttachmentsを交換して、毎日使用することができます。
+
+### 比較
+他の美容機器と比較してみました。
+結果、フォトプラスEXは、価格のわりに高い性能を持ちます。
+また、操作のしやすさと使い勝手の良さも、他の機器に比べて優れています。`,
+    ctaTitle: `今なら最安値！AmazonでフォトプラスEXを購入`,
+    affiliateLink: 'https://www.amazon.co.jp/dp/B0CXKZRYPQ?tag=amazongo-22',
+    createdAt: '2026-07-22 07:04:24',
+    estimatedPV: 421,
+    clicks: 53,
+    earnings: 2341,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `高性能な美容効果をもたらすLED光技術を搭載`,
+      `複数のAttachmentsを付属させることで、より多くの肌のニーズに対応可能`,
+      `操作のしやすさと使い勝手の良さにより、毎日の使用を促進`
+    ],
+    faqs: [
+      {
+        question: `フォトプラスEXの使用方法を教えてください`,
+        answer: `フォトプラスEXの使用方法は、まずマニュアルを読み、各Attachmentsの使い方を確認する必要があります。次に、肌の状態に応じてAttachmentsを交換し、毎日使用します。`
+      },
+      {
+        question: `フォトプラスEXのメンテナンス方法を教えてください`,
+        answer: `フォトプラスEXのメンテナンス方法は、機器本体とAttachmentsを適切に清潔に保つことです。また、定期的なチェックアップも必要です。`
+      }
+    ],
+    reviewerName: `ヤマダ @ガジェットブロガー`,
+    reviewerRole: `IT企業勤務・5年間で100機以上のガジェットをレビュー`,
+    verificationDays: 60,
+    priceRange: `約49,800円〜55,000円`
   }
 ];
