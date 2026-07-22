@@ -170,7 +170,7 @@ function buildPrompt(category, product) {
   "cons": ["デメリット1（正直に）", "デメリット2"],
   "reviewBody": "### H3見出し付きのMarkdown形式レビュー本文（600文字以上）。感情に訴えかける書き出し、具体的なユースケース、競合比較を含めること",
   "ctaTitle": "緊急性・限定性を含む購入を促すCTAテキスト（例：＼ 今なら○○！Amazonで最安値をチェック ／）",
-  "affiliateLink": "https://www.amazon.co.jp/dp/${product.asin}?tag=amazongo-22",
+  "affiliateLink": "https://www.amazon.co.jp/dp/${product.asin}?tag=mattan0290c-22",
   "createdAt": "${new Date().toISOString().replace('T', ' ').slice(0, 19)}",
   "estimatedPV": 100〜600のランダムな整数,
   "clicks": 10〜80のランダムな整数,
@@ -434,7 +434,7 @@ function validateArticle(article) {
 
   // affiliateLinkにアソシエイトIDがなければ付与
   if (!article.affiliateLink.includes('tag=')) {
-    article.affiliateLink += (article.affiliateLink.includes('?') ? '&' : '?') + 'tag=amazongo-22';
+    article.affiliateLink += (article.affiliateLink.includes('?') ? '&' : '?') + 'tag=mattan0290c-22';
   }
 
   return article;

@@ -182,18 +182,17 @@ function selectProductMockImage(cat: string, namePrompt: string): string {
 }
 
 // 2. High-Performance Review Generator API
-import * as amazonPaapi from 'amazon-paapi';
+// Note: Amazon PA-API is not used (eligibility requirements not met).
+//       Affiliate links are built directly from ASIN + associate ID.
 
 app.post("/api/generate-amazon-review", async (req, res) => {
   const { inputUrl, category, associateId, userCustomTitle } = req.body;
 
   const targetCategory = category || "gadgets";
-  // The user's requested associate ID, fallback to the one provided in instructions
-  const providedAssociateIdMatch = "{Applicationid: mattan0290c-22.jack}".match(/mattan0290c-22/);
-  const userTag = associateId || (providedAssociateIdMatch ? providedAssociateIdMatch[0] : "amazongo-22");
+  // アフィリエイトID: ユーザー指定 > デフォルト固定値
+  const userTag = associateId || "mattan0290c-22";
 
-  // Helper patterns for extraction
-  // Extract ASIN as well if possible e.g. B0xxxxxx from URL
+  // ASIN を URL から抽出
   let detectedAsin = "B08N5WRWNW"; // Fallback ASIN
   const asinMatch = (inputUrl || "").match(/\/(dp|gp\/product)\/([A-Z0-9]{10})/i);
   if (asinMatch && asinMatch[2]) {
@@ -202,50 +201,10 @@ app.post("/api/generate-amazon-review", async (req, res) => {
     detectedAsin = (inputUrl || "").trim().toUpperCase();
   }
 
-  // Attempt Amazon PA-API fetch
-  let finalAffLink = `https://www.amazon.co.jp/dp/${detectedAsin}?tag=${userTag}`;
-  let finalImg = selectProductMockImage(targetCategory, userCustomTitle || detectedAsin);
-  let apiProductTitle = "";
-  
-  try {
-    console.log("Attempting Amazon PA-API fetch for ASIN:", detectedAsin);
-    const commonParameters = {
-      AccessKey: process.env.AMAZON_ACCESS_KEY || '',
-      SecretKey: process.env.AMAZON_SECRET_KEY || '',
-      PartnerTag: userTag, 
-      PartnerType: 'Associates', 
-      Marketplace: 'www.amazon.co.jp' 
-    };
-
-    const requestParameters = {
-      ItemIds: [detectedAsin],
-      ItemIdType: 'ASIN',
-      Resources: [
-        'ItemInfo.Title',
-        'Images.Primary.Large',
-        'ItemInfo.Features'
-      ]
-    };
-
-    // The call will likely fail because AccessKey/SecretKey are invalid/missing for PA-API
-    const paapiData = await amazonPaapi.GetItems(commonParameters, requestParameters);
-    console.log("Amazon API Success:", paapiData);
-    
-    if (paapiData.ItemsResult && paapiData.ItemsResult.Items && paapiData.ItemsResult.Items.length > 0) {
-      const item = paapiData.ItemsResult.Items[0];
-      if (item.Images && item.Images.Primary && item.Images.Primary.Large) {
-         finalImg = item.Images.Primary.Large.URL;
-      }
-      if (item.DetailPageURL) {
-         finalAffLink = item.DetailPageURL;
-      }
-      if (item.ItemInfo && item.ItemInfo.Title) {
-         apiProductTitle = item.ItemInfo.Title.DisplayValue;
-      }
-    }
-  } catch (error) {
-    console.warn("Amazon PA-API fetch failed. Falling back to default behavior.", error.message || error);
-  }
+  // PA-API は利用条件未達のため使用しない。アフィリエイトリンクとモック画像を直接生成する。
+  const finalAffLink = `https://www.amazon.co.jp/dp/${detectedAsin}?tag=${userTag}`;
+  const finalImg = selectProductMockImage(targetCategory, userCustomTitle || detectedAsin);
+  console.log(`[Review API] ASIN: ${detectedAsin}, Tag: ${userTag}, Category: ${targetCategory}`);
 
   if (!ai) {
     // Generate lovely mock response when API key is missing

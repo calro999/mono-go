@@ -80,7 +80,7 @@ export default function App() {
       if (saved) {
         const parsed = JSON.parse(saved);
         return {
-          associateId: parsed.associateId || 'amazongo-22',
+          associateId: parsed.associateId || 'mattan0290c-22',
           fallbackAdUrl: parsed.fallbackAdUrl || 'https://www.amazon.co.jp',
           activeCategorySlug: parsed.activeCategorySlug || 'all',
           articles: Array.isArray(parsed.articles) ? parsed.articles : INITIAL_ARTICLES,
@@ -94,7 +94,7 @@ export default function App() {
     }
 
     return {
-      associateId: 'amazongo-22',
+      associateId: 'mattan0290c-22',
       fallbackAdUrl: 'https://www.amazon.co.jp',
       activeCategorySlug: 'all',
       articles: INITIAL_ARTICLES,
@@ -449,11 +449,11 @@ export default function App() {
         }
         // Re-seed default values
         await seedArticlesIfEmpty(INITIAL_ARTICLES);
-        await saveSettingsToFirestore('amazongo-22', 'https://www.amazon.co.jp');
+        await saveSettingsToFirestore('mattan0290c-22', 'https://www.amazon.co.jp');
       }
 
       setState({
-        associateId: 'amazongo-22',
+        associateId: 'mattan0290c-22',
         fallbackAdUrl: 'https://www.amazon.co.jp',
         activeCategorySlug: 'all',
         articles: INITIAL_ARTICLES,
@@ -1506,7 +1506,7 @@ jobs:
                             type="text"
                             value={state.associateId}
                             onChange={(e) => {
-                              const v = e.target.value.trim() || 'amazongo-22';
+                              const v = e.target.value.trim() || 'mattan0290c-22';
                               // Update local config
                               setState(p => {
                                 const updated = p.articles.map(art => ({
@@ -1520,7 +1520,7 @@ jobs:
                               pushLog(`アソシエイトIDを [${v}] に書き換え、データベース連動を同期しました。`, "info");
                             }}
                             className="w-full bg-zinc-900 border border-zinc-800 px-3.5 py-2.5 rounded-lg text-white font-mono focus:outline-none focus:border-orange-500"
-                            placeholder="amazongo-22"
+                            placeholder="mattan0290c-22"
                           />
                           <p className="text-[9px] text-zinc-500 leading-relaxed">
                             ※ここを本物のAmazonアソシエイトIDに変更すると、生成された全記事内のアフィリエイト購入ボタンの追跡コードが即座に同期されます。

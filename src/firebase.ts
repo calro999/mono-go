@@ -127,7 +127,7 @@ export function subscribeToSettings(
     if (docSnap.exists()) {
       const data = docSnap.data();
       onUpdate({
-        associateId: data.associateId || 'amazongo-22',
+        associateId: data.associateId || 'mattan0290c-22',
         fallbackAdUrl: data.fallbackAdUrl || 'https://www.amazon.co.jp',
       });
     }
