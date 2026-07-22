@@ -12,24 +12,28 @@ const CATEGORIES = [
 ];
 
 const TARGET_PRODUCTS = [
-  // ヘアケア
-  { category: 'haircare', asin: 'B0CH321SGN', name: 'Panasonic ヘアードライヤー ナノケア EH-NA0J' },
-  { category: 'haircare', asin: 'B08L7D47RP', name: 'ReFa BEAUTECH DRYER PRO' },
-  { category: 'haircare', asin: 'B07VP67D42', name: 'Dyson Supersonic Ionic' },
+  // 夏のスキンケア・UVケア
+  { category: 'skincare', asin: 'B08S324BZS', name: 'アネッサ パーフェクトUV スキンケアミルク N' },
+  { category: 'skincare', asin: 'B0CNVDB4Z7', name: 'POLA B.A ライト セレクター N' },
+  { category: 'skincare', asin: 'B0CT5HDKC4', name: 'KANEBO ヴェイル オブ デイ' },
+  { category: 'skincare', asin: 'B0CPQ1ZJ9K', name: 'RMK クーリングジェル' },
   
-  // スキンケア
-  { category: 'skincare', asin: 'B09Y8NZY7C', name: 'SK-II フェイシャルトリートメントエッセンス' },
-  { category: 'skincare', asin: 'B07HRV4PXB', name: 'KANEBO クリーム イン デイ' },
-  { category: 'skincare', asin: 'B0BJ6J57Y6', name: 'LANCOME ジェニフィック アドバンスト N' },
+  // 夏の崩れないベースメイク
+  { category: 'makeup', asin: 'B0BVB89XFT', name: 'LANCOME タンイドル ウルトラ ウェア リキッド' },
+  { category: 'makeup', asin: 'B09YJ8HFTC', name: 'TIRTIR マスクフィットレッドクッション' },
+  { category: 'makeup', asin: 'B09Q87J1Q5', name: 'Dior ディオールスキン フォーエヴァー フルイド マット' },
   
-  // 美容家電
-  { category: 'device', asin: 'B0CXKZRYPQ', name: 'YA-MAN フォトプラス EX プレミアム' }, // 既存
-  { category: 'device', asin: 'B0B8CRZ459', name: 'Panasonic スチーマー ナノケア EH-SA0B' },
-  { category: 'device', asin: 'B0922XF8F1', name: 'ReFa BEAUTECH EPI (光美容器)' },
+  // 夏限定カラー・ウォータープルーフ
+  { category: 'makeup', asin: 'B0CVXF4M7C', name: 'SUQQU シグニチャー カラー アイズ (夏限定)' },
+  { category: 'makeup', asin: 'B08F22L4QG', name: 'ヒロインメイクSP スムースリキッドアイライナー スーパーキープ' },
   
-  // メイクアップ
-  { category: 'makeup', asin: 'B0B79L78C9', name: 'DIOR ディオールスキン フォーエヴァー フルイド グロウ' },
-  { category: 'makeup', asin: 'B0CDBK2RZW', name: 'SUQQU シグニチャー カラー アイズ' }
+  // 夏のヘアケア (紫外線ダメージケア)
+  { category: 'haircare', asin: 'B0CVWZQKZK', name: 'オージュア QU クエンチ ヘアトリートメント' },
+  { category: 'haircare', asin: 'B0CN2NXZP7', name: 'ReFa LOCK OIL LIGHT' },
+  
+  // 既存美容家電
+  { category: 'device', asin: 'B0CXKZRYPQ', name: 'YA-MAN フォトプラス EX プレミアム' },
+  { category: 'device', asin: 'B0B8CRZ459', name: 'Panasonic スチーマー ナノケア EH-SA0B' }
 ];
 
 // イメージマッピング（Unsplash）
