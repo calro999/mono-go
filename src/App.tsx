@@ -869,7 +869,7 @@ jobs:
                   className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-bold transition-all cursor-pointer text-left
                     ${state.activeCategorySlug === 'all'
                       ? 'bg-stone-700/10 text-stone-600 border-l-[3px] border-orange-500'
-                      : 'text-stone-500 hover:bg-stone-50/40 hover:text-zinc-200'
+                      : 'text-stone-500 hover:bg-stone-50/40 hover:text-stone-200'
                     }`}
                 >
                   <div className="flex items-center gap-2">
@@ -888,7 +888,7 @@ jobs:
                       className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold transition-all cursor-pointer text-left
                         ${state.activeCategorySlug === cat.slug
                           ? 'bg-stone-700/10 text-stone-600 border-l-[3px] border-orange-500'
-                          : 'text-stone-500 hover:bg-stone-50/40 hover:text-zinc-200'
+                          : 'text-stone-500 hover:bg-stone-50/40 hover:text-stone-200'
                         }`}
                       title={cat.description}
                     >
@@ -897,10 +897,10 @@ jobs:
                         <span className="truncate">{cat.name}</span>
                       </div>
                       <div className="flex items-center gap-1 flex-shrink-0">
-                        <span className="text-[9px] bg-stone-50 px-1.5 py-0.5 rounded text-zinc-550 font-mono">
+                        <span className="text-[9px] bg-stone-50 px-1.5 py-0.5 rounded text-stone-550 font-mono">
                           {countInCat}
                         </span>
-                        <ChevronRight className="w-3 h-3 text-zinc-750" />
+                        <ChevronRight className="w-3 h-3 text-stone-750" />
                       </div>
                     </button>
                   );
@@ -908,8 +908,8 @@ jobs:
               </div>
 
               {/* Secure Editorial Quality Statement */}
-              <div className="bg-zinc-950/40 border border-stone-200 p-4 rounded-xl text-left space-y-2">
-                <h4 className="text-xs font-bold text-zinc-200 flex items-center gap-1.5">
+              <div className="bg-stone-950/40 border border-stone-200 p-4 rounded-xl text-left space-y-2">
+                <h4 className="text-xs font-bold text-stone-200 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
                   本音と透明性を最優先
                 </h4>
@@ -925,8 +925,8 @@ jobs:
               
               {/* LIST FEED AREA (Left panel of sub division) */}
               <div className={`${selectedArticleId ? 'md:col-span-4' : 'md:col-span-12'} flex flex-col gap-4 overflow-y-auto max-h-[680px] pr-1 custom-scrollbar`}>
-                <div className="flex justify-between items-center bg-zinc-950/30 p-2.5 rounded-lg border border-stone-200/50">
-                  <h3 className="text-xs font-black text-zinc-300 uppercase tracking-wider flex items-center gap-1.5">
+                <div className="flex justify-between items-center bg-stone-950/30 p-2.5 rounded-lg border border-stone-200/50">
+                  <h3 className="text-xs font-black text-stone-300 uppercase tracking-wider flex items-center gap-1.5">
                     <span>レビュー一覧</span>
                     <span className="text-[10px] bg-stone-50 px-2 py-0.5 rounded text-stone-400 font-mono">
                       {filteredArticles.length}
@@ -951,7 +951,7 @@ jobs:
                           className={`p-3 rounded-xl border text-left cursor-pointer transition-all flex gap-3 relative overflow-hidden group
                             ${isCurrent
                               ? 'bg-stone-50 border-amber-500/40 shadow-[0_4px_22px_rgba(249,115,22,0.06)]'
-                              : 'bg-[#0a0a0c] border-[#131317] hover:bg-[#0e0e11] hover:border-stone-300'
+                              : 'bg-white border-stone-200 hover:bg-white hover:border-stone-300'
                             }`}
                         >
                           <div className="w-16 h-16 bg-stone-50 rounded-lg overflow-hidden border border-stone-300/80 flex-shrink-0 relative">
@@ -974,11 +974,11 @@ jobs:
                               </span>
                               
                               <h4 className={`text-xs font-bold leading-snug line-clamp-2 transition-colors
-                                ${isCurrent ? 'text-stone-600' : 'text-zinc-300 group-hover:text-stone-900'}`}>
+                                ${isCurrent ? 'text-stone-600' : 'text-stone-300 group-hover:text-stone-900'}`}>
                                 {art.title}
                               </h4>
                             </div>
-                            <span className="text-[9px] text-zinc-650 font-mono block mt-1">
+                            <span className="text-[9px] text-stone-650 font-mono block mt-1">
                               公開日: {art.createdAt.substring(0, 10)}
                             </span>
                           </div>
@@ -998,7 +998,7 @@ jobs:
 
               {/* ARTICLE FULL SPECIFICATION DEMONSTRATOR LIST (Right pane of sub division) */}
               {selectedArticle ? (
-                <article className="col-span-1 md:col-span-8 bg-stone-50/30 border border-[#131317] rounded-xl p-5 md:p-6 flex flex-col text-left justify-between min-h-[500px]">
+                <article className="col-span-1 md:col-span-8 bg-stone-50/30 border border-stone-200 rounded-xl p-5 md:p-6 flex flex-col text-left justify-between min-h-[500px]">
                   
                   <div className="space-y-4">
                     
@@ -1010,11 +1010,11 @@ jobs:
                         {AMAZON_CATEGORIES.find(c => c.slug === selectedArticle.category)?.name}
                       </span>
                       <ChevronRight className="w-3 h-3 text-stone-300 flex-shrink-0" />
-                      <span className="text-zinc-300 font-bold truncate max-w-[200px]">{selectedArticle.title}</span>
+                      <span className="text-stone-300 font-bold truncate max-w-[200px]">{selectedArticle.title}</span>
                     </nav>
 
                     {/* Header meta badges & E-E-A-T Trust snippet */}
-                    <div className="flex flex-wrap items-center justify-between gap-2 bg-zinc-950/60 p-2.5 rounded-lg border border-stone-200">
+                    <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-950/60 p-2.5 rounded-lg border border-stone-200">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="text-[9px] bg-stone-700/10 text-stone-600 font-mono font-bold px-2 py-0.5 rounded border border-orange-500/20">
                           {AMAZON_CATEGORIES.find(c => c.slug === selectedArticle.category)?.name}
@@ -1049,14 +1049,14 @@ jobs:
                       </div>
                       
                       {/* E-E-A-T Author & Date info */}
-                      <div className="flex flex-wrap items-center gap-3 text-[10px] text-zinc-450 font-mono pt-1">
+                      <div className="flex flex-wrap items-center gap-3 text-[10px] text-stone-450 font-mono pt-1">
                         <span className="text-stone-600 font-bold flex items-center gap-1">
                           <UserIcon className="w-3 h-3" />
                           {selectedArticle.reviewerName || "タカハシ @専門バイヤー"}
                         </span>
-                        <span className="text-zinc-600">|</span>
+                        <span className="text-stone-600">|</span>
                         <span>{selectedArticle.reviewerRole || "ガジェット・家電比較アナリスト"}</span>
-                        <span className="text-zinc-600">|</span>
+                        <span className="text-stone-600">|</span>
                         <time dateTime={selectedArticle.createdAt}>公開: {selectedArticle.createdAt}</time>
                       </div>
                     </header>
@@ -1067,7 +1067,7 @@ jobs:
                         <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
                         <span>⚡ 15秒で分かるこの記事の要点（AI Overview要約）</span>
                       </h3>
-                      <ul className="text-xs text-zinc-200 font-sans space-y-1.5 pl-1">
+                      <ul className="text-xs text-stone-200 font-sans space-y-1.5 pl-1">
                         {(selectedArticle.summaryKeyPoints || selectedArticle.features).map((point, pIdx) => (
                           <li key={pIdx} className="flex items-start gap-2">
                             <span className="text-amber-400 font-extrabold">▶</span>
@@ -1080,7 +1080,7 @@ jobs:
                     {/* Image and intro block */}
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-5 pt-1">
                       <div className="md:col-span-4 flex flex-col gap-2">
-                        <div className="w-full aspect-square bg-zinc-950 rounded-xl overflow-hidden border border-stone-200 shadow-md">
+                        <div className="w-full aspect-square bg-stone-950 rounded-xl overflow-hidden border border-stone-200 shadow-md">
                           <img
                             src={selectedArticle.imageUrl}
                             alt={`${selectedArticle.title} の実機画像`}
@@ -1092,7 +1092,7 @@ jobs:
                       </div>
 
                       <div className="md:col-span-8 flex flex-col justify-between gap-3">
-                        <div className="bg-gradient-to-r from-zinc-950 to-zinc-900/40 p-3.5 rounded-xl border border-stone-200/60 font-sans italic text-zinc-300 leading-relaxed text-xs sm:text-sm">
+                        <div className="bg-gradient-to-r from-zinc-950 to-zinc-900/40 p-3.5 rounded-xl border border-stone-200/60 font-sans italic text-stone-300 leading-relaxed text-xs sm:text-sm">
                           「 {selectedArticle.introText} 」
                         </div>
 
@@ -1115,12 +1115,12 @@ jobs:
 
                     {/* Merits/Demerits section */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                      <div className="bg-[#0b100e] border border-emerald-950/60 p-3.5 rounded-xl text-xs space-y-2">
+                      <div className="bg-white border border-emerald-950/60 p-3.5 rounded-xl text-xs space-y-2">
                         <div className="flex items-center gap-1.5 text-emerald-400 font-black border-b border-emerald-950 pb-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                           メリット（良かった点）
                         </div>
-                        <ul className="space-y-1.5 text-zinc-300 font-sans leading-relaxed">
+                        <ul className="space-y-1.5 text-stone-300 font-sans leading-relaxed">
                           {selectedArticle.pros.map((p, idx) => (
                             <li key={idx} className="flex gap-1.5">
                               <span className="text-emerald-500 font-bold">＋</span>
@@ -1130,12 +1130,12 @@ jobs:
                         </ul>
                       </div>
 
-                      <div className="bg-[#120a0a] border border-red-950/60 p-3.5 rounded-xl text-xs space-y-2">
+                      <div className="bg-white border border-red-950/60 p-3.5 rounded-xl text-xs space-y-2">
                         <div className="flex items-center gap-1.5 text-red-400 font-black border-b border-red-950 pb-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
                           デメリット・懸念点
                         </div>
-                        <ul className="space-y-1.5 text-zinc-300 font-sans leading-relaxed">
+                        <ul className="space-y-1.5 text-stone-300 font-sans leading-relaxed">
                           {selectedArticle.cons.map((c, idx) => (
                             <li key={idx} className="flex gap-1.5">
                               <span className="text-red-400 font-bold">－</span>
@@ -1151,7 +1151,7 @@ jobs:
                       <h3 className="text-[10px] text-stone-400 font-mono font-bold uppercase tracking-widest block">
                         実機レビュー検証記録
                       </h3>
-                      <div className="text-xs sm:text-sm text-zinc-350 leading-relaxed space-y-4 pr-1 border-l border-stone-200/60 pl-3 whitespace-pre-line font-sans">
+                      <div className="text-xs sm:text-sm text-stone-350 leading-relaxed space-y-4 pr-1 border-l border-stone-200/60 pl-3 whitespace-pre-line font-sans">
                         {cleanMarkdownHeaders(selectedArticle.reviewBody)}
                       </div>
                     </div>
@@ -1165,12 +1165,12 @@ jobs:
                         </h3>
                         <div className="space-y-2.5">
                           {selectedArticle.faqs.map((faq, fIdx) => (
-                            <div key={fIdx} className="bg-zinc-950/80 border border-stone-200 p-3.5 rounded-xl space-y-1.5 text-xs text-left">
+                            <div key={fIdx} className="bg-stone-950/80 border border-stone-200 p-3.5 rounded-xl space-y-1.5 text-xs text-left">
                               <h4 className="font-bold text-amber-300 flex items-start gap-2">
                                 <span className="bg-stone-600/20 text-amber-400 px-1.5 py-0.5 rounded font-mono text-[10px] flex-shrink-0">Q</span>
                                 <span>{faq.question}</span>
                               </h4>
-                              <p className="text-zinc-300 pl-6 leading-relaxed font-sans">
+                              <p className="text-stone-300 pl-6 leading-relaxed font-sans">
                                 {faq.answer}
                               </p>
                             </div>
@@ -1215,7 +1215,7 @@ jobs:
                         <ArrowUpRight className="w-4 h-4 text-black font-extrabold" />
                       </a>
 
-                      <span className="text-[8px] text-zinc-650 font-mono mt-2 block">
+                      <span className="text-[8px] text-stone-650 font-mono mt-2 block">
                         ※上記リンクからAmazon.co.jpに遷移してご購入いただくと、割引価格や限定アソシエイト保証が適用されます。
                       </span>
                     </div>
@@ -1248,7 +1248,7 @@ jobs:
                 <p className="text-xs text-stone-500 font-mono">管理者セッションを検証中...</p>
               </div>
             ) : !authUser ? (
-              <div className="max-w-md mx-auto my-12 bg-zinc-950 border border-stone-200 p-6 sm:p-8 rounded-2xl text-center space-y-6 shadow-2xl">
+              <div className="max-w-md mx-auto my-12 bg-stone-950 border border-stone-200 p-6 sm:p-8 rounded-2xl text-center space-y-6 shadow-2xl">
                 <div className="space-y-2">
                   <div className="w-12 h-12 bg-stone-700/10 text-stone-700 rounded-full flex items-center justify-center mx-auto border border-orange-500/20">
                     <Shield className="w-6 h-6" />
@@ -1259,12 +1259,12 @@ jobs:
                   </p>
                 </div>
 
-                <div className="border border-dashed border-zinc-850 p-4 rounded-xl text-left bg-stone-50/20">
+                <div className="border border-dashed border-stone-850 p-4 rounded-xl text-left bg-stone-50/20">
                   <span className="text-[9px] font-bold text-stone-600 block mb-1 uppercase tracking-wider">
                     ※ 許可されたアクセス用アカウント
                   </span>
-                  <p className="text-xs text-zinc-200 font-bold flex items-center gap-1.5">
-                    <UserIcon className="w-3.5 h-3.5 text-zinc-450" />
+                  <p className="text-xs text-stone-200 font-bold flex items-center gap-1.5">
+                    <UserIcon className="w-3.5 h-3.5 text-stone-450" />
                     ご指定の特権管理者アカウントのみ
                   </p>
                   <p className="text-[10px] text-stone-400 mt-1.5 leading-normal">
@@ -1281,7 +1281,7 @@ jobs:
                 </button>
               </div>
             ) : authUser.email !== 'mattan029@gmail.com' ? (
-              <div className="max-w-md mx-auto my-12 bg-zinc-950 border border-stone-200 p-8 rounded-2xl text-center space-y-6">
+              <div className="max-w-md mx-auto my-12 bg-stone-950 border border-stone-200 p-8 rounded-2xl text-center space-y-6">
                 <div className="space-y-2">
                   <div className="w-12 h-12 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto border border-red-500/20">
                     <AlertCircle className="w-6 h-6" />
@@ -1292,7 +1292,7 @@ jobs:
                   </p>
                 </div>
 
-                <div className="border border-[#1f0f0f] p-4 rounded-xl text-left bg-[#150a0a]">
+                <div className="border border-stone-200 p-4 rounded-xl text-left bg-white">
                   <p className="text-xs text-stone-500">
                     現在ログイン中のアドレス:
                   </p>
@@ -1304,7 +1304,7 @@ jobs:
                 <div className="flex flex-col gap-2.5">
                   <button
                     onClick={handleSignOut}
-                    className="w-full bg-stone-50 border border-stone-300 hover:border-zinc-700 text-zinc-300 font-bold text-xs py-2.5 rounded-lg transition-all cursor-pointer"
+                    className="w-full bg-stone-50 border border-stone-300 hover:border-stone-700 text-stone-300 font-bold text-xs py-2.5 rounded-lg transition-all cursor-pointer"
                   >
                     アカウントを変更する
                   </button>
@@ -1344,7 +1344,7 @@ jobs:
 
                   <button
                     onClick={handleSignOut}
-                    className="ml-auto bg-zinc-950 border border-stone-200 hover:border-stone-300 text-stone-500 hover:text-stone-900 px-3.5 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1.5 cursor-pointer shadow-inner"
+                    className="ml-auto bg-stone-950 border border-stone-200 hover:border-stone-300 text-stone-500 hover:text-stone-900 px-3.5 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1.5 cursor-pointer shadow-inner"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     ログアウト
@@ -1354,7 +1354,7 @@ jobs:
                 {/* Dashboard Metrics Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
                   
-                  <div className="bg-zinc-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
+                  <div className="bg-stone-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
                     <div className="p-2.5 bg-stone-700/10 text-stone-600 rounded-lg">
                       <DollarSign className="w-5 h-5" />
                     </div>
@@ -1366,19 +1366,19 @@ jobs:
                     </div>
                   </div>
 
-                  <div className="bg-zinc-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
-                    <div className="p-2.5 bg-[#0080ff]/10 text-blue-400 rounded-lg">
+                  <div className="bg-stone-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
+                    <div className="p-2.5 bg-white/10 text-blue-400 rounded-lg">
                       <ChevronRight className="w-5 h-5 rotate-45" />
                     </div>
                     <div>
                       <span className="text-[9px] text-stone-400 uppercase tracking-wider block font-bold">総アフィクリック（シミュレーション）</span>
-                      <span className="text-lg font-mono font-black text-zinc-200">
+                      <span className="text-lg font-mono font-black text-stone-200">
                         {resolvedArticles.reduce((sum, item) => sum + item.clicks, 0).toLocaleString()} <em className="text-xs text-stone-500 not-italic">回</em>
                       </span>
                     </div>
                   </div>
 
-                  <div className="bg-zinc-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
+                  <div className="bg-stone-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
                     <div className="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-lg">
                       <FileText className="w-5 h-5" />
                     </div>
@@ -1391,7 +1391,7 @@ jobs:
                   </div>
 
                   {/* Active Simulator Control widget */}
-                  <div className="bg-[#121115] border border-stone-200 px-4 py-3 rounded-xl flex items-center justify-between gap-3">
+                  <div className="bg-white border border-stone-200 px-4 py-3 rounded-xl flex items-center justify-between gap-3">
                     <div className="min-w-0">
                       <span className="text-[9px] text-purple-400 font-bold tracking-widest block uppercase">定刻自動配信シミュレーター</span>
                       <span className="text-[10px] text-stone-400 block leading-normal pt-0.5 truncate">Actions自動追加の擬似再現</span>
@@ -1416,7 +1416,7 @@ jobs:
 
                 {/* Progress bar visualizer for cron simulation */}
                 {state.simulatedCronActive && (
-                  <div className="bg-[#12100a] border border-[#2f200c]/80 text-amber-300 p-3 rounded-xl flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-xs text-left">
+                  <div className="bg-white border border-stone-200/80 text-amber-300 p-3 rounded-xl flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-xs text-left">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-amber-400 animate-spin flex-shrink-0" />
                       <div>
@@ -1440,7 +1440,7 @@ jobs:
                   <div className="lg:col-span-6 flex flex-col gap-6">
                     
                     {/* Review Generator Form */}
-                    <div className="bg-zinc-950 border border-stone-200 p-5 sm:p-6 rounded-xl text-left space-y-4">
+                    <div className="bg-stone-950 border border-stone-200 p-5 sm:p-6 rounded-xl text-left space-y-4">
                       <div className="flex items-center gap-2 border-b border-stone-200 pb-3">
                         <Sparkles className="text-stone-700 w-5 h-5 flex-shrink-0" />
                         <div>
@@ -1483,7 +1483,7 @@ jobs:
                           </div>
 
                           <div className="space-y-1.5">
-                            <label className="text-[9px] text-zinc-401 uppercase tracking-widest font-black block">
+                            <label className="text-[9px] text-stone-400 uppercase tracking-widest font-black block">
                               タイトルカスタム指定（任意）
                             </label>
                             <input
@@ -1517,7 +1517,7 @@ jobs:
                     </div>
 
                     {/* ID Control Settings & Reset Panel */}
-                    <div className="bg-zinc-950 border border-stone-200 p-5 sm:p-6 rounded-xl text-left space-y-4">
+                    <div className="bg-stone-950 border border-stone-200 p-5 sm:p-6 rounded-xl text-left space-y-4">
                       
                       <div className="flex items-center gap-2 border-b border-stone-200 pb-3">
                         <Settings className="text-stone-700 w-5 h-5 flex-shrink-0" />
@@ -1575,7 +1575,7 @@ jobs:
                   <div className="lg:col-span-6 flex flex-col gap-6">
                     
                     {/* Real-time Simulator Console logs panel */}
-                    <div className="bg-zinc-950 border border-stone-200 rounded-xl p-5 flex flex-col flex-1 min-h-[220px]">
+                    <div className="bg-stone-950 border border-stone-200 rounded-xl p-5 flex flex-col flex-1 min-h-[220px]">
                       <div className="text-[10px] font-bold text-stone-500 uppercase tracking-widest block border-b border-stone-200 pb-2 mb-3 flex justify-between items-center">
                         <span className="flex items-center gap-1">
                           <span className="w-1.5 h-1.5 bg-stone-700 rounded-full"></span>
@@ -1589,11 +1589,11 @@ jobs:
                       <div className="flex-1 overflow-y-auto max-h-[190px] text-[10px] font-mono space-y-2 text-stone-500 custom-scrollbar pr-1">
                         {state.systemLogs.map(log => (
                           <p key={log.id} className="leading-relaxed">
-                            <span className="text-zinc-650">[{log.timestamp}]</span>{' '}
+                            <span className="text-stone-650">[{log.timestamp}]</span>{' '}
                             <span className={`px-1 py-0.1 rounded text-[8px] font-black uppercase
-                              ${log.type === 'success' ? 'bg-[#0f1d16] text-emerald-400' : ''}
-                              ${log.type === 'warn' ? 'bg-[#220f0f] text-red-400' : ''}
-                              ${log.type === 'ai' ? 'bg-[#181126] text-purple-400' : ''}
+                              ${log.type === 'success' ? 'bg-white text-emerald-400' : ''}
+                              ${log.type === 'warn' ? 'bg-white text-red-400' : ''}
+                              ${log.type === 'ai' ? 'bg-white text-purple-400' : ''}
                               ${log.type === 'info' ? 'bg-stone-50 text-stone-400' : ''}
                             `}>
                               {log.type.toUpperCase()}
@@ -1605,7 +1605,7 @@ jobs:
                     </div>
 
                     {/* GitHub Actions YAML Deployment Manual exporter */}
-                    <div className="bg-zinc-950 border border-stone-200 p-5 rounded-xl space-y-4">
+                    <div className="bg-stone-950 border border-stone-200 p-5 rounded-xl space-y-4">
                       <div className="flex items-center justify-between border-b border-stone-200 pb-3">
                         <div className="flex items-center gap-2 font-black text-stone-900 text-xs sm:text-sm">
                           <Github className="text-stone-500 w-4 h-4" />
@@ -1628,7 +1628,7 @@ jobs:
                         </button>
                       </div>
 
-                      <p className="text-[11px] text-zinc-450 leading-normal text-left font-sans">
+                      <p className="text-[11px] text-stone-450 leading-normal text-left font-sans">
                         ローカルまたはGitHubリポジトリに
                         <code className="text-stone-600 font-mono text-[10px] bg-stone-50 px-1.5 py-0.5 rounded ml-1">.github/workflows/amazongo-loop.yml</code>
                         を配置すると、Gemini 3.5 Flashが24時間自動学習＆巡回して1時間に1回勝手に新着レビューを作成する全自動収益型エンジンが実現できます。
@@ -1639,7 +1639,7 @@ jobs:
                 </div>
 
                 {/* Article Catalogue list management (Table format for the admin) */}
-                <div className="bg-zinc-950 border border-stone-200 rounded-xl p-5 text-left">
+                <div className="bg-stone-950 border border-stone-200 rounded-xl p-5 text-left">
                   <h3 className="font-black text-stone-900 text-xs sm:text-sm border-b border-stone-200 pb-3 mb-4 flex items-center justify-between">
                     <span>格納アフィリエイト記事一覧と削除管理 ({resolvedArticles.length}件)</span>
                     <span className="text-[9px] text-stone-400 font-mono uppercase tracking-wider">
@@ -1660,12 +1660,12 @@ jobs:
                       </thead>
                       <tbody className="divide-y divide-zinc-900">
                         {resolvedArticles.map((art) => (
-                          <tr key={art.id} className="hover:bg-stone-50/30 text-zinc-300">
+                          <tr key={art.id} className="hover:bg-stone-50/30 text-stone-300">
                             <td className="py-3 px-1 max-w-sm truncate font-medium">
                               <span className="text-stone-700 font-sans mr-2 text-[9px] bg-stone-700/5 px-1.5 py-0.5 rounded border border-orange-500/10">
                                 {AMAZON_CATEGORIES.find(c => c.slug === art.category)?.name}
                               </span>
-                              <span className="font-sans font-bold text-zinc-200">{art.title}</span>
+                              <span className="font-sans font-bold text-stone-200">{art.title}</span>
                             </td>
                             <td className="py-3 px-3 text-stone-500 truncate max-w-[80px]">{art.asin}</td>
                             <td className="py-3 px-3 text-blue-400 font-bold">{art.estimatedPV.toLocaleString()} PV</td>
@@ -1673,13 +1673,13 @@ jobs:
                             <td className="py-3 px-3 text-right space-x-2 flex items-center justify-end">
                               <button
                                 onClick={() => handleCopyMarkdown(art)}
-                                className="bg-stone-50 hover:text-stone-900 px-2.5 py-1 rounded text-[10px] transition-all cursor-pointer text-stone-500 hover:border-zinc-700 border border-stone-300"
+                                className="bg-stone-50 hover:text-stone-900 px-2.5 py-1 rounded text-[10px] transition-all cursor-pointer text-stone-500 hover:border-stone-700 border border-stone-300"
                               >
                                 markdown
                               </button>
                               <button
                                 onClick={() => handleDeleteArticle(art.id, art.title)}
-                                className="bg-[#1a1111] hover:bg-[#291414] hover:text-red-400 border border-[#2b1717] px-2 py-1 rounded transition-all text-red-500 cursor-pointer flex items-center"
+                                className="bg-white hover:bg-white hover:text-red-400 border border-stone-200 px-2 py-1 rounded transition-all text-red-500 cursor-pointer flex items-center"
                                 title="検証データをデータベースから削除する"
                               >
                                 <Trash2 className="w-3.5 h-3.5" />
@@ -1712,7 +1712,7 @@ jobs:
           <span>© 2026 Lumière</span>
           <span
             onClick={() => navigateTo(isAdminRoute ? '/' : '/host')}
-            className="text-zinc-600 hover:text-stone-600 transition-all cursor-pointer hover:underline"
+            className="text-stone-600 hover:text-stone-600 transition-all cursor-pointer hover:underline"
           >
             {isAdminRoute ? "公開ページへ" : "管理"}
           </span>
