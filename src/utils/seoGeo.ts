@@ -1,14 +1,19 @@
 import { AmazonProductArticle, BlogPost, AuthorProfile } from '../types';
 
+export interface SeoGeoOptions {
+  title: string;
+  description: string;
+  imageUrl?: string;
+  urlPath?: string;
+  jsonLdSchema?: object | object[];
+}
+
 /**
  * Update dynamic head meta tags and JSON-LD schema for SEO and GEO (Generative Engine Optimization)
  */
-export function updateSeoGeoMetadata(config: {
-  title: string;
-  description: string;
-  urlPath: string;
-  jsonLdSchema?: object[];
-}) {
+export function updateSeoGeoMetadata(config: SeoGeoOptions) {
+  const urlPath = config.urlPath || window.location.pathname;
+  
   // 1. Update Document Title
   document.title = `${config.title} | Lumière 夏コスメ・ボディケア検証本音レビュー`;
 

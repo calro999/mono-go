@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { AmazonProductArticle } from '../types';
-import { CATEGORIES } from '../data';
+import { AMAZON_CATEGORIES } from '../data';
 import { handleImageError } from '../utils/imageHelper';
 import { updateSeoGeoMetadata } from '../utils/seoGeo';
 
@@ -68,7 +68,7 @@ export function ProductListPage({ articles, onNavigate }: ProductListPageProps) 
               >
                 すべて ({articles.length})
               </button>
-              {CATEGORIES.map((cat) => (
+              {AMAZON_CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.slug)}
