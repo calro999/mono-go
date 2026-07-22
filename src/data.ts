@@ -1142,6 +1142,20 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     priceRange: '約600円〜900円 (300ml)'
   },
 
+  // 24. ルルルンプレシャス GREEN (担当: ミキ @ビューティーエディター)
+  {
+    id: 'art-b09m3h1z89',
+    title: '【夏のゴワつき肌をほぐす】ルルルンプレシャス GREEN (バランス) 徹底レビュー',
+    originalUrl: 'https://www.amazon.co.jp/s?k=LuLuLun+%E3%83%97%E3%83%AC%E3%83%B7%E3%83%A3%E3%82%B9+GREEN&tag=mattan0290c-22',
+    asin: 'B09M3H1Z89',
+    productName: 'ルルルンプレシャス GREEN (バランス)',
+    category: 'beauty',
+    imageUrl: 'https://images.unsplash.com/photo-1615397323214-cb904a259c40?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.8,
+    introText: '「夏のエアコンで肌がごわつく」「手軽に大人肌のケアを始めたい」そんな大人のバランス肌に向けた王道シートマスク。',
+    features: [
+      '肌の油水分バランスを整える大人向け処方',
+      '厚手でふっくらしたシートが美容液をたっぷり保持',
       '毎日使える32枚入り大容量ボックスで取り出しやすい'
     ],
     pros: [

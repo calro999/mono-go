@@ -43,6 +43,7 @@ export interface AuthorProfile {
   experienceYears: number; // Experience in years
   genderTarget: 'men' | 'women' | 'unisex';
   isDepartmentHead?: boolean; // Is 部長
+  qualifications?: string[]; // 保有資格
 }
 
 export interface BlogPost {
