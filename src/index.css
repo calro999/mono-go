@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
@@ -7,32 +8,19 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-
 body {
   font-family: var(--font-sans);
-  background-color: hsl(var(--background));
-  color: hsl(var(--text-main));
+  background-color: #f4f8fc;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(120, 110, 100, 0.1);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .elegant-shadow {
-  box-shadow: 0 10px 40px -10px rgba(120, 110, 100, 0.15);
-}
-
-.gradient-text-beauty {
-  background: linear-gradient(135deg, hsl(40 40% 50%), hsl(350 30% 45%));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gold-gradient-bg {
-  background: linear-gradient(135deg, hsl(30 20% 90%), hsl(40 30% 85%));
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
 }
