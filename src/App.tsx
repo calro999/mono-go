@@ -777,7 +777,7 @@ jobs:
   }, [selectedArticle, state.activeCategorySlug, isAdminRoute]);
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-stone-800 flex items-center justify-center p-2 sm:p-5 font-sans overflow-x-hidden relative selection:bg-stone-700 selection:text-stone-900">
+    <div className="min-h-screen bg-[#FAF9F6] text-stone-800 flex items-center justify-center p-4 sm:p-6 md:p-8 font-sans overflow-x-hidden relative selection:bg-stone-700 selection:text-stone-900">
       {/* Glow ambient meshes */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-stone-600/5 blur-[140px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-stone-700/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -791,12 +791,12 @@ jobs:
           
           {/* Logo & Category Slogan */}
           <div className="space-y-1">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2.5">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-stone-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-stone-700"></span>
               </span>
-              <span className="text-[9px] tracking-[0.25em] text-stone-600 font-bold uppercase font-mono">
+              <span className="text-[11px] tracking-[0.25em] text-stone-900 font-bold uppercase font-mono">
                 {isAdminRoute ? "LUMIÈRE BEAUTY MANAGER" : "CURATED BEAUTY EXPERT REVIEWS"}
               </span>
             </div>
@@ -804,12 +804,12 @@ jobs:
             <div className="flex flex-wrap items-center gap-3">
               <div 
                 onClick={() => navigateTo('/')}
-                className="bg-stone-50 text-stone-800 border border-stone-300/80 font-black text-xl sm:text-2xl px-3.5 py-1 rounded-lg tracking-tighter flex items-center gap-1.5 hover:border-amber-500/40 cursor-pointer shadow-inner transition-all"
+                className="bg-stone-50 text-stone-800 border border-stone-300/80 font-black text-2xl sm:text-2xl px-3.5 py-1 rounded-lg tracking-tighter flex items-center gap-2.5 hover:border-amber-500/40 cursor-pointer shadow-inner transition-all"
               >
                 Lumière
               </div>
-              <span className="text-stone-300 text-base font-normal hidden sm:inline">|</span>
-              <p className="text-xs text-stone-500 font-medium">
+              <span className="text-stone-800 text-lg font-normal hidden sm:inline">|</span>
+              <p className="text-sm text-stone-800 font-medium">
                 {isAdminRoute ? "管理者コンソール・アフィリエイト設定" : "バイヤーが徹底検証。本当に買ってよかったモノだけを紹介する本音ブログ"}
               </p>
             </div>
@@ -820,7 +820,7 @@ jobs:
             {isAdminRoute && (
               <button
                 onClick={() => navigateTo('/')}
-                className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-lg bg-gradient-to-r from-stone-500 to-stone-700 text-black shadow-md hover:brightness-110 transition-all cursor-pointer"
+                className="flex items-center gap-2.5 px-4 py-2 text-sm font-bold rounded-lg bg-gradient-to-r from-stone-500 to-stone-700 text-black shadow-md hover:brightness-110 transition-all cursor-pointer"
               >
                 <Store className="w-3.5 h-3.5" />
                 公開サイトへ戻る
@@ -840,18 +840,18 @@ jobs:
               
               {/* Refinement Search input */}
               <div className="relative">
-                <Search className="w-4 h-4 text-stone-400 absolute left-3 top-2.5" />
+                <Search className="w-4 h-4 text-stone-800 absolute left-3 top-2.5" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="カテゴリーを検索する..."
-                  className="w-full bg-stone-50 hover:bg-stone-50 border border-stone-300 focus:border-orange-500 focus:outline-none rounded-lg pl-9 pr-4 py-2.5 text-xs text-stone-900 placeholder-zinc-500 transition-all"
+                  className="w-full bg-stone-50 hover:bg-stone-50 border border-stone-300 focus:border-orange-500 focus:outline-none rounded-lg pl-9 pr-4 py-2.5 text-sm text-stone-900 placeholder-zinc-500 transition-all"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-2 text-stone-500 hover:text-stone-900 text-xs font-bold"
+                    className="absolute right-3 top-2 text-stone-800 hover:text-stone-900 text-sm font-bold"
                   >
                     ×
                   </button>
@@ -860,23 +860,23 @@ jobs:
 
               {/* Sidebar Category Selection */}
               <div className="bg-stone-50/30 border border-stone-200 rounded-xl p-3 flex flex-col gap-1 text-left">
-                <span className="text-[9px] font-bold text-stone-400 uppercase tracking-widest px-2.5 pb-2 border-b border-stone-200/60 mb-2 block">
+                <span className="text-[11px] font-bold text-stone-800 uppercase tracking-widest px-2.5 pb-2 border-b border-stone-200/60 mb-2 block">
                   カテゴリー
                 </span>
 
                 <button
                   onClick={() => setState(prev => ({ ...prev, activeCategorySlug: 'all' }))}
-                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-bold transition-all cursor-pointer text-left
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-bold transition-all cursor-pointer text-left
                     ${state.activeCategorySlug === 'all'
-                      ? 'bg-stone-700/10 text-stone-600 border-l-[3px] border-orange-500'
-                      : 'text-stone-500 hover:bg-stone-50/40 hover:text-stone-200'
+                      ? 'bg-stone-700/10 text-stone-900 border-l-[3px] border-orange-500'
+                      : 'text-stone-800 hover:bg-stone-50/40 hover:text-stone-800'
                     }`}
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-3">
                     <Store className="w-3.5 h-3.5" />
                     <span>すべてのカテゴリー ({resolvedArticles.length})</span>
                   </div>
-                  <ChevronRight className="w-3 h-3 text-stone-300" />
+                  <ChevronRight className="w-3 h-3 text-stone-800" />
                 </button>
 
                 {AMAZON_CATEGORIES.map((cat) => {
@@ -885,22 +885,22 @@ jobs:
                     <button
                       key={cat.id}
                       onClick={() => setState(prev => ({ ...prev, activeCategorySlug: cat.slug }))}
-                      className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold transition-all cursor-pointer text-left
+                      className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold transition-all cursor-pointer text-left
                         ${state.activeCategorySlug === cat.slug
-                          ? 'bg-stone-700/10 text-stone-600 border-l-[3px] border-orange-500'
-                          : 'text-stone-500 hover:bg-stone-50/40 hover:text-stone-200'
+                          ? 'bg-stone-700/10 text-stone-900 border-l-[3px] border-orange-500'
+                          : 'text-stone-800 hover:bg-stone-50/40 hover:text-stone-800'
                         }`}
                       title={cat.description}
                     >
-                      <div className="flex items-center gap-2 truncate pr-1">
+                      <div className="flex items-center gap-3 truncate pr-1">
                         <CategoryIcon icon={cat.icon} className="w-3.5 h-3.5" />
                         <span className="truncate">{cat.name}</span>
                       </div>
                       <div className="flex items-center gap-1 flex-shrink-0">
-                        <span className="text-[9px] bg-stone-50 px-1.5 py-0.5 rounded text-stone-550 font-mono">
+                        <span className="text-[11px] bg-stone-50 px-1.5 py-0.5 rounded text-stone-800 font-mono">
                           {countInCat}
                         </span>
-                        <ChevronRight className="w-3 h-3 text-stone-750" />
+                        <ChevronRight className="w-3 h-3 text-stone-900" />
                       </div>
                     </button>
                   );
@@ -909,11 +909,11 @@ jobs:
 
               {/* Secure Editorial Quality Statement */}
               <div className="bg-stone-950/40 border border-stone-200 p-4 rounded-xl text-left space-y-2">
-                <h4 className="text-xs font-bold text-stone-200 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                <h4 className="text-sm font-bold text-stone-800 flex items-center gap-2.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                   本音と透明性を最優先
                 </h4>
-                <p className="text-[10px] text-stone-400 leading-normal">
+                <p className="text-sm text-stone-800 leading-normal">
                   紹介しているアイテムはすべて専門バイヤーによる詳細調査に基づいています。メリットだけでなくデメリットも正直に隠さず記述。
                 </p>
               </div>
@@ -926,15 +926,15 @@ jobs:
               {/* LIST FEED AREA (Left panel of sub division) */}
               <div className={`${selectedArticleId ? 'md:col-span-4' : 'md:col-span-12'} flex flex-col gap-4 overflow-y-auto max-h-[680px] pr-1 custom-scrollbar`}>
                 <div className="flex justify-between items-center bg-stone-950/30 p-2.5 rounded-lg border border-stone-200/50">
-                  <h3 className="text-xs font-black text-stone-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <h3 className="text-sm font-black text-stone-800 uppercase tracking-wider flex items-center gap-2.5">
                     <span>レビュー一覧</span>
-                    <span className="text-[10px] bg-stone-50 px-2 py-0.5 rounded text-stone-400 font-mono">
+                    <span className="text-sm bg-stone-50 px-2 py-0.5 rounded text-stone-800 font-mono">
                       {filteredArticles.length}
                     </span>
                   </h3>
                   
                   {state.activeCategorySlug !== 'all' && (
-                    <span className="text-[9px] text-stone-600 font-bold bg-stone-700/5 px-2 py-0.5 rounded border border-orange-500/10">
+                    <span className="text-[11px] text-stone-900 font-bold bg-stone-700/5 px-2 py-0.5 rounded border border-orange-500/10">
                       {AMAZON_CATEGORIES.find(c => c.slug === state.activeCategorySlug)?.name}
                     </span>
                   )}
@@ -961,24 +961,24 @@ jobs:
                               className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                               referrerPolicy="no-referrer"
                             />
-                            <span className="absolute bottom-1 right-1 text-[8px] bg-black/80 px-1 rounded text-stone-600 font-mono font-bold flex items-center gap-0.5">
-                              <Star className="w-2 h-2 text-stone-700 fill-orange-500" />
+                            <span className="absolute bottom-1 right-1 text-sm bg-black/80 px-1 rounded text-stone-900 font-mono font-bold flex items-center gap-0.5">
+                              <Star className="w-2 h-2 text-stone-900 fill-orange-500" />
                               {art.starRating}
                             </span>
                           </div>
 
                           <div className="min-w-0 flex-1 flex flex-col justify-between py-0.5">
                             <div>
-                              <span className="text-[8px] text-[#FF9900] font-mono px-1.5 py-0.2 bg-stone-700/5 border border-orange-500/10 rounded uppercase tracking-wider mb-1 inline-block">
+                              <span className="text-sm text-[#FF9900] font-mono px-1.5 py-0.2 bg-stone-700/5 border border-orange-500/10 rounded uppercase tracking-wider mb-1 inline-block">
                                 {AMAZON_CATEGORIES.find(c => c.slug === art.category)?.name}
                               </span>
                               
-                              <h4 className={`text-xs font-bold leading-snug line-clamp-2 transition-colors
-                                ${isCurrent ? 'text-stone-600' : 'text-stone-300 group-hover:text-stone-900'}`}>
+                              <h4 className={`text-sm font-bold leading-snug line-clamp-2 transition-colors
+                                ${isCurrent ? 'text-stone-900' : 'text-stone-800 group-hover:text-stone-900'}`}>
                                 {art.title}
                               </h4>
                             </div>
-                            <span className="text-[9px] text-stone-650 font-mono block mt-1">
+                            <span className="text-[11px] text-stone-900 font-mono block mt-1">
                               公開日: {art.createdAt.substring(0, 10)}
                             </span>
                           </div>
@@ -988,8 +988,8 @@ jobs:
                   </div>
                 ) : (
                   <div className="border border-dashed border-stone-200 rounded-xl p-10 text-center opacity-60">
-                    <BookOpen className="w-8 h-8 mx-auto text-stone-400 mb-2" />
-                    <p className="text-xs text-stone-500">
+                    <BookOpen className="w-8 h-8 mx-auto text-stone-800 mb-2" />
+                    <p className="text-sm text-stone-800">
                       該当カテゴリーのレビュー記事は現在スタンバイ中です。
                     </p>
                   </div>
@@ -1003,35 +1003,35 @@ jobs:
                   <div className="space-y-4">
                     
                     {/* Breadcrumbs Navigation UI for UX & SEO */}
-                    <nav className="flex items-center gap-1.5 text-[10px] text-stone-400 font-sans border-b border-stone-200/80 pb-2.5 overflow-x-auto">
-                      <span className="hover:text-amber-400 cursor-pointer transition-colors" onClick={() => setState(prev => ({ ...prev, activeCategorySlug: 'all' }))}>ホーム</span>
-                      <ChevronRight className="w-3 h-3 text-stone-300 flex-shrink-0" />
-                      <span className="hover:text-amber-400 cursor-pointer transition-colors" onClick={() => setState(prev => ({ ...prev, activeCategorySlug: selectedArticle.category }))}>
+                    <nav className="flex items-center gap-2.5 text-sm text-stone-800 font-sans border-b border-stone-200/80 pb-2.5 overflow-x-auto">
+                      <span className="hover:text-amber-700 cursor-pointer transition-colors" onClick={() => setState(prev => ({ ...prev, activeCategorySlug: 'all' }))}>ホーム</span>
+                      <ChevronRight className="w-3 h-3 text-stone-800 flex-shrink-0" />
+                      <span className="hover:text-amber-700 cursor-pointer transition-colors" onClick={() => setState(prev => ({ ...prev, activeCategorySlug: selectedArticle.category }))}>
                         {AMAZON_CATEGORIES.find(c => c.slug === selectedArticle.category)?.name}
                       </span>
-                      <ChevronRight className="w-3 h-3 text-stone-300 flex-shrink-0" />
-                      <span className="text-stone-300 font-bold truncate max-w-[200px]">{selectedArticle.title}</span>
+                      <ChevronRight className="w-3 h-3 text-stone-800 flex-shrink-0" />
+                      <span className="text-stone-800 font-bold truncate max-w-[200px]">{selectedArticle.title}</span>
                     </nav>
 
                     {/* Header meta badges & E-E-A-T Trust snippet */}
-                    <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-950/60 p-2.5 rounded-lg border border-stone-200">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-[9px] bg-stone-700/10 text-stone-600 font-mono font-bold px-2 py-0.5 rounded border border-orange-500/20">
+                    <div className="flex flex-wrap items-center justify-between gap-3 bg-stone-950/60 p-2.5 rounded-lg border border-stone-200">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="text-[11px] bg-stone-700/10 text-stone-900 font-mono font-bold px-2 py-0.5 rounded border border-orange-500/20">
                           {AMAZON_CATEGORIES.find(c => c.slug === selectedArticle.category)?.name}
                         </span>
-                        <span className="text-[9px] text-stone-400 font-mono">
+                        <span className="text-[11px] text-stone-800 font-mono">
                           ASIN: {selectedArticle.asin}
                         </span>
                         {selectedArticle.priceRange && (
-                          <span className="text-[9px] text-emerald-400 font-mono bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                          <span className="text-[11px] text-emerald-700 font-mono bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                             参考価格: {selectedArticle.priceRange}
                           </span>
                         )}
                       </div>
 
                       {/* E-E-A-T Verification Tag */}
-                      <div className="flex items-center gap-1.5 text-[9px] text-amber-400 font-mono bg-stone-600/10 px-2 py-0.5 rounded border border-amber-500/20">
-                        <Shield className="w-3 h-3 text-amber-400" />
+                      <div className="flex items-center gap-2.5 text-[11px] text-amber-700 font-mono bg-stone-600/10 px-2 py-0.5 rounded border border-amber-500/20">
+                        <Shield className="w-3 h-3 text-amber-700" />
                         <span>{selectedArticle.verificationDays || 30}日間実機検証済み</span>
                       </div>
                     </div>
@@ -1039,38 +1039,38 @@ jobs:
                     {/* Title display */}
                     <header className="space-y-1.5">
                       <div className="flex items-start gap-3 justify-between">
-                        <h1 className="text-base sm:text-xl font-bold text-stone-900 tracking-tight leading-snug">
+                        <h1 className="text-lg sm:text-2xl font-bold text-stone-900 tracking-tight leading-snug">
                           {selectedArticle.title}
                         </h1>
-                        <div className="flex items-center gap-1 bg-stone-50 px-2.5 py-1 rounded border border-stone-300 text-amber-400 font-extrabold text-xs flex-shrink-0 mt-0.5">
+                        <div className="flex items-center gap-1 bg-stone-50 px-2.5 py-1 rounded border border-stone-300 text-amber-700 font-extrabold text-sm flex-shrink-0 mt-0.5">
                           <Star className="w-3.5 h-3.5 fill-amber-400" />
                           <span>{selectedArticle.starRating}</span>
                         </div>
                       </div>
                       
                       {/* E-E-A-T Author & Date info */}
-                      <div className="flex flex-wrap items-center gap-3 text-[10px] text-stone-450 font-mono pt-1">
-                        <span className="text-stone-600 font-bold flex items-center gap-1">
+                      <div className="flex flex-wrap items-center gap-3 text-sm text-stone-800 font-mono pt-1">
+                        <span className="text-stone-900 font-bold flex items-center gap-1">
                           <UserIcon className="w-3 h-3" />
                           {selectedArticle.reviewerName || "タカハシ @専門バイヤー"}
                         </span>
-                        <span className="text-stone-600">|</span>
+                        <span className="text-stone-900">|</span>
                         <span>{selectedArticle.reviewerRole || "ガジェット・家電比較アナリスト"}</span>
-                        <span className="text-stone-600">|</span>
+                        <span className="text-stone-900">|</span>
                         <time dateTime={selectedArticle.createdAt}>公開: {selectedArticle.createdAt}</time>
                       </div>
                     </header>
 
                     {/* GEO / AI-SEO OPTIMIZED: 15-SECOND KEY TAKEAWAYS SUMMARY BOX */}
                     <div className="bg-gradient-to-br from-amber-950/20 via-orange-950/10 to-zinc-950 p-4 rounded-xl border border-amber-500/30 space-y-2">
-                      <h3 className="text-xs font-black text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
-                        <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
+                      <h3 className="text-sm font-black text-amber-700 uppercase tracking-wider flex items-center gap-2.5">
+                        <Sparkles className="w-4 h-4 text-amber-700 animate-pulse" />
                         <span>⚡ 15秒で分かるこの記事の要点（AI Overview要約）</span>
                       </h3>
-                      <ul className="text-xs text-stone-200 font-sans space-y-1.5 pl-1">
+                      <ul className="text-sm text-stone-800 font-sans space-y-1.5 pl-1">
                         {(selectedArticle.summaryKeyPoints || selectedArticle.features).map((point, pIdx) => (
-                          <li key={pIdx} className="flex items-start gap-2">
-                            <span className="text-amber-400 font-extrabold">▶</span>
+                          <li key={pIdx} className="flex items-start gap-3">
+                            <span className="text-amber-700 font-extrabold">▶</span>
                             <span className="leading-snug">{point}</span>
                           </li>
                         ))}
@@ -1079,7 +1079,7 @@ jobs:
 
                     {/* Image and intro block */}
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-5 pt-1">
-                      <div className="md:col-span-4 flex flex-col gap-2">
+                      <div className="md:col-span-4 flex flex-col gap-3">
                         <div className="w-full aspect-square bg-stone-950 rounded-xl overflow-hidden border border-stone-200 shadow-md">
                           <img
                             src={selectedArticle.imageUrl}
@@ -1092,19 +1092,19 @@ jobs:
                       </div>
 
                       <div className="md:col-span-8 flex flex-col justify-between gap-3">
-                        <div className="bg-gradient-to-r from-zinc-950 to-zinc-900/40 p-3.5 rounded-xl border border-stone-200/60 font-sans italic text-stone-300 leading-relaxed text-xs sm:text-sm">
+                        <div className="bg-gradient-to-r from-zinc-950 to-zinc-900/40 p-3.5 rounded-xl border border-stone-200/60 font-sans italic text-stone-800 leading-relaxed text-sm sm:text-base">
                           「 {selectedArticle.introText} 」
                         </div>
 
                         {/* Bullet key highlights */}
                         <div className="space-y-1.5 text-left">
-                          <h3 className="text-[9px] font-black text-stone-600 uppercase tracking-widest block">
+                          <h3 className="text-[11px] font-black text-stone-900 uppercase tracking-widest block">
                             🔑 主な製品仕様・売りポイント
                           </h3>
-                          <ul className="text-xs space-y-1 text-stone-500 font-sans">
+                          <ul className="text-sm space-y-1 text-stone-800 font-sans">
                             {selectedArticle.features.map((feat, idx) => (
-                              <li key={idx} className="flex items-start gap-1.5">
-                                <span className="text-stone-700 font-bold">✓</span>
+                              <li key={idx} className="flex items-start gap-2.5">
+                                <span className="text-stone-900 font-bold">✓</span>
                                 <span>{feat}</span>
                               </li>
                             ))}
@@ -1115,30 +1115,30 @@ jobs:
 
                     {/* Merits/Demerits section */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                      <div className="bg-white border border-emerald-950/60 p-3.5 rounded-xl text-xs space-y-2">
-                        <div className="flex items-center gap-1.5 text-emerald-400 font-black border-b border-emerald-950 pb-1.5">
+                      <div className="bg-white border border-emerald-950/60 p-3.5 rounded-xl text-sm space-y-2">
+                        <div className="flex items-center gap-2.5 text-emerald-700 font-black border-b border-emerald-950 pb-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                           メリット（良かった点）
                         </div>
-                        <ul className="space-y-1.5 text-stone-300 font-sans leading-relaxed">
+                        <ul className="space-y-1.5 text-stone-800 font-sans leading-relaxed">
                           {selectedArticle.pros.map((p, idx) => (
-                            <li key={idx} className="flex gap-1.5">
-                              <span className="text-emerald-500 font-bold">＋</span>
+                            <li key={idx} className="flex gap-2.5">
+                              <span className="text-emerald-700 font-bold">＋</span>
                               {p}
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      <div className="bg-white border border-red-950/60 p-3.5 rounded-xl text-xs space-y-2">
-                        <div className="flex items-center gap-1.5 text-red-400 font-black border-b border-red-950 pb-1.5">
+                      <div className="bg-white border border-red-950/60 p-3.5 rounded-xl text-sm space-y-2">
+                        <div className="flex items-center gap-2.5 text-red-700 font-black border-b border-red-950 pb-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
                           デメリット・懸念点
                         </div>
-                        <ul className="space-y-1.5 text-stone-300 font-sans leading-relaxed">
+                        <ul className="space-y-1.5 text-stone-800 font-sans leading-relaxed">
                           {selectedArticle.cons.map((c, idx) => (
-                            <li key={idx} className="flex gap-1.5">
-                              <span className="text-red-400 font-bold">－</span>
+                            <li key={idx} className="flex gap-2.5">
+                              <span className="text-red-700 font-bold">－</span>
                               {c}
                             </li>
                           ))}
@@ -1148,10 +1148,10 @@ jobs:
 
                     {/* Markdown Body reviews details */}
                     <div className="border-t border-stone-200 pt-5 mt-4 space-y-3">
-                      <h3 className="text-[10px] text-stone-400 font-mono font-bold uppercase tracking-widest block">
+                      <h3 className="text-sm text-stone-800 font-mono font-bold uppercase tracking-widest block">
                         実機レビュー検証記録
                       </h3>
-                      <div className="text-xs sm:text-sm text-stone-350 leading-relaxed space-y-4 pr-1 border-l border-stone-200/60 pl-3 whitespace-pre-line font-sans">
+                      <div className="text-sm sm:text-base text-stone-800 leading-relaxed space-y-4 pr-1 border-l border-stone-200/60 pl-3 whitespace-pre-line font-sans">
                         {cleanMarkdownHeaders(selectedArticle.reviewBody)}
                       </div>
                     </div>
@@ -1159,18 +1159,18 @@ jobs:
                     {/* GEO / AI-SEO STRUCTURED FAQ SECTION */}
                     {selectedArticle.faqs && selectedArticle.faqs.length > 0 && (
                       <section className="border-t border-stone-200 pt-5 mt-6 space-y-3">
-                        <h3 className="text-xs font-black text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
-                          <AlertCircle className="w-4 h-4 text-amber-400" />
+                        <h3 className="text-sm font-black text-amber-700 uppercase tracking-wider flex items-center gap-2.5">
+                          <AlertCircle className="w-4 h-4 text-amber-700" />
                           <span>❓ よくある質問と回答（FAQ）</span>
                         </h3>
                         <div className="space-y-2.5">
                           {selectedArticle.faqs.map((faq, fIdx) => (
-                            <div key={fIdx} className="bg-stone-950/80 border border-stone-200 p-3.5 rounded-xl space-y-1.5 text-xs text-left">
-                              <h4 className="font-bold text-amber-300 flex items-start gap-2">
-                                <span className="bg-stone-600/20 text-amber-400 px-1.5 py-0.5 rounded font-mono text-[10px] flex-shrink-0">Q</span>
+                            <div key={fIdx} className="bg-stone-950/80 border border-stone-200 p-3.5 rounded-xl space-y-1.5 text-sm text-left">
+                              <h4 className="font-bold text-amber-700 flex items-start gap-3">
+                                <span className="bg-stone-600/20 text-amber-700 px-1.5 py-0.5 rounded font-mono text-sm flex-shrink-0">Q</span>
                                 <span>{faq.question}</span>
                               </h4>
-                              <p className="text-stone-300 pl-6 leading-relaxed font-sans">
+                              <p className="text-stone-800 pl-6 leading-relaxed font-sans">
                                 {faq.answer}
                               </p>
                             </div>
@@ -1209,13 +1209,13 @@ jobs:
                             return { ...prev, articles: updated };
                           });
                         }}
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-stone-500 to-stone-700 hover:brightness-110 text-black font-extrabold text-xs sm:text-sm tracking-wider px-8 py-3.5 rounded-lg transition-all shadow-[0_4px_18px_rgba(249,115,22,0.15)] cursor-pointer"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-stone-500 to-stone-700 hover:brightness-110 text-black font-extrabold text-sm sm:text-base tracking-wider px-8 py-3.5 rounded-lg transition-all shadow-[0_4px_18px_rgba(249,115,22,0.15)] cursor-pointer"
                       >
                         Amazon 公式サイトで詳細と最安値をチェックする
                         <ArrowUpRight className="w-4 h-4 text-black font-extrabold" />
                       </a>
 
-                      <span className="text-[8px] text-stone-650 font-mono mt-2 block">
+                      <span className="text-sm text-stone-900 font-mono mt-2 block">
                         ※上記リンクからAmazon.co.jpに遷移してご購入いただくと、割引価格や限定アソシエイト保証が適用されます。
                       </span>
                     </div>
@@ -1224,8 +1224,8 @@ jobs:
                 </article>
               ) : (
                 <div className="col-span-1 md:col-span-8 bg-stone-50/10 border border-dashed border-stone-200 rounded-xl p-12 text-center flex flex-col items-center justify-center min-h-[500px]">
-                  <BookOpen className="w-12 h-12 text-stone-300 mb-2 animate-bounce" />
-                  <p className="text-sm text-stone-400">
+                  <BookOpen className="w-12 h-12 text-stone-800 mb-2 animate-bounce" />
+                  <p className="text-base text-stone-800">
                     表示するレビュー記事が選択されていません。
                   </p>
                 </div>
@@ -1244,37 +1244,37 @@ jobs:
             {/* SUB-FLOW: GOOGLE AUTH REQUIREMENT SCREEN */}
             {authLoading ? (
               <div className="py-20 text-center flex flex-col items-center justify-center gap-4">
-                <RefreshCw className="w-10 h-10 text-stone-700 animate-spin" />
-                <p className="text-xs text-stone-500 font-mono">管理者セッションを検証中...</p>
+                <RefreshCw className="w-10 h-10 text-stone-900 animate-spin" />
+                <p className="text-sm text-stone-800 font-mono">管理者セッションを検証中...</p>
               </div>
             ) : !authUser ? (
               <div className="max-w-md mx-auto my-12 bg-stone-950 border border-stone-200 p-6 sm:p-8 rounded-2xl text-center space-y-6 shadow-2xl">
                 <div className="space-y-2">
-                  <div className="w-12 h-12 bg-stone-700/10 text-stone-700 rounded-full flex items-center justify-center mx-auto border border-orange-500/20">
+                  <div className="w-12 h-12 bg-stone-700/10 text-stone-900 rounded-full flex items-center justify-center mx-auto border border-orange-500/20">
                     <Shield className="w-6 h-6" />
                   </div>
-                  <h2 className="text-base sm:text-lg font-black text-stone-900">ホスト管理者アクセス制限</h2>
-                  <p className="text-xs text-stone-500">
+                  <h2 className="text-lg sm:text-xl font-black text-stone-900">ホスト管理者アクセス制限</h2>
+                  <p className="text-sm text-stone-800">
                     「Lumière」管理コンソールへ入るには、Googleログイン認証を通過する必要があります。
                   </p>
                 </div>
 
                 <div className="border border-dashed border-stone-850 p-4 rounded-xl text-left bg-stone-50/20">
-                  <span className="text-[9px] font-bold text-stone-600 block mb-1 uppercase tracking-wider">
+                  <span className="text-[11px] font-bold text-stone-900 block mb-1 uppercase tracking-wider">
                     ※ 許可されたアクセス用アカウント
                   </span>
-                  <p className="text-xs text-stone-200 font-bold flex items-center gap-1.5">
-                    <UserIcon className="w-3.5 h-3.5 text-stone-450" />
+                  <p className="text-sm text-stone-800 font-bold flex items-center gap-2.5">
+                    <UserIcon className="w-3.5 h-3.5 text-stone-800" />
                     ご指定の特権管理者アカウントのみ
                   </p>
-                  <p className="text-[10px] text-stone-400 mt-1.5 leading-normal">
+                  <p className="text-sm text-stone-800 mt-1.5 leading-normal">
                     ご指定の管理者アカウント以外のメールアドレスでログインされた場合、記事の書き込みやダッシュボード編集操作などはブロックされます。
                   </p>
                 </div>
 
                 <button
                   onClick={handleGoogleLogin}
-                  className="w-full bg-white hover:bg-gray-100 text-black font-extrabold text-xs tracking-wider py-3 px-4 rounded-lg flex items-center justify-center gap-2.5 transition-all shadow-md cursor-pointer"
+                  className="w-full bg-white hover:bg-gray-100 text-black font-extrabold text-sm tracking-wider py-3 px-4 rounded-lg flex items-center justify-center gap-3.5 transition-all shadow-md cursor-pointer"
                 >
                   <LogIn className="w-4 h-4 text-black" />
                   Google 認証でサインイン
@@ -1283,34 +1283,34 @@ jobs:
             ) : authUser.email !== 'mattan029@gmail.com' ? (
               <div className="max-w-md mx-auto my-12 bg-stone-950 border border-stone-200 p-8 rounded-2xl text-center space-y-6">
                 <div className="space-y-2">
-                  <div className="w-12 h-12 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto border border-red-500/20">
+                  <div className="w-12 h-12 bg-red-500/10 text-red-700 rounded-full flex items-center justify-center mx-auto border border-red-500/20">
                     <AlertCircle className="w-6 h-6" />
                   </div>
-                  <h2 className="text-base sm:text-lg font-black text-stone-900">アクセスが拒否されました</h2>
-                  <p className="text-xs text-stone-500">
+                  <h2 className="text-lg sm:text-xl font-black text-stone-900">アクセスが拒否されました</h2>
+                  <p className="text-sm text-stone-800">
                     申し訳ありませんが、入力されたアカウントには管理権限がありません。
                   </p>
                 </div>
 
                 <div className="border border-stone-200 p-4 rounded-xl text-left bg-white">
-                  <p className="text-xs text-stone-500">
+                  <p className="text-sm text-stone-800">
                     現在ログイン中のアドレス:
                   </p>
-                  <p className="text-xs text-red-400 font-mono font-bold mt-1">
+                  <p className="text-sm text-red-700 font-mono font-bold mt-1">
                     {authUser.email}
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-2.5">
+                <div className="flex flex-col gap-3.5">
                   <button
                     onClick={handleSignOut}
-                    className="w-full bg-stone-50 border border-stone-300 hover:border-stone-700 text-stone-300 font-bold text-xs py-2.5 rounded-lg transition-all cursor-pointer"
+                    className="w-full bg-stone-50 border border-stone-300 hover:border-stone-700 text-stone-800 font-bold text-sm py-2.5 rounded-lg transition-all cursor-pointer"
                   >
                     アカウントを変更する
                   </button>
                   <button
                     onClick={() => navigateTo('/')}
-                    className="w-full bg-stone-700 text-black font-black text-xs py-2.5 rounded-lg transition-all cursor-pointer"
+                    className="w-full bg-stone-700 text-black font-black text-sm py-2.5 rounded-lg transition-all cursor-pointer"
                   >
                     一般公開サイトに戻る
                   </button>
@@ -1322,20 +1322,20 @@ jobs:
               <div className="space-y-6">
                 
                 {/* Host User status block */}
-                <div className="bg-stone-50/40 border border-stone-200 rounded-xl p-4 flex flex-wrap justify-between items-center gap-4 text-xs font-sans">
+                <div className="bg-stone-50/40 border border-stone-200 rounded-xl p-4 flex flex-wrap justify-between items-center gap-4 text-sm font-sans">
                   <div className="flex items-center gap-3">
                     {authUser.photoURL ? (
                       <img src={authUser.photoURL} alt="Avatar" className="w-8 h-8 rounded-full border border-orange-500/30" referrerPolicy="no-referrer" />
                     ) : (
-                      <div className="w-8 h-8 rounded-full bg-stone-700/10 text-stone-700 flex items-center justify-center font-bold">
+                      <div className="w-8 h-8 rounded-full bg-stone-700/10 text-stone-900 flex items-center justify-center font-bold">
                         A
                       </div>
                     )}
                     <div>
-                      <p className="text-stone-500 font-mono">
+                      <p className="text-stone-800 font-mono">
                         ログイン管理者: <strong className="text-stone-900 font-mono">{authUser.email}</strong>
                       </p>
-                      <span className="text-[10px] text-emerald-400 font-mono font-bold uppercase flex items-center gap-1">
+                      <span className="text-sm text-emerald-700 font-mono font-bold uppercase flex items-center gap-1">
                         <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
                         FireStore Database & Auth Sync Status: Verified
                       </span>
@@ -1344,7 +1344,7 @@ jobs:
 
                   <button
                     onClick={handleSignOut}
-                    className="ml-auto bg-stone-950 border border-stone-200 hover:border-stone-300 text-stone-500 hover:text-stone-900 px-3.5 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1.5 cursor-pointer shadow-inner"
+                    className="ml-auto bg-stone-950 border border-stone-200 hover:border-stone-300 text-stone-800 hover:text-stone-900 px-3.5 py-1.5 rounded-lg text-sm font-bold flex items-center gap-2.5 cursor-pointer shadow-inner"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     ログアウト
@@ -1355,37 +1355,37 @@ jobs:
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
                   
                   <div className="bg-stone-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
-                    <div className="p-2.5 bg-stone-700/10 text-stone-600 rounded-lg">
+                    <div className="p-2.5 bg-stone-700/10 text-stone-900 rounded-lg">
                       <DollarSign className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[9px] text-stone-400 uppercase tracking-wider block font-bold">推定成果（シミュレーション）</span>
-                      <span className="text-lg font-mono font-black text-stone-900">
+                      <span className="text-[11px] text-stone-800 uppercase tracking-wider block font-bold">推定成果（シミュレーション）</span>
+                      <span className="text-xl font-mono font-black text-stone-900">
                         ¥{resolvedArticles.reduce((sum, item) => sum + item.earnings, 0).toLocaleString()}
                       </span>
                     </div>
                   </div>
 
                   <div className="bg-stone-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
-                    <div className="p-2.5 bg-white/10 text-blue-400 rounded-lg">
+                    <div className="p-2.5 bg-white/10 text-blue-700 rounded-lg">
                       <ChevronRight className="w-5 h-5 rotate-45" />
                     </div>
                     <div>
-                      <span className="text-[9px] text-stone-400 uppercase tracking-wider block font-bold">総アフィクリック（シミュレーション）</span>
-                      <span className="text-lg font-mono font-black text-stone-200">
-                        {resolvedArticles.reduce((sum, item) => sum + item.clicks, 0).toLocaleString()} <em className="text-xs text-stone-500 not-italic">回</em>
+                      <span className="text-[11px] text-stone-800 uppercase tracking-wider block font-bold">総アフィクリック（シミュレーション）</span>
+                      <span className="text-xl font-mono font-black text-stone-800">
+                        {resolvedArticles.reduce((sum, item) => sum + item.clicks, 0).toLocaleString()} <em className="text-sm text-stone-800 not-italic">回</em>
                       </span>
                     </div>
                   </div>
 
                   <div className="bg-stone-950 border border-stone-200 p-4 rounded-xl flex items-center gap-3.5">
-                    <div className="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                    <div className="p-2.5 bg-emerald-500/10 text-emerald-700 rounded-lg">
                       <FileText className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[9px] text-stone-400 uppercase tracking-wider block font-bold">データベース蓄積記事</span>
-                      <span className="text-lg font-mono font-black text-stone-900">
-                        {resolvedArticles.length} <em className="text-xs text-stone-500 not-italic">記事</em>
+                      <span className="text-[11px] text-stone-800 uppercase tracking-wider block font-bold">データベース蓄積記事</span>
+                      <span className="text-xl font-mono font-black text-stone-900">
+                        {resolvedArticles.length} <em className="text-sm text-stone-800 not-italic">記事</em>
                       </span>
                     </div>
                   </div>
@@ -1393,8 +1393,8 @@ jobs:
                   {/* Active Simulator Control widget */}
                   <div className="bg-white border border-stone-200 px-4 py-3 rounded-xl flex items-center justify-between gap-3">
                     <div className="min-w-0">
-                      <span className="text-[9px] text-purple-400 font-bold tracking-widest block uppercase">定刻自動配信シミュレーター</span>
-                      <span className="text-[10px] text-stone-400 block leading-normal pt-0.5 truncate">Actions自動追加の擬似再現</span>
+                      <span className="text-[11px] text-purple-700 font-bold tracking-widest block uppercase">定刻自動配信シミュレーター</span>
+                      <span className="text-sm text-stone-800 block leading-normal pt-0.5 truncate">Actions自動追加の擬似再現</span>
                     </div>
                     <button
                       onClick={() => {
@@ -1402,10 +1402,10 @@ jobs:
                         setState(prev => ({ ...prev, simulatedCronActive: next }));
                         pushLog(next ? "自律型Actions自動クローラを駆動開始しました。" : "自動クローラを停止しました。", next ? "success" : "warn");
                       }}
-                      className={`font-black text-[10px] px-3 py-1.5 rounded uppercase tracking-wider cursor-pointer flex-shrink-0 transition-all
+                      className={`font-black text-sm px-3 py-1.5 rounded uppercase tracking-wider cursor-pointer flex-shrink-0 transition-all
                         ${state.simulatedCronActive
                           ? 'bg-stone-600 text-black shadow'
-                          : 'bg-stone-50 text-stone-500 hover:bg-stone-100'
+                          : 'bg-stone-50 text-stone-800 hover:bg-stone-100'
                         }`}
                     >
                       {state.simulatedCronActive ? '稼働中' : '停止中'}
@@ -1416,19 +1416,19 @@ jobs:
 
                 {/* Progress bar visualizer for cron simulation */}
                 {state.simulatedCronActive && (
-                  <div className="bg-white border border-stone-200/80 text-amber-300 p-3 rounded-xl flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-xs text-left">
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-amber-400 animate-spin flex-shrink-0" />
+                  <div className="bg-white border border-stone-200/80 text-amber-700 p-3 rounded-xl flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-sm text-left">
+                    <div className="flex items-center gap-3">
+                      <Clock className="w-4 h-4 text-amber-700 animate-spin flex-shrink-0" />
                       <div>
                         <strong className="font-bold uppercase">[自動運転巡回中]</strong>{' '}
                         15秒を仮想の「1時間」とし、自律連携プログラムが自動的におすすめを執筆。各カテゴリーページへ新記事を配置しています。
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 min-w-[140px]">
+                    <div className="flex items-center gap-3 min-w-[140px]">
                       <div className="h-1.5 bg-stone-50 w-full rounded-full overflow-hidden">
                         <div className="h-full bg-stone-600 transition-all duration-300" style={{ width: `${autoGenProgress}%` }}></div>
                       </div>
-                      <span className="font-mono text-[9px] text-stone-500 flex-shrink-0">{autoGenProgress}%</span>
+                      <span className="font-mono text-[11px] text-stone-800 flex-shrink-0">{autoGenProgress}%</span>
                     </div>
                   </div>
                 )}
@@ -1441,18 +1441,18 @@ jobs:
                     
                     {/* Review Generator Form */}
                     <div className="bg-stone-950 border border-stone-200 p-5 sm:p-6 rounded-xl text-left space-y-4">
-                      <div className="flex items-center gap-2 border-b border-stone-200 pb-3">
-                        <Sparkles className="text-stone-700 w-5 h-5 flex-shrink-0" />
+                      <div className="flex items-center gap-3 border-b border-stone-200 pb-3">
+                        <Sparkles className="text-stone-900 w-5 h-5 flex-shrink-0" />
                         <div>
-                          <h3 className="font-black text-stone-900 text-xs sm:text-sm">Lumière 高機能AIレビュー執筆執動</h3>
-                          <p className="text-[10px] text-stone-400">Google Gemini 3.5 Flashを安全に経由し、レビューカタログを随時自動量産</p>
+                          <h3 className="font-black text-stone-900 text-sm sm:text-base">Lumière 高機能AIレビュー執筆執動</h3>
+                          <p className="text-sm text-stone-800">Google Gemini 3.5 Flashを安全に経由し、レビューカタログを随時自動量産</p>
                         </div>
                       </div>
 
-                      <form onSubmit={handleCreateNewArticle} className="space-y-4 text-xs">
+                      <form onSubmit={handleCreateNewArticle} className="space-y-4 text-sm">
                         
                         <div className="space-y-1.5">
-                          <label className="text-[9px] text-stone-500 uppercase tracking-widest font-black block">
+                          <label className="text-[11px] text-stone-800 uppercase tracking-widest font-black block">
                             Amazon 製品URL または 10桁のASIN識別子
                           </label>
                           <input
@@ -1466,7 +1466,7 @@ jobs:
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="space-y-1.5">
-                            <label className="text-[9px] text-stone-500 uppercase tracking-widest font-black block">
+                            <label className="text-[11px] text-stone-800 uppercase tracking-widest font-black block">
                               配置宛先カテゴリー
                             </label>
                             <select
@@ -1483,7 +1483,7 @@ jobs:
                           </div>
 
                           <div className="space-y-1.5">
-                            <label className="text-[9px] text-stone-400 uppercase tracking-widest font-black block">
+                            <label className="text-[11px] text-stone-800 uppercase tracking-widest font-black block">
                               タイトルカスタム指定（任意）
                             </label>
                             <input
@@ -1499,7 +1499,7 @@ jobs:
                         <button
                           type="submit"
                           disabled={generationLoading}
-                          className="w-full bg-gradient-to-r from-stone-500 to-stone-700 hover:brightness-110 text-black font-black py-3 rounded-lg uppercase tracking-widest shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                          className="w-full bg-gradient-to-r from-stone-500 to-stone-700 hover:brightness-110 text-black font-black py-3 rounded-lg uppercase tracking-widest shadow-md transition-all flex items-center justify-center gap-3 cursor-pointer"
                         >
                           {generationLoading ? (
                             <>
@@ -1519,17 +1519,17 @@ jobs:
                     {/* ID Control Settings & Reset Panel */}
                     <div className="bg-stone-950 border border-stone-200 p-5 sm:p-6 rounded-xl text-left space-y-4">
                       
-                      <div className="flex items-center gap-2 border-b border-stone-200 pb-3">
-                        <Settings className="text-stone-700 w-5 h-5 flex-shrink-0" />
+                      <div className="flex items-center gap-3 border-b border-stone-200 pb-3">
+                        <Settings className="text-stone-900 w-5 h-5 flex-shrink-0" />
                         <div>
-                          <h3 className="font-black text-stone-900 text-xs sm:text-sm">トラッキングID（アソシエイト）設定</h3>
-                          <p className="text-[10px] text-stone-400">全ての成果獲得誘導URLをご自身のアフィロゴタグに自動署名</p>
+                          <h3 className="font-black text-stone-900 text-sm sm:text-base">トラッキングID（アソシエイト）設定</h3>
+                          <p className="text-sm text-stone-800">全ての成果獲得誘導URLをご自身のアフィロゴタグに自動署名</p>
                         </div>
                       </div>
 
-                      <div className="space-y-4 text-xs">
+                      <div className="space-y-4 text-sm">
                         <div className="space-y-1.5">
-                          <label className="text-[9px] text-stone-500 uppercase tracking-widest font-black block">
+                          <label className="text-[11px] text-stone-800 uppercase tracking-widest font-black block">
                             管理者 Amazon associate-id
                           </label>
                           <input
@@ -1552,7 +1552,7 @@ jobs:
                             className="w-full bg-stone-50 border border-stone-300 px-3.5 py-2.5 rounded-lg text-stone-900 font-mono focus:outline-none focus:border-orange-500"
                             placeholder="mattan0290c-22"
                           />
-                          <p className="text-[9px] text-stone-400 leading-relaxed">
+                          <p className="text-[11px] text-stone-800 leading-relaxed">
                             ※ここを本物のAmazonアソシエイトIDに変更すると、生成された全記事内のアフィリエイト購入ボタンの追跡コードが即座に同期されます。
                           </p>
                         </div>
@@ -1560,7 +1560,7 @@ jobs:
                         <div className="pt-2 border-t border-stone-200/60 pb-1">
                           <button
                             onClick={handleResetCatalog}
-                            className="w-full border border-red-500/10 hover:border-red-500/40 hover:bg-red-550/5 text-red-400 py-2.5 rounded-lg text-[10px] uppercase font-black tracking-widest transition-all cursor-pointer text-center"
+                            className="w-full border border-red-500/10 hover:border-red-500/40 hover:bg-red-550/5 text-red-700 py-2.5 rounded-lg text-sm uppercase font-black tracking-widest transition-all cursor-pointer text-center"
                           >
                             全レビュー記事と報酬シミュレータの初期リセット
                           </button>
@@ -1576,25 +1576,25 @@ jobs:
                     
                     {/* Real-time Simulator Console logs panel */}
                     <div className="bg-stone-950 border border-stone-200 rounded-xl p-5 flex flex-col flex-1 min-h-[220px]">
-                      <div className="text-[10px] font-bold text-stone-500 uppercase tracking-widest block border-b border-stone-200 pb-2 mb-3 flex justify-between items-center">
+                      <div className="text-sm font-bold text-stone-800 uppercase tracking-widest block border-b border-stone-200 pb-2 mb-3 flex justify-between items-center">
                         <span className="flex items-center gap-1">
                           <span className="w-1.5 h-1.5 bg-stone-700 rounded-full"></span>
                           システム統合コンソール
                         </span>
-                        <span className="text-stone-700 tracking-wider text-[8px] uppercase">
+                        <span className="text-stone-900 tracking-wider text-sm uppercase">
                           SECURE DYNAMIC LINK
                         </span>
                       </div>
 
-                      <div className="flex-1 overflow-y-auto max-h-[190px] text-[10px] font-mono space-y-2 text-stone-500 custom-scrollbar pr-1">
+                      <div className="flex-1 overflow-y-auto max-h-[190px] text-sm font-mono space-y-2 text-stone-800 custom-scrollbar pr-1">
                         {state.systemLogs.map(log => (
                           <p key={log.id} className="leading-relaxed">
-                            <span className="text-stone-650">[{log.timestamp}]</span>{' '}
-                            <span className={`px-1 py-0.1 rounded text-[8px] font-black uppercase
-                              ${log.type === 'success' ? 'bg-white text-emerald-400' : ''}
-                              ${log.type === 'warn' ? 'bg-white text-red-400' : ''}
-                              ${log.type === 'ai' ? 'bg-white text-purple-400' : ''}
-                              ${log.type === 'info' ? 'bg-stone-50 text-stone-400' : ''}
+                            <span className="text-stone-900">[{log.timestamp}]</span>{' '}
+                            <span className={`px-1 py-0.1 rounded text-sm font-black uppercase
+                              ${log.type === 'success' ? 'bg-white text-emerald-700' : ''}
+                              ${log.type === 'warn' ? 'bg-white text-red-700' : ''}
+                              ${log.type === 'ai' ? 'bg-white text-purple-700' : ''}
+                              ${log.type === 'info' ? 'bg-stone-50 text-stone-800' : ''}
                             `}>
                               {log.type.toUpperCase()}
                             </span>{' '}
@@ -1607,18 +1607,18 @@ jobs:
                     {/* GitHub Actions YAML Deployment Manual exporter */}
                     <div className="bg-stone-950 border border-stone-200 p-5 rounded-xl space-y-4">
                       <div className="flex items-center justify-between border-b border-stone-200 pb-3">
-                        <div className="flex items-center gap-2 font-black text-stone-900 text-xs sm:text-sm">
-                          <Github className="text-stone-500 w-4 h-4" />
+                        <div className="flex items-center gap-3 font-black text-stone-900 text-sm sm:text-base">
+                          <Github className="text-stone-800 w-4 h-4" />
                           <span>サーバー代0円：完全自律化マニュアル</span>
                         </div>
 
                         <button
                           onClick={handleCopyYaml}
-                          className="text-stone-600 hover:text-orange-300 font-bold text-[10px] flex items-center gap-1.5 cursor-pointer"
+                          className="text-stone-900 hover:text-orange-300 font-bold text-sm flex items-center gap-2.5 cursor-pointer"
                         >
                           {yamlCopied ? (
                             <>
-                              <Check className="w-3.5 h-3.5 text-emerald-400" /> コピー完了!
+                              <Check className="w-3.5 h-3.5 text-emerald-700" /> コピー完了!
                             </>
                           ) : (
                             <>
@@ -1628,9 +1628,9 @@ jobs:
                         </button>
                       </div>
 
-                      <p className="text-[11px] text-stone-450 leading-normal text-left font-sans">
+                      <p className="text-[11px] text-stone-800 leading-normal text-left font-sans">
                         ローカルまたはGitHubリポジトリに
-                        <code className="text-stone-600 font-mono text-[10px] bg-stone-50 px-1.5 py-0.5 rounded ml-1">.github/workflows/amazongo-loop.yml</code>
+                        <code className="text-stone-900 font-mono text-sm bg-stone-50 px-1.5 py-0.5 rounded ml-1">.github/workflows/amazongo-loop.yml</code>
                         を配置すると、Gemini 3.5 Flashが24時間自動学習＆巡回して1時間に1回勝手に新着レビューを作成する全自動収益型エンジンが実現できます。
                       </p>
                     </div>
@@ -1640,17 +1640,17 @@ jobs:
 
                 {/* Article Catalogue list management (Table format for the admin) */}
                 <div className="bg-stone-950 border border-stone-200 rounded-xl p-5 text-left">
-                  <h3 className="font-black text-stone-900 text-xs sm:text-sm border-b border-stone-200 pb-3 mb-4 flex items-center justify-between">
+                  <h3 className="font-black text-stone-900 text-sm sm:text-base border-b border-stone-200 pb-3 mb-4 flex items-center justify-between">
                     <span>格納アフィリエイト記事一覧と削除管理 ({resolvedArticles.length}件)</span>
-                    <span className="text-[9px] text-stone-400 font-mono uppercase tracking-wider">
+                    <span className="text-[11px] text-stone-800 font-mono uppercase tracking-wider">
                       Firestore Documents database
                     </span>
                   </h3>
 
                   <div className="overflow-x-auto">
-                    <table className="w-full text-xs font-mono">
+                    <table className="w-full text-sm font-mono">
                       <thead>
-                        <tr className="border-b border-stone-200 text-stone-400 pb-2 text-[10px] uppercase font-bold text-left">
+                        <tr className="border-b border-stone-200 text-stone-800 pb-2 text-sm uppercase font-bold text-left">
                           <th className="py-2.5 pr-4 pl-1">商品名・タイトル</th>
                           <th className="py-2.5 px-3">ASIN</th>
                           <th className="py-2.5 px-3">アクセス数 (PV)</th>
@@ -1660,26 +1660,26 @@ jobs:
                       </thead>
                       <tbody className="divide-y divide-zinc-900">
                         {resolvedArticles.map((art) => (
-                          <tr key={art.id} className="hover:bg-stone-50/30 text-stone-300">
+                          <tr key={art.id} className="hover:bg-stone-50/30 text-stone-800">
                             <td className="py-3 px-1 max-w-sm truncate font-medium">
-                              <span className="text-stone-700 font-sans mr-2 text-[9px] bg-stone-700/5 px-1.5 py-0.5 rounded border border-orange-500/10">
+                              <span className="text-stone-900 font-sans mr-2 text-[11px] bg-stone-700/5 px-1.5 py-0.5 rounded border border-orange-500/10">
                                 {AMAZON_CATEGORIES.find(c => c.slug === art.category)?.name}
                               </span>
-                              <span className="font-sans font-bold text-stone-200">{art.title}</span>
+                              <span className="font-sans font-bold text-stone-800">{art.title}</span>
                             </td>
-                            <td className="py-3 px-3 text-stone-500 truncate max-w-[80px]">{art.asin}</td>
-                            <td className="py-3 px-3 text-blue-400 font-bold">{art.estimatedPV.toLocaleString()} PV</td>
-                            <td className="py-3 px-3 text-green-400 font-bold">¥{art.earnings.toLocaleString()}</td>
+                            <td className="py-3 px-3 text-stone-800 truncate max-w-[80px]">{art.asin}</td>
+                            <td className="py-3 px-3 text-blue-700 font-bold">{art.estimatedPV.toLocaleString()} PV</td>
+                            <td className="py-3 px-3 text-green-700 font-bold">¥{art.earnings.toLocaleString()}</td>
                             <td className="py-3 px-3 text-right space-x-2 flex items-center justify-end">
                               <button
                                 onClick={() => handleCopyMarkdown(art)}
-                                className="bg-stone-50 hover:text-stone-900 px-2.5 py-1 rounded text-[10px] transition-all cursor-pointer text-stone-500 hover:border-stone-700 border border-stone-300"
+                                className="bg-stone-50 hover:text-stone-900 px-2.5 py-1 rounded text-sm transition-all cursor-pointer text-stone-800 hover:border-stone-700 border border-stone-300"
                               >
                                 markdown
                               </button>
                               <button
                                 onClick={() => handleDeleteArticle(art.id, art.title)}
-                                className="bg-white hover:bg-white hover:text-red-400 border border-stone-200 px-2 py-1 rounded transition-all text-red-500 cursor-pointer flex items-center"
+                                className="bg-white hover:bg-white hover:text-red-700 border border-stone-200 px-2 py-1 rounded transition-all text-red-700 cursor-pointer flex items-center"
                                 title="検証データをデータベースから削除する"
                               >
                                 <Trash2 className="w-3.5 h-3.5" />
@@ -1689,7 +1689,7 @@ jobs:
                         ))}
                         {resolvedArticles.length === 0 && (
                           <tr>
-                            <td colSpan={5} className="py-8 text-center text-stone-400 italic">
+                            <td colSpan={5} className="py-8 text-center text-stone-800 italic">
                               データベース内のレビュー記事は空です。
                             </td>
                           </tr>
@@ -1708,11 +1708,11 @@ jobs:
         {/* ==================================================================== */}
         {/* ======================= COMPREHENSIVE FOOTER COMPONENT ============ */}
         {/* ==================================================================== */}
-        <div className="border-t border-stone-200 pt-5 mt-4 flex items-center justify-between px-1 text-[10px] text-stone-400">
+        <div className="border-t border-stone-200 pt-5 mt-4 flex items-center justify-between px-1 text-sm text-stone-800">
           <span>© 2026 Lumière</span>
           <span
             onClick={() => navigateTo(isAdminRoute ? '/' : '/host')}
-            className="text-stone-600 hover:text-stone-600 transition-all cursor-pointer hover:underline"
+            className="text-stone-900 hover:text-stone-900 transition-all cursor-pointer hover:underline"
           >
             {isAdminRoute ? "公開ページへ" : "管理"}
           </span>
