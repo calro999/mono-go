@@ -87,16 +87,14 @@ export default function App() {
         fixedLink = fixedLink.replace(/tag=[^&]+/, `tag=${CORRECT_TAG}`);
       }
 
-      // /dp/ASIN 形式の404問題を解消するため、検索URL形式に変換
+      // /dp/ASIN 形式の404問題を解消するため、検索URL形式に変換（確実なASIN検索を使用）
       if (fixedLink && fixedLink.includes('/dp/')) {
-        const searchQuery = encodeURIComponent(art.title.replace(/【.*?】/g, '').trim() || art.asin);
-        fixedLink = `https://www.amazon.co.jp/s?k=${searchQuery}&tag=${CORRECT_TAG}`;
+        fixedLink = `https://www.amazon.co.jp/s?k=${art.asin}&tag=${CORRECT_TAG}`;
       }
 
       let fixedOriginalUrl = art.originalUrl;
       if (fixedOriginalUrl && fixedOriginalUrl.includes('/dp/')) {
-        const searchQuery = encodeURIComponent(art.title.replace(/【.*?】/g, '').trim() || art.asin);
-        fixedOriginalUrl = `https://www.amazon.co.jp/s?k=${searchQuery}&tag=${CORRECT_TAG}`;
+        fixedOriginalUrl = `https://www.amazon.co.jp/s?k=${art.asin}&tag=${CORRECT_TAG}`;
       }
 
       return { ...art, affiliateLink: fixedLink, originalUrl: fixedOriginalUrl };

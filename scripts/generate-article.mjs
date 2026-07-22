@@ -434,8 +434,7 @@ function validateArticle(article) {
 
   // affiliateLinkにアソシエイトIDがなければ付与（検索URL形式に統一）
   if (!article.affiliateLink.includes('tag=')) {
-    const searchQuery = encodeURIComponent(article.title?.replace(/【.*?】/g, '').trim() || article.asin);
-    article.affiliateLink = `https://www.amazon.co.jp/s?k=${searchQuery}&tag=mattan0290c-22`;
+    article.affiliateLink = `https://www.amazon.co.jp/s?k=${article.asin}&tag=mattan0290c-22`;
   }
 
   return article;
