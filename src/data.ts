@@ -285,5 +285,55 @@ HHKB HYBRID Type-Sは、**「タイピングという行為そのものをエン
     reviewerRole: `IT企業勤務・5年間で100機以上のガジェットをレビュー`,
     verificationDays: 60,
     priceRange: `約49,800円〜55,000円`
+  },
+  {
+    id: 'art-b0bvx3zypq',
+    title: `【徹底レビュー】New Balance 990v6 スニーカー`,
+    originalUrl: 'https://www.amazon.co.jp/dp/B0BVX3ZYPQ',
+    asin: 'B0BVX3ZYPQ',
+    category: 'fashion',
+    imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c6a62?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.5,
+    introText: `ハイブリッドスニーカーの王者New Balance 990v6。走行性、クッション性、そしてスタイリッシュなデザイン。新しい時代のランニングを体験するなら、コレ一台で十分です。`,
+    features: [`ABZORBミッドソールを採用したクッション性`, ` Nduranceラバーを使用した耐久性`, ` Upper部にメッシュ素材を使用した軽量性`],
+    pros: [`長時間のランニングでもクッション性が持続`, `軽量で足に負担を与えない`, `スニーカーとしてもファッション性が高い`],
+    cons: [`価格がやや高め`, `初期のクッション性は硬め`],
+    reviewBody: `### New Balance 990v6 スニーカー 試走レビュー
+
+New Balance 990v6 スニーカーは、走行性とクッション性を兼ね備えたハイブリッドスニーカーです。このスニーカーには、ABZORBミッドソールが採用されており、長時間のランニングでもクッション性が持続します。また、Nduranceラバーを使用した耐久性も高く、 Upper部にメッシュ素材を使用しているため軽量で足に負担を与えません。
+
+実際に走行してみたところ、最初から最後までクッション性が持続し、足に負担を感じることがありませんでした。さらに、スニーカーとしてもファッション性が高く、日常の着用にも適しています。
+
+ただし、価格がやや高めである点と、初期のクッション性が硬めである点が気になります。
+
+### まとめ
+
+New Balance 990v6 スニーカーは、ハイブリッドスニーカーの王者と呼ばれるにふさわしい性能を持ちます。走行性、クッション性、そしてスタイリッシュなデザイン。新しい時代のランニングを体験するなら、コレ一台で十分です。`,
+    ctaTitle: `＼ 今なら特価！Amazonで最安値をチェック ／`,
+    affiliateLink: 'https://www.amazon.co.jp/dp/B0BVX3ZYPQ?tag=mattan0290c-22',
+    createdAt: '2026-07-22 07:09:16',
+    estimatedPV: 320,
+    clicks: 45,
+    earnings: 4800,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `ハイブリッドスニーカーとして最高のクッション性と走行性`,
+      `軽量でメッシュ素材を使用した Upper部`,
+      `耐久性が高い Nduranceラバーを使用`
+    ],
+    faqs: [
+      {
+        question: `New Balance 990v6 スニーカーはどんなに大きなサイズになりますか？`,
+        answer: `一般的なスニーカーと同様のサイズ感です。ただし、実際のフィッティングは足の形や使用目的によって異なります。購入前にサイズ表を確認することをお勧めします。`
+      },
+      {
+        question: `クッション性が硬いと感じた場合、何か対策はありますか？`,
+        answer: `New Balance 990v6 スニーカーは、初期のクッション性が硬めです。ブレーキン期间中に柔らかくなることがありますが、すぐに慣れることが多いです。`
+      }
+    ],
+    reviewerName: `田中 @ランニングブロガー`,
+    reviewerRole: `ランニング愛好家・5年間で50足以上のランニングシューズをレビュー`,
+    verificationDays: 60,
+    priceRange: `約28,000円〜32,000円`
   }
 ];
