@@ -2,19 +2,34 @@ import React from 'react';
 
 interface MarkdownRendererProps {
   content: string;
+  onNavigate?: (path: string) => void;
 }
 
-export function MarkdownRenderer({ content }: MarkdownRendererProps) {
+export function MarkdownRenderer({ content, onNavigate }: MarkdownRendererProps) {
   if (!content) return null;
 
   const lines = content.split('\n');
   const elements: React.ReactNode[] = [];
   let listItems: React.ReactNode[] = [];
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/')) {
+      e.preventDefault();
+      if (onNavigate) {
+        onNavigate(href);
+      } else {
+        window.history.pushState({}, '', href);
+        window.dispatchEvent(new Event('popstate'));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
+
   const parseInline = (text: string): React.ReactNode[] => {
-    // Regex for **bold** text
-    const parts = text.split(/(\*\*.*?\*\*)/g);
+    // Regex for [anchor text](url) and **bold**
+    const parts = text.split(/(\[.*?\]\(.*?\)|`.*?`|\*\*.*?\*\*)/g);
     return parts.map((part, pIdx) => {
+      // Bold text
       if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
         const boldText = part.slice(2, -2);
         return (
@@ -23,6 +38,31 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           </strong>
         );
       }
+
+      // Markdown Link [text](url)
+      if (part.startsWith('[') && part.includes('](') && part.endsWith(')')) {
+        const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
+        if (linkMatch) {
+          const anchorText = linkMatch[1];
+          const href = linkMatch[2];
+          const isInternal = href.startsWith('/');
+
+          return (
+            <a
+              key={pIdx}
+              href={href}
+              target={isInternal ? '_self' : '_blank'}
+              rel={isInternal ? undefined : 'noopener noreferrer'}
+              onClick={(e) => handleLinkClick(e, href)}
+              className="inline-flex items-center gap-1 font-extrabold text-indigo-600 hover:text-indigo-800 hover:underline bg-indigo-50 px-2 py-1 rounded-md my-0.5 border border-indigo-100 transition-colors cursor-pointer"
+            >
+              <span>{anchorText}</span>
+              {isInternal ? <span className="text-xs">→</span> : <span className="text-xs">↗</span>}
+            </a>
+          );
+        }
+      }
+
       return part;
     });
   };

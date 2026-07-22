@@ -149,7 +149,7 @@ export function BlogPostPage({ postId, articles, onNavigate }: BlogPostPageProps
 
         {/* Markdown Content */}
         <div className="prose prose-slate max-w-none text-slate-800 leading-relaxed">
-          <MarkdownRenderer content={post.contentMarkdown} />
+          <MarkdownRenderer content={post.contentMarkdown} onNavigate={onNavigate} />
         </div>
 
         {/* Recommended Items */}
