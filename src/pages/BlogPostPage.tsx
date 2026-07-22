@@ -1,6 +1,7 @@
 import React from 'react';
 import { SPECIAL_BLOG_POSTS, INITIAL_ARTICLES, AUTHOR_PROFILES } from '../data';
 import { MarkdownRenderer } from '../components/MarkdownRenderer';
+import { handleImageError } from '../utils/imageHelper';
 import { generateBlogJsonLd, updateSeoGeoMetadata } from '../utils/seoGeo';
 
 interface BlogPostPageProps {
@@ -19,6 +20,7 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
       updateSeoGeoMetadata({
         title: `${post.title} | Lumière 夏コスメ2026`,
         description: post.introText,
+        imageUrl: post.coverImage,
         urlPath: `/blogs/${post.id}`,
         jsonLdSchema: jsonLd
       });
@@ -71,9 +73,8 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
           <img
             src={post.coverImage}
             alt={post.title}
-            onError={(e) => {
-              e.currentTarget.src = 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg';
-            }}
+            referrerPolicy="no-referrer"
+            onError={handleImageError}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-6 sm:p-8">
@@ -94,6 +95,8 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
             <img
               src={post.authorAvatar}
               alt={post.authorName}
+              referrerPolicy="no-referrer"
+              onError={handleImageError}
               className="w-12 h-12 rounded-full border-2 border-indigo-500 p-0.5 object-cover bg-white"
             />
             <div>
@@ -144,9 +147,8 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
                       <img
                         src={art.imageUrl}
                         alt={art.productName || art.title}
-                        onError={(e) => {
-                          e.currentTarget.src = 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg';
-                        }}
+                        referrerPolicy="no-referrer"
+                        onError={handleImageError}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <span className="absolute top-1 left-1 bg-slate-900/90 text-white text-[10px] font-black px-1.5 py-0.5 rounded">
@@ -198,6 +200,8 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
             <img
               src={author.avatarUrl}
               alt={author.name}
+              referrerPolicy="no-referrer"
+              onError={handleImageError}
               className="w-16 h-16 rounded-full border-2 border-amber-400 p-0.5 object-cover flex-shrink-0"
             />
             <div>

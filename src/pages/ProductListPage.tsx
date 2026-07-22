@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { AmazonProductArticle } from '../types';
-import { AMAZON_CATEGORIES } from '../data';
+import { CATEGORIES } from '../data';
+import { handleImageError } from '../utils/imageHelper';
 import { updateSeoGeoMetadata } from '../utils/seoGeo';
-import { Search, Star, Store, Check, ExternalLink, ShoppingCart, ChevronRight, Tag } from 'lucide-react';
 
 interface ProductListPageProps {
   articles: AmazonProductArticle[];
@@ -10,190 +10,150 @@ interface ProductListPageProps {
 }
 
 export function ProductListPage({ articles, onNavigate }: ProductListPageProps) {
-  const [activeCategorySlug, setActiveCategorySlug] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
-  useEffect(() => {
+  React.useEffect(() => {
     updateSeoGeoMetadata({
-      title: '2026年夏 厳選コスメ・ボディケアおすすめ一覧 32選',
-      description: '日焼け止め、UVカット化粧水、8×4などの制汗デオドラント、口臭ケアなど、2026年夏の猛暑を乗り切る人気コスメ・ボディケア商品を検証レビュー。',
+      title: 'Lumière - 2026年夏厳選コスメ＆身だしなみケアおすすめ10選',
+      description: '猛暑を乗り切る日焼け止め・UVケア・体臭84・口臭ケアを徹底比較＆レビュー！',
       urlPath: '/'
     });
   }, []);
 
-  const filteredArticles = articles.filter(art => {
-    const categoryMatches = activeCategorySlug === 'all' || art.category === activeCategorySlug;
-    const queryMatches = !searchQuery.trim() || 
-      art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      art.reviewBody.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      art.asin.toLowerCase().includes(searchQuery.toLowerCase());
-    return categoryMatches && queryMatches;
-  });
+  const filteredArticles = useMemo(() => {
+    return articles.filter((art) => {
+      const matchCat =
+        selectedCategory === 'all' || art.category === selectedCategory;
+      const matchQuery =
+        !searchQuery ||
+        art.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (art.productName && art.productName.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        art.introText.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchCat && matchQuery;
+    });
+  }, [articles, selectedCategory, searchQuery]);
 
   return (
-    <div className="space-y-8">
-      {/* Hero Header */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-800 relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl space-y-4">
-          <span className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 font-extrabold text-xs rounded-full border border-indigo-500/30">
-            2026 SUMMER SELECTION
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-            猛暑を乗り切る<br />
-            <span className="text-amber-400">厳選夏コスメ＆ボディケア</span> 本音レビュー
-          </h1>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            日焼け止め・UVケア・制汗防臭・頭皮ニオイ・口臭ケアまで、当サイトの検証レビュアー陣が実際に自ら試して本当に効果のあった厳選32アイテムを徹底解説。
-          </p>
-        </div>
-      </div>
-
-      {/* Filter and Search Bar */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        {/* Left Category Selector (3 Cols) */}
-        <div className="col-span-1 lg:col-span-3 space-y-4">
-          <div className="relative">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="商品を検索..."
-              className="w-full bg-white border border-slate-200 focus:border-indigo-500 focus:outline-none rounded-xl pl-10 pr-8 py-3 text-sm text-slate-900 placeholder-slate-400 shadow-sm"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-3 text-slate-400 hover:text-slate-600 text-sm font-bold"
-              >
-                ×
-              </button>
-            )}
+    <div className="min-h-screen bg-slate-50 py-8 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto space-y-8">
+        {/* Header Hero Section */}
+        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+          <div className="relative z-10 max-w-2xl">
+            <span className="inline-block px-3 py-1 bg-amber-400 text-slate-950 text-xs font-black rounded-full uppercase tracking-wider mb-3 shadow-sm">
+              2026 SUMMER SELECTION
+            </span>
+            <h1 className="text-2xl sm:text-4xl font-black leading-tight mb-3">
+              猛暑に負けない！夏コスメ＆身だしなみケア厳選
+            </h1>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              日焼け止め、UVケア化粧水、体臭・デオドラント、口臭ケアまで！専門のコスメ部長が本気で試した実体感レビュー。
+            </p>
           </div>
+        </div>
 
-          <div className="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-2">
-            <h2 className="text-xs font-extrabold text-slate-400 uppercase tracking-wider px-2 mb-2">
-              カテゴリー検索
-            </h2>
-            <button
-              onClick={() => setActiveCategorySlug('all')}
-              className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                activeCategorySlug === 'all'
-                  ? 'bg-slate-900 text-white shadow-sm'
-                  : 'text-slate-700 hover:bg-slate-100'
-              }`}
-            >
-              <div className="flex items-center gap-2">
-                <Store className="w-4 h-4" />
-                <span>すべて表示</span>
-              </div>
-              <span className="text-[11px] opacity-80">{articles.length}</span>
-            </button>
-
-            {AMAZON_CATEGORIES.map(cat => {
-              const count = articles.filter(a => a.category === cat.id).length;
-              return (
+        {/* Filter and Search Controls */}
+        <div className="bg-white p-4 sm:p-6 rounded-2xl border border-slate-100 shadow-sm space-y-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-stretch sm:items-center">
+            {/* Category Tabs */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none">
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold whitespace-nowrap transition-all ${
+                  selectedCategory === 'all'
+                    ? 'bg-slate-900 text-white shadow-md'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                すべて ({articles.length})
+              </button>
+              {CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
-                  onClick={() => setActiveCategorySlug(cat.id)}
-                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                    activeCategorySlug === cat.id
-                      ? 'bg-slate-900 text-white shadow-sm'
-                      : 'text-slate-700 hover:bg-slate-100'
+                  onClick={() => setSelectedCategory(cat.slug)}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold whitespace-nowrap transition-all ${
+                    selectedCategory === cat.slug
+                      ? 'bg-slate-900 text-white shadow-md'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                   }`}
                 >
-                  <div className="flex items-center gap-2">
-                    <Tag className="w-4 h-4 text-indigo-500" />
-                    <span>{cat.name}</span>
-                  </div>
-                  <span className="text-[11px] opacity-80">{count}</span>
+                  {cat.name}
                 </button>
-              );
-            })}
+              ))}
+            </div>
+
+            {/* Search Input */}
+            <div className="relative min-w-[200px] sm:w-64">
+              <input
+                type="text"
+                placeholder="商品名やキーワードで検索..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Right Product Grid (9 Cols) */}
-        <div className="col-span-1 lg:col-span-9 space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-            <h2 className="text-lg font-black text-slate-900 flex items-center gap-2">
-              <span>🛒 該当する厳選アイテム</span>
-              <span className="text-xs text-indigo-600 font-bold bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">
-                {filteredArticles.length}件
-              </span>
-            </h2>
-          </div>
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredArticles.map((art) => (
+            <div
+              key={art.id}
+              onClick={() => onNavigate(`/articles/${art.id}`)}
+              className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col cursor-pointer group"
+            >
+              {/* Product Image Container */}
+              <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
+                <img
+                  src={art.imageUrl}
+                  alt={art.productName || art.title}
+                  referrerPolicy="no-referrer"
+                  onError={handleImageError}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-3 left-3 px-2.5 py-1 bg-slate-900/90 text-white text-[11px] font-extrabold rounded-md backdrop-blur-sm">
+                  {art.category.toUpperCase()}
+                </span>
+                <span className="absolute bottom-3 right-3 px-2 py-0.5 bg-amber-400 text-slate-950 font-black text-xs rounded-md shadow-sm">
+                  ★ {art.starRating.toFixed(1)}
+                </span>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {filteredArticles.map(art => (
-              <div
-                key={art.id}
-                className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
-              >
+              {/* Product Info */}
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <div className="relative aspect-video rounded-xl overflow-hidden mb-4 bg-slate-100 border border-slate-100">
-                    <img
-                      src={art.imageUrl}
-                      alt={art.productName || art.title}
-                      onError={(e) => {
-                        e.currentTarget.src = 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg';
-                      }}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-3 left-3 px-2.5 py-1 bg-slate-900/90 text-white text-[11px] font-extrabold rounded-md backdrop-blur-sm">
-                      ★ {art.starRating}
-                    </span>
-                  </div>
-
-                  <span className="text-[11px] font-extrabold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100 inline-block mb-2">
-                    {AMAZON_CATEGORIES.find(c => c.id === art.category)?.name || art.category}
-                  </span>
-
-                  <h3 
-                    onClick={() => onNavigate(`/articles/${art.id}`)}
-                    className="text-base font-bold text-slate-900 hover:text-indigo-600 transition-colors cursor-pointer leading-snug mb-2 line-clamp-2"
-                  >
-                    {art.title}
+                  <h3 className="font-extrabold text-slate-900 text-base leading-snug line-clamp-2 mb-2 group-hover:text-indigo-600 transition">
+                    {art.productName || art.title}
                   </h3>
-
-                  <p className="text-slate-600 text-xs leading-relaxed line-clamp-2 mb-4">
+                  <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">
                     {art.introText}
                   </p>
-
-                  <div className="space-y-1 mb-4">
-                    {art.features.slice(0, 2).map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-1.5 text-xs text-slate-700">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-                        <span className="truncate">{feat}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
-                  <button
-                    onClick={() => onNavigate(`/articles/${art.id}`)}
-                    className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-colors cursor-pointer flex items-center gap-1"
-                  >
-                    <span>詳細ページを見る</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-
-                  <a
-                    href={art.affiliateLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xs shadow-sm hover:shadow transition-all cursor-pointer flex items-center gap-1"
-                  >
-                    <ShoppingCart className="w-3.5 h-3.5" />
-                    <span>Amazon</span>
-                    <ExternalLink className="w-3 h-3 opacity-80" />
-                  </a>
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-indigo-600 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                    検証レビューを見る ➔
+                  </span>
+                  {art.priceRange && (
+                    <span className="text-xs font-semibold text-slate-400">
+                      {art.priceRange}
+                    </span>
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+
+        {filteredArticles.length === 0 && (
+          <div className="text-center py-16 bg-white rounded-3xl border border-slate-100">
+            <p className="text-slate-500 font-bold text-base">
+              条件に一致する夏コスメアイテムが見つかりませんでした。
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

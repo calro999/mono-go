@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
+import React from 'react';
 import { AmazonProductArticle } from '../types';
-import { AMAZON_CATEGORIES } from '../data';
-import { updateSeoGeoMetadata, generateProductJsonLd } from '../utils/seoGeo';
+import { AUTHOR_PROFILES } from '../data';
 import { MarkdownRenderer } from '../components/MarkdownRenderer';
-import { ArrowLeft, Star, ExternalLink, Check, ShoppingCart, Tag, BookOpen, AlertCircle, Home } from 'lucide-react';
+import { handleImageError } from '../utils/imageHelper';
+import { generateProductJsonLd, updateSeoGeoMetadata } from '../utils/seoGeo';
 
 interface ProductDetailPageProps {
   articleId: string;
@@ -12,205 +12,172 @@ interface ProductDetailPageProps {
 }
 
 export function ProductDetailPage({ articleId, articles, onNavigate }: ProductDetailPageProps) {
-  const article = articles.find(a => a.id === articleId) || articles[0];
+  const article = articles.find((a) => a.id === articleId || a.asin === articleId);
 
-  useEffect(() => {
-    if (!article) return;
-
-    const baseUrl = window.location.origin;
-    const jsonLd = generateProductJsonLd(article, baseUrl);
-
-    updateSeoGeoMetadata({
-      title: `${article.title}`,
-      description: `${article.title}の検証本音レビュー。${article.introText.substring(0, 120)}`,
-      urlPath: `/articles/${article.id}`,
-      jsonLdSchema: jsonLd
-    });
+  React.useEffect(() => {
+    if (article) {
+      const jsonLd = generateProductJsonLd(article, window.location.origin);
+      updateSeoGeoMetadata({
+        title: `${article.productName || article.title} 口コミ・効果検証 | Lumière`,
+        description: article.introText,
+        imageUrl: article.imageUrl,
+        urlPath: `/articles/${article.id}`,
+        jsonLdSchema: jsonLd
+      });
+    }
   }, [article]);
 
   if (!article) {
     return (
-      <div className="text-center py-16 space-y-4">
-        <p className="text-slate-500 font-medium">指定された商品記事が見つかりませんでした。</p>
+      <div className="max-w-4xl mx-auto px-4 py-16 text-center">
+        <h2 className="text-2xl font-bold text-slate-800 mb-4">
+          指定された商品記事が見つかりませんでした。
+        </h2>
         <button
           onClick={() => onNavigate('/')}
-          className="px-4 py-2 bg-slate-900 text-white font-bold rounded-xl text-xs"
+          className="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition"
         >
-          トップ一覧へ戻る
+          商品一覧へ戻る
         </button>
       </div>
     );
   }
 
-  const categoryName = AMAZON_CATEGORIES.find(c => c.id === article.category)?.name || article.category;
+  const reviewer = AUTHOR_PROFILES.find((a) => a.name === article.reviewerName) || AUTHOR_PROFILES[0];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
-      {/* Breadcrumb Navigation (SEO & GEO) */}
-      <nav className="flex items-center gap-2 text-xs font-semibold text-slate-500 overflow-x-auto py-1">
-        <button 
-          onClick={() => onNavigate('/')} 
-          className="flex items-center gap-1 hover:text-slate-900 transition-colors cursor-pointer"
-        >
-          <Home className="w-3.5 h-3.5" />
-          <span>ホーム</span>
-        </button>
-        <span>/</span>
-        <button 
-          onClick={() => onNavigate('/')} 
-          className="hover:text-slate-900 transition-colors cursor-pointer"
-        >
-          {categoryName}
-        </button>
-        <span>/</span>
-        <span className="text-slate-900 truncate max-w-xs">{article.title}</span>
-      </nav>
-
-      {/* Back Button */}
-      <button
-        onClick={() => onNavigate('/')}
-        className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-slate-900 transition-colors cursor-pointer group"
-      >
-        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-        <span>商品一覧へ戻る</span>
-      </button>
-
-      {/* Main Product Article Container */}
-      <article className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-8">
-        {/* Header Metadata */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
-          <span className="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-extrabold rounded-lg border border-indigo-100">
-            {categoryName}
+    <div className="min-h-screen bg-slate-50 py-8 px-4 sm:px-6">
+      <article className="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl space-y-8">
+        {/* Breadcrumb Navigation */}
+        <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 flex-wrap">
+          <button onClick={() => onNavigate('/')} className="hover:text-indigo-600 transition">
+            ホーム
+          </button>
+          <span>/</span>
+          <span className="text-slate-900 font-bold truncate max-w-[200px] sm:max-w-xs">
+            {article.productName || article.title}
           </span>
+        </nav>
 
-          <div className="flex items-center gap-3 text-xs">
-            <div className="flex items-center text-amber-500 font-extrabold">
-              <Star className="w-4 h-4 fill-amber-400 text-amber-400 mr-1" />
-              <span>{article.starRating} / 5.0</span>
-            </div>
-            <span className="text-slate-300">•</span>
-            <span className="text-slate-500 font-medium">検証担当: {article.reviewerName || '検証レビュアー'}</span>
+        {/* Title Header */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-extrabold rounded-full">
+              {article.category.toUpperCase()}
+            </span>
+            <span className="px-3 py-1 bg-amber-400 text-slate-950 text-xs font-extrabold rounded-full">
+              ★ {article.starRating.toFixed(1)}
+            </span>
           </div>
-        </div>
-
-        {/* Title & Intro */}
-        <div>
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4">
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">
             {article.title}
           </h1>
-          <p className="text-slate-700 text-base leading-relaxed bg-slate-50 p-5 rounded-2xl border border-slate-100">
-            {article.introText}
-          </p>
         </div>
 
-        {/* Hero Image & Features */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          <div className="col-span-1 md:col-span-5 rounded-2xl overflow-hidden border border-slate-100 shadow-sm aspect-square bg-slate-100">
+        {/* Product Visual & Buy Box Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start bg-slate-50 p-6 rounded-2xl border border-slate-100">
+          <div className="col-span-1 md:col-span-5 rounded-2xl overflow-hidden border border-slate-100 shadow-sm aspect-square bg-white">
             <img
               src={article.imageUrl}
               alt={article.productName || article.title}
-              onError={(e) => {
-                e.currentTarget.src = 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg';
-              }}
+              referrerPolicy="no-referrer"
+              onError={handleImageError}
               className="w-full h-full object-cover"
             />
           </div>
 
-          <div className="col-span-1 md:col-span-7 space-y-4">
-            <h2 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-              <Tag className="w-4 h-4 text-indigo-600" />
-              <span>主な特徴・アピールポイント</span>
-            </h2>
-            <div className="space-y-2.5">
-              {article.features.map((feat, idx) => (
-                <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span>{feat}</span>
-                </div>
-              ))}
+          <div className="col-span-1 md:col-span-7 space-y-5">
+            <div>
+              <h2 className="text-xl font-black text-slate-900 mb-2">
+                {article.productName || article.title}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {article.introText}
+              </p>
+            </div>
+
+            {/* Selling Points */}
+            <div className="space-y-2">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                検証ポイント
+              </span>
+              <ul className="space-y-1 text-xs sm:text-sm text-slate-800">
+                {article.features.map((feat, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <span className="text-indigo-600 font-bold">✓</span>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CTA Affiliate Link Button */}
+            <div className="pt-2">
+              <a
+                href={article.affiliateLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-4 px-6 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black text-center text-sm sm:text-base rounded-2xl shadow-lg transition transform hover:-translate-y-0.5"
+              >
+                {article.ctaTitle || 'Amazonで最安値・最新在庫を確認する ↗'}
+              </a>
+              <p className="text-[11px] text-slate-400 text-center mt-2">
+                ※ Amazonのアソシエイトとして、適格販売により収入を得ています。
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Pros & Cons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="bg-emerald-50/60 border border-emerald-200 p-5 rounded-2xl space-y-2">
-            <h3 className="text-xs font-extrabold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
-              <Check className="w-4 h-4 text-emerald-600" />
-              <span>良かった点 (Pros)</span>
-            </h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+        {/* Reviewer Persona Header */}
+        <div className="flex items-center gap-4 p-4 bg-indigo-50/50 rounded-2xl border border-indigo-100">
+          <img
+            src={reviewer.avatarUrl}
+            alt={reviewer.avatarAlt || reviewer.name}
+            className="w-12 h-12 rounded-full border-2 border-indigo-500 p-0.5 object-cover bg-white"
+          />
+          <div>
+            <div className="text-xs text-indigo-600 font-extrabold">この記事の検証筆者</div>
+            <div className="font-bold text-slate-900 text-sm sm:text-base">{reviewer.name}</div>
+          </div>
+        </div>
+
+        {/* Full Markdown Review Article Body */}
+        <div className="prose prose-slate max-w-none text-slate-800 leading-relaxed border-t border-slate-100 pt-8">
+          <h3 className="text-xl font-black text-slate-900 mb-4">
+            【実体験検証】{article.productName}を本気レビュー！
+          </h3>
+          <MarkdownRenderer content={article.reviewBody} onNavigate={onNavigate} />
+        </div>
+
+        {/* Pros and Cons Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+          <div className="bg-emerald-50/60 p-5 rounded-2xl border border-emerald-100 space-y-3">
+            <h4 className="font-extrabold text-emerald-900 text-sm flex items-center gap-2">
+              <span className="text-emerald-600 font-black">👍</span> 高評価・メリット
+            </h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-emerald-950">
               {article.pros.map((p, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-emerald-600 font-bold">・</span>
+                  <span className="text-emerald-600">・</span>
                   <span>{p}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-rose-50/60 border border-rose-200 p-5 rounded-2xl space-y-2">
-            <h3 className="text-xs font-extrabold text-rose-800 uppercase tracking-wider flex items-center gap-1.5">
-              <span>気になる点 (Cons)</span>
-            </h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+          <div className="bg-rose-50/60 p-5 rounded-2xl border border-rose-100 space-y-3">
+            <h4 className="font-extrabold text-rose-900 text-sm flex items-center gap-2">
+              <span className="text-rose-600 font-black">⚠️</span> 気になった点・注意点
+            </h4>
+            <ul className="space-y-2 text-xs sm:text-sm text-rose-950">
               {article.cons.map((c, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-rose-600 font-bold">・</span>
+                  <span className="text-rose-600">・</span>
                   <span>{c}</span>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
-
-        {/* Real Review Body */}
-        <div className="border-t border-slate-100 pt-8 space-y-4">
-          <h2 className="text-xl font-black text-slate-900 flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-indigo-600" />
-            <span>実体験レビュー詳細</span>
-          </h2>
-          <MarkdownRenderer content={article.reviewBody} />
-        </div>
-
-        {/* GEO Structured FAQ Section */}
-        {article.faqs && article.faqs.length > 0 && (
-          <section className="border-t border-slate-100 pt-8 space-y-4">
-            <h2 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 text-indigo-600" />
-              <span>よくある質問と回答（FAQ）</span>
-            </h2>
-            <div className="space-y-3">
-              {article.faqs.map((faq, fIdx) => (
-                <div key={fIdx} className="bg-indigo-50/40 border border-indigo-100 p-4 rounded-xl space-y-2">
-                  <h3 className="font-bold text-xs sm:text-sm text-slate-900 flex items-start gap-2">
-                    <span className="bg-indigo-600 text-white text-[10px] px-1.5 py-0.5 rounded font-mono">Q</span>
-                    <span>{faq.question}</span>
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-700 pl-5 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Amazon Affiliate Purchase Box */}
-        <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 p-6 sm:p-8 rounded-2xl text-center space-y-4 shadow-sm">
-          <h3 className="text-sm font-extrabold text-slate-800">
-            {article.ctaTitle}
-          </h3>
-          <a
-            href={article.affiliateLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-extrabold text-base shadow-md hover:shadow-lg transition-all cursor-pointer"
-          >
-            <ShoppingCart className="w-5 h-5" />
-            <span>Amazonで商品詳細と最新価格を見る</span>
-            <ExternalLink className="w-4 h-4 ml-1 opacity-80" />
-          </a>
         </div>
       </article>
     </div>
