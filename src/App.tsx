@@ -7,6 +7,7 @@ import { BlogPostPage } from './pages/BlogPostPage';
 import { AuthorListPage } from './pages/AuthorListPage';
 import { AuthorDetailPage } from './pages/AuthorDetailPage';
 import { Store, Sparkles, Users } from 'lucide-react';
+import { AmazonProductArticle } from './types';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -34,13 +35,23 @@ export default function App() {
   const isAuthorsTab = currentPath.startsWith('/authors');
 
   // Render individual page component based on URL path
+  const [articles] = useState<AmazonProductArticle[]>(() => {
+    // Clear stale image caches if any
+    try {
+      localStorage.removeItem('monogo_app_state_v8_summer32');
+    } catch {
+      // Ignore
+    }
+    return INITIAL_ARTICLES;
+  });
+
   const renderCurrentPage = () => {
     if (currentPath.startsWith('/articles/')) {
       const articleId = currentPath.replace('/articles/', '');
       return (
         <ProductDetailPage
           articleId={articleId}
-          articles={INITIAL_ARTICLES}
+          articles={articles}
           onNavigate={navigateTo}
         />
       );
@@ -55,7 +66,6 @@ export default function App() {
       return (
         <BlogPostPage
           postId={postId}
-          articles={INITIAL_ARTICLES}
           onNavigate={navigateTo}
         />
       );
