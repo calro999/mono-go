@@ -74,7 +74,7 @@ export default function App() {
   const [authLoading, setAuthLoading] = useState(true);
 
   // Core App states
-  const STORAGE_KEY = 'monogo_app_state_v4'; // v4: affiliate ID migration
+  const STORAGE_KEY = 'monogo_app_state_v5'; // v5: beauty migration
   const CORRECT_TAG = 'mattan0290c-22';
 
   // 古いaffiliate IDとURLを修正するヘルパー
@@ -97,13 +97,15 @@ export default function App() {
 
   const [state, setState] = useState<AmazonGoState>(() => {
     try {
-      // 旧キーのデータをクリアしてv4へ移行
+      // 旧キーのデータをクリアしてv5へ移行
+      localStorage.removeItem('monogo_app_state_v4');
       localStorage.removeItem('amazongo_app_state_v3');
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
+        const validCategoryIds = AMAZON_CATEGORIES.map(c => c.id);
         const articles = Array.isArray(parsed.articles)
-          ? fixAffiliateLinks(parsed.articles)
+          ? fixAffiliateLinks(parsed.articles.filter((item: any) => validCategoryIds.includes(item.category)))
           : INITIAL_ARTICLES;
         return {
           associateId: CORRECT_TAG, // 常に正しいIDに強制上書き
