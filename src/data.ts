@@ -1136,83 +1136,12 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
         answer: '冷蔵庫で冷やすと清涼感が増してより気持ちよくお使いいただけます。'
       }
     ],
-    reviewerName: 'アオイ @アフターサンケアライター',
-    reviewerRole: 'マリンスポーツ＆ボディコスメアナリスト',
+    reviewerName: 'アオイ',
+    reviewerRole: 'アフターサンケアライター',
     verificationDays: 90,
     priceRange: '約600円〜900円 (300ml)'
   },
 
-  // === 【新規追加 10件】ここから23〜32件目（既存ライターのみ割り当て） ===
-
-  // 23. デジャヴュ アイブロウカラー (担当: マユ @メイクアドバイザー)
-  {
-    id: 'art-b088b7788p',
-    title: '【汗で眉毛の眉マスカラが落ちない】デジャヴュ フィルム眉カラーのダマにならない立体感と耐久性を本音レビュー！',
-    originalUrl: 'https://www.amazon.co.jp/s?k=dejavu+%E3%82%A2%E3%82%A4%E3%83%96%E3%83%AD%E3%82%A6%E3%82%AB%E3%83%A9%E3%83%BC&tag=mattan0290c-22',
-    asin: 'B088B7788P',
-    productName: 'デジャヴュ フィルム眉カラー (ナチュラルブラウン)',
-    category: 'makeup',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600',
-    starRating: 4.8,
-    introText: '「眉マスカラを塗ると地肌について固まる」「夏場汗をかくとパリパリ剥がれる」そんな不満を解消する極細コンパクトブラシの神眉マスカラ。',
-    features: [
-      '地肌につかない極小15mmのマイクロブラシ',
-      '軽やかな高発色フィルム液で固まらず柔らかな質感',
-      '皮脂・汗・擦れに強いのにお湯で簡単にオフできる'
-    ],
-    pros: [
-      '眉頭から眉尻まで地肌を汚さずに1本1本キレイに色づく',
-      '汗をかいてもパリパリにならず自然な柔らか眉が一日持続',
-      'お湯でスルッと落ちるのでクレンジング時の自眉の抜け毛を防げる'
-    ],
-    cons: [
-      '非常にブラシが小さいため一気にサッと塗りたい人には慣れが必要',
-      '液が乾くまで数秒間触らないように注意'
-    ],
-    reviewBody: `### 自眉が固まらない！エアリーで高発色な夏眉マスカラ
-
-眉マスカラで地肌に液がべっとりつく失敗が多かったのですが、デジャヴュの極小極細ブラシにしてから一変。眉毛の根元からさっととかすだけで、自眉が固まらず本物の毛のように自然に発色してくれます。
-
-汗をかいても滲まず、お湯で簡単に落とせる手軽さも最高です。
-`,
-    ctaTitle: '＼ ダマにならない極細ブラシ！Amazonでデジャヴュ眉マスカラを見る ／',
-    affiliateLink: 'https://www.amazon.co.jp/s?k=dejavu+%E3%82%A2%E3%82%A4%E3%83%96%E3%83%AD%E3%82%A6%E3%82%AB%E3%83%A9%E3%83%BC&tag=mattan0290c-22',
-    createdAt: '2026-07-22 17:40:00',
-    estimatedPV: 3100,
-    clicks: 420,
-    earnings: 8400,
-    aiModelUsed: 'Gemini 3.6 Flash',
-    summaryKeyPoints: [
-      '極細15mmブラシで地肌に液をつけずに毛だけを綺麗に発色',
-      'フィルムタイプで汗や皮脂に強く、お湯で簡単にOFF',
-      '眉毛がパリパリに固まらないやわらかなナチュラル仕上がり'
-    ],
-    faqs: [
-      {
-        question: 'どの色を選べばいいですか？',
-        answer: 'ナチュラルブラウンは明るすぎず暗すぎず、どんな髪色にも合わせやすい万能カラーです。'
-      }
-    ],
-    reviewerName: 'マユ @メイクアドバイザー',
-    reviewerRole: 'アイブロウスペシャリスト',
-    verificationDays: 30,
-    priceRange: '約800円〜1,000円'
-  },
-
-  // 24. ルルルン プレシャス GREEN (担当: ミキ @ビューティーエディター)
-  {
-    id: 'art-b09kbw8p27',
-    title: '【夏の紫外線・エアコン荒れ肌にうるおい補給】ルルルン プレシャス GREEN 32枚入の密着シートとエイジング集中保湿を本音検証！',
-    originalUrl: 'https://www.amazon.co.jp/s?k=LuLuLun+%E3%83%97%E3%83%AC%E3%83%B7%E3%83%A3%E3%82%B9+GREEN&tag=mattan0290c-22',
-    asin: 'B09KBW8P27',
-    productName: 'ルルルン プレシャス GREEN (バランス) 32枚入',
-    category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600',
-    starRating: 4.8,
-    introText: '「夏の紫外線やエアコンでゴワついた肌を整えたい」大人の揺らぎ肌に健康的なうるおいバランスを取り戻す毎日の大容量パック。',
-    features: [
-      '22歳の健康的な皮脂バランスを模した「L22」オイル配合',
-      '極厚ふっくらシートで美容成分が肌の角層までじっくり浸透',
       '毎日使える32枚入り大容量ボックスで取り出しやすい'
     ],
     pros: [
@@ -1772,7 +1701,7 @@ export const AUTHOR_PROFILES: AuthorProfile[] = [
     id: 'auth-shota',
     name: 'ショウタ @メンズ美容研究家',
     role: 'ヘルスケア・体臭予防コンサルタント',
-    avatarUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300',
+    avatarUrl: 'https://api.dicebear.com/7.x/bottts/svg?seed=shota',
     avatarAlt: 'ショウタ @メンズ美容研究家',
     bio: '男性特有の皮脂量やストレス臭・加齢臭の研究に注力。薬用ボディウォッシュや高機能スプレーの実際の消臭性能を体験評価。',
     qualifications: ['メンズヘルスケア指導員'],
@@ -1784,7 +1713,7 @@ export const AUTHOR_PROFILES: AuthorProfile[] = [
     id: 'auth-naoko',
     name: 'ナオコ @オーラルケアマニア',
     role: '歯科衛生士・オーラルケアアドバイザー',
-    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300',
+    avatarUrl: 'https://api.dicebear.com/7.x/lorelei/svg?seed=naoko',
     avatarAlt: 'ナオコ @オーラルケアマニア',
     bio: '現役歯科衛生士の視点から、お口の殺菌持続力や虫歯・歯周病・口臭予防洗口液（コンクールF等）の成分・効能を厳密に評価。',
     qualifications: ['国家資格 歯科衛生士', 'オーラルヘルス指導士'],
@@ -1796,7 +1725,7 @@ export const AUTHOR_PROFILES: AuthorProfile[] = [
     id: 'auth-haruka',
     name: 'ハルカ @ブレスケアライター',
     role: '口臭予防インストラクター・美容ライター',
-    avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300',
+    avatarUrl: 'https://api.dicebear.com/7.x/lorelei/svg?seed=haruka',
     avatarAlt: 'ハルカ @ブレスケアライター',
     bio: '口臭の根本原因である舌苔に着目。舌クリーナーや専用ジェルの落としやすさと低刺激性を自身のお口で比較レビュー。',
     qualifications: ['口臭予防インストラクター'],
@@ -1808,7 +1737,7 @@ export const AUTHOR_PROFILES: AuthorProfile[] = [
     id: 'auth-aya',
     name: 'アヤ @ベースメイク専門ライター',
     role: 'メイクアップアーティスト・コスメ検定1級',
-    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300',
+    avatarUrl: 'https://api.dicebear.com/7.x/lorelei/svg?seed=aya',
     avatarAlt: 'アヤ @ベースメイク専門ライター',
     bio: '元美容部員の経験を活かし、真夏の汗・皮脂で崩れない皮脂吸着下地やウォータープルーフマスカラの崩れにくさを実験。',
     qualifications: ['日本化粧品検定1級', 'メイクセラピスト2級'],
@@ -1820,7 +1749,7 @@ export const AUTHOR_PROFILES: AuthorProfile[] = [
     id: 'auth-hiroshi',
     name: 'ヒロシ @夏対策グッズレビュアー',
     role: 'アウトドア・スポーツライター',
-    avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=300',
+    avatarUrl: 'https://api.dicebear.com/7.x/bottts/svg?seed=hiroshi',
     avatarAlt: 'ヒロシ @夏対策グッズレビュアー',
     bio: '真夏の猛暑日にキャンプやスポーツを実施し、冷感ボディシートやクール入浴剤の冷却スピードと爽快持続力を検証。',
     qualifications: ['キャンプインストラクター', '熱中症予防指導員'],
@@ -1832,7 +1761,7 @@ export const AUTHOR_PROFILES: AuthorProfile[] = [
     id: 'auth-emi',
     name: 'エミ @敏感肌コスメライター',
     role: 'スキンケアアドバイザー',
-    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300',
+    avatarUrl: 'https://api.dicebear.com/7.x/lorelei/svg?seed=emi',
     avatarAlt: 'エミ @敏感肌コスメライター',
     bio: '自身の超敏感肌を活かし、夏の紫外線やあせも・汗荒れで刺激を受けやすい肌にも優しく使える低刺激ローションやトーンアップUVを厳選。',
     qualifications: ['敏感肌スキンケアアドバイザー'],
@@ -1844,7 +1773,7 @@ export const AUTHOR_PROFILES: AuthorProfile[] = [
     id: 'auth-yuki',
     name: 'ユウキ @スタイリスト',
     role: 'ヘアケアアドバイザー',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300',
+    avatarUrl: 'https://api.dicebear.com/7.x/bottts/svg?seed=yuki',
     avatarAlt: 'ユウキ @スタイリスト',
     bio: '汗や皮脂でべたつく夏の髪・前髪を瞬時に洗い立てのふんわり感に戻すドライシャンプーのスタイリング性能を評価。',
     qualifications: ['美容師免許', 'ヘアケアコーディネーター'],
@@ -1868,7 +1797,7 @@ export const AUTHOR_PROFILES: AuthorProfile[] = [
     id: 'auth-mayu',
     name: 'マユ @メイクアドバイザー',
     role: 'アイブロウスペシャリスト',
-    avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=300',
+    avatarUrl: 'https://api.dicebear.com/7.x/lorelei/svg?seed=mayu',
     avatarAlt: 'マユ @メイクアドバイザー',
     bio: '「猛暑の汗で眉毛が消える」悩みを解決するウォータープルーフペンシルや眉マスカラの耐久性をチェック。',
     qualifications: ['アイブロウデザイナー', 'メイクアップ検定1級'],

@@ -1,5 +1,5 @@
 import { BlogPost } from '../types';
-import { Sparkles, Calendar, Clock, ChevronRight, User, ShieldCheck } from 'lucide-react';
+import { Sparkles, Calendar, Clock, ChevronRight } from 'lucide-react';
 
 interface BlogViewProps {
   posts: BlogPost[];
@@ -11,15 +11,15 @@ export function BlogView({ posts, onSelectPost }: BlogViewProps) {
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 font-semibold text-sm mb-4 border border-indigo-200 shadow-sm">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 font-bold text-sm mb-4 border border-indigo-200">
           <Sparkles className="w-4 h-4 text-indigo-600" />
-          <span>2026年夏 コスメ部長厳選・特別特集コーナー</span>
+          <span>2026年夏 コスメ部長厳選・特別特集</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
           夏対策コスメ＆身だしなみ 2大特集ブログ
         </h1>
         <p className="text-slate-600 text-base leading-relaxed">
-          当サイトの男性コスメ部長タクマと、女性コスメ部長エリがそれぞれ厳選した、2026年夏の猛暑を完全攻略する最新おすすめコスメ10選を詳しく解説します。
+          男性コスメ部長タクマと、女性コスメ部長エリがそれぞれ厳選した、2026年夏の猛暑を快適に乗り切る最新おすすめコスメ10選を詳しく解説します。
         </p>
       </div>
 
@@ -29,11 +29,11 @@ export function BlogView({ posts, onSelectPost }: BlogViewProps) {
           <div
             key={post.id}
             onClick={() => onSelectPost(post.id)}
-            className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between"
+            className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between"
           >
             <div>
               {/* Cover Image & Tag */}
-              <div className="relative aspect-video overflow-hidden">
+              <div className="relative aspect-video overflow-hidden bg-slate-100">
                 <img
                   src={post.coverImage}
                   alt={post.title}
@@ -84,7 +84,7 @@ export function BlogView({ posts, onSelectPost }: BlogViewProps) {
                 <img
                   src={post.authorAvatar}
                   alt={post.authorName}
-                  className="w-10 h-10 rounded-full object-cover border-2 border-indigo-500"
+                  className="w-10 h-10 rounded-full object-cover border-2 border-indigo-500 shadow-sm bg-slate-100"
                 />
                 <div>
                   <div className="text-xs font-bold text-slate-900">{post.authorName}</div>

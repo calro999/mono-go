@@ -1,5 +1,5 @@
 import { BlogPost, AmazonProductArticle, AuthorProfile } from '../types';
-import { ArrowLeft, Star, ExternalLink, ShieldCheck, Check, Calendar, Clock, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, Star, ExternalLink, Check, Calendar, Clock, ShoppingCart } from 'lucide-react';
 
 interface BlogDetailViewProps {
   post: BlogPost;
@@ -15,7 +15,7 @@ export function BlogDetailView({ post, recommendedArticles, author, onBack, onSe
       {/* Back Button */}
       <button
         onClick={onBack}
-        className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 mb-6 group transition-colors"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 mb-6 group transition-colors cursor-pointer"
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
         <span>特集ブログ一覧へ戻る</span>
@@ -47,13 +47,13 @@ export function BlogDetailView({ post, recommendedArticles, author, onBack, onSe
           {post.subtitle}
         </p>
 
-        {/* 著者クレジット (E-E-A-T) */}
-        <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/80 flex items-center justify-between">
+        {/* 著者クレジット */}
+        <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
               src={post.authorAvatar}
               alt={post.authorName}
-              className="w-12 h-12 rounded-full object-cover border-2 border-indigo-500 shadow-sm"
+              className="w-12 h-12 rounded-full object-cover border-2 border-indigo-500 shadow-sm bg-slate-100"
             />
             <div>
               <div className="flex items-center gap-2">
@@ -65,15 +65,14 @@ export function BlogDetailView({ post, recommendedArticles, author, onBack, onSe
               <p className="text-slate-500 text-xs mt-0.5">{post.authorRole}</p>
             </div>
           </div>
-          <div className="hidden sm:flex items-center gap-1 text-xs text-emerald-700 font-bold bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-200">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>自費購入・実体験検証済み</span>
+          <div className="hidden sm:block text-xs text-slate-500 font-medium">
+            実体験検証おすすめ
           </div>
         </div>
       </div>
 
       {/* Cover Image */}
-      <div className="rounded-2xl overflow-hidden mb-8 border border-slate-200 shadow-sm aspect-video">
+      <div className="rounded-2xl overflow-hidden mb-8 border border-slate-200 shadow-sm aspect-video bg-slate-100">
         <img
           src={post.coverImage}
           alt={post.title}
@@ -100,7 +99,7 @@ export function BlogDetailView({ post, recommendedArticles, author, onBack, onSe
           <h2 className="text-xl sm:text-2xl font-black text-slate-900">
             🛒 特集で紹介している厳選おすすめアイテム ({recommendedArticles.length}選)
           </h2>
-          <span className="text-xs text-slate-500 font-medium">全品Amazon正規品リンク付き</span>
+          <span className="text-xs text-slate-500 font-medium">Amazon正規品リンク付き</span>
         </div>
 
         <div className="grid grid-cols-1 gap-6">
@@ -157,7 +156,7 @@ export function BlogDetailView({ post, recommendedArticles, author, onBack, onSe
                 <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
                   <button
                     onClick={() => onSelectArticle(art.id)}
-                    className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-colors"
+                    className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold transition-colors cursor-pointer"
                   >
                     詳細レビューを見る
                   </button>
@@ -166,10 +165,10 @@ export function BlogDetailView({ post, recommendedArticles, author, onBack, onSe
                     href={art.affiliateLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xs shadow-sm hover:shadow transition-all"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-bold text-xs shadow-sm hover:shadow transition-all cursor-pointer"
                   >
                     <ShoppingCart className="w-3.5 h-3.5" />
-                    <span>Amazonで価格を見る</span>
+                    <span>Amazonで確認する</span>
                     <ExternalLink className="w-3 h-3 ml-0.5 opacity-80" />
                   </a>
                 </div>
