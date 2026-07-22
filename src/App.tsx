@@ -77,13 +77,29 @@ export default function App() {
   const STORAGE_KEY = 'monogo_app_state_v4'; // v4: affiliate ID migration
   const CORRECT_TAG = 'mattan0290c-22';
 
-  // 古いaffililate IDを修正するヘルパー
+  // 古いaffiliate IDと/dp/形式のURLを修正するヘルパー
   const fixAffiliateLinks = (articles: AmazonProductArticle[]): AmazonProductArticle[] => {
     return articles.map(art => {
-      if (!art.affiliateLink || art.affiliateLink.includes(CORRECT_TAG)) return art;
-      // amazongo-22 など旧タグがあれば置換
-      const fixedLink = art.affiliateLink.replace(/tag=[^&]+/, `tag=${CORRECT_TAG}`);
-      return { ...art, affiliateLink: fixedLink };
+      let fixedLink = art.affiliateLink;
+      
+      // 旧タグ置換
+      if (fixedLink && !fixedLink.includes(CORRECT_TAG)) {
+        fixedLink = fixedLink.replace(/tag=[^&]+/, `tag=${CORRECT_TAG}`);
+      }
+
+      // /dp/ASIN 形式の404問題を解消するため、検索URL形式に変換
+      if (fixedLink && fixedLink.includes('/dp/')) {
+        const searchQuery = encodeURIComponent(art.title.replace(/【.*?】/g, '').trim() || art.asin);
+        fixedLink = `https://www.amazon.co.jp/s?k=${searchQuery}&tag=${CORRECT_TAG}`;
+      }
+
+      let fixedOriginalUrl = art.originalUrl;
+      if (fixedOriginalUrl && fixedOriginalUrl.includes('/dp/')) {
+        const searchQuery = encodeURIComponent(art.title.replace(/【.*?】/g, '').trim() || art.asin);
+        fixedOriginalUrl = `https://www.amazon.co.jp/s?k=${searchQuery}&tag=${CORRECT_TAG}`;
+      }
+
+      return { ...art, affiliateLink: fixedLink, originalUrl: fixedOriginalUrl };
     });
   };
 
@@ -192,7 +208,7 @@ export default function App() {
     // 3. Real-time Firestore subscription
     const unsubscribeArticles = subscribeToArticles(
       (items) => {
-        setDbArticles(items);
+        setDbArticles(fixAffiliateLinks(items));
         setIsDbLoaded(true);
       },
       (err) => {
