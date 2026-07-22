@@ -210,8 +210,8 @@ app.post("/api/generate-amazon-review", async (req, res) => {
   try {
     console.log("Attempting Amazon PA-API fetch for ASIN:", detectedAsin);
     const commonParameters = {
-      AccessKey: 'AMAZON_ACCESS_KEY_REMOVED',
-      SecretKey: 'AMAZON_SECRET_KEY_REMOVED',
+      AccessKey: process.env.AMAZON_ACCESS_KEY || '',
+      SecretKey: process.env.AMAZON_SECRET_KEY || '',
       PartnerTag: userTag, 
       PartnerType: 'Associates', 
       Marketplace: 'www.amazon.co.jp' 
