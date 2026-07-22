@@ -113,7 +113,7 @@ export function AuthorDetailPage({ authorId, onNavigate }: AuthorDetailPageProps
                     src={art.imageUrl}
                     alt={art.productName || art.title}
                     onError={(e) => {
-                      e.currentTarget.src = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600';
+                      e.currentTarget.src = 'https://m.media-amazon.com/images/I/71YyM9e5pGL._AC_SL1500_.jpg';
                     }}
                     className="w-16 h-16 rounded-xl object-cover flex-shrink-0 bg-white border border-slate-200"
                   />
