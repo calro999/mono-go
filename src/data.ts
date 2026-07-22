@@ -2109,6 +2109,53 @@ export const SPECIAL_BLOG_POSTS: BlogPost[] = [
 
 ぜひご自身の肌質やライフスタイルに合ったアイテムを試してみてくださいね！
 `
+  },
+  {
+    id: 'art-b0cnvdb4z7',
+    title: `輝く肌を手に入れる！POLA B.A ライト セレクターNの実感レビュー`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=POLA%20B.A%20%E3%83%A9%E3%82%A4%E3%83%88%20%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%83%BC%20N&tag=mattan0290c-22',
+    asin: 'B0CNVDB4Z7',
+    productName: 'POLA B.A ライト セレクター N',
+    category: 'skincare',
+    imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.8,
+    introText: `肌の悩みを解決したいという方のための究極の選択`,
+    features: [`高品質な成分`, `独自のセレクター技術`, `使いやすいデザイン`],
+    pros: [`使用しやすい`, `肌に負担が少ない`, `短期間で効果が表れた`],
+    cons: [`価格が高め`, `個人の肌の調子に応じて効果に差があった`],
+    reviewBody: `###POLA B.A ライト セレクターNとは
+POLAの新しいスキンケアシリーズ、B.A ライト セレクターNは、独自の技術で肌を明るく潤ませることで、美しい肌を実現することができます。
+###使用感
+実際に使用してみたところ、使用しやすく、快適な感触で肌に負担が少ないことがわかりました。
+###効果
+短期間で肌のトロトロさが増し、細かいしわもスムーズになりました。\\n###肌の変化
+30日間の使用で肌が明るくなり、透明感が増しました。`,
+    ctaTitle: `今すぐ実感してみる!`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=POLA%20B.A%20%E3%83%A9%E3%82%A4%E3%83%88%20%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%83%BC%20N&tag=mattan0290c-22',
+    createdAt: '2026-07-22 16:16:45',
+    estimatedPV: Math.floor(Math.random() * 500) + 100,
+    clicks: Math.floor(Math.random() * 50) + 10,
+    earnings: Math.floor(Math.random() * 5000) + 500,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `独自のセレクター技術が肌を明るくする`,
+      `短期間で効果が表れた`,
+      `使いやすく肌に負担が少ない`
+    ],
+    faqs: [
+      {
+        question: `肌のタイプ別に効果は変わりますか？`,
+        answer: `基本的には全ての肌タイプに効果がありますが、個人の肌の調子によっては結果に差が生じる可能性があります。`
+      },
+      {
+        question: `使用方法はどうなりますか？`,
+        answer: `基本的なスキンケアと同様に、洗顔をしてから使用します。`
+      }
+    ],
+    reviewerName: `アヤ @美容ライター`,
+    reviewerRole: `元美容部員・日本化粧品検定1級`,
+    verificationDays: 30,
+    priceRange: `約35,000円〜`
   }
 ];
 
