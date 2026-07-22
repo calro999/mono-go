@@ -434,7 +434,7 @@ function validateArticle(article) {
 
   // affiliateLinkにアソシエイトIDがなければ付与（検索URL形式に統一）
   if (!article.affiliateLink.includes('tag=')) {
-    article.affiliateLink = `https://www.amazon.co.jp/s?k=${article.asin}&tag=mattan0290c-22`;
+    article.affiliateLink = `https://www.amazon.co.jp/s?k=${encodeURIComponent(article.productName || article.asin)}&tag=mattan0290c-22`;
   }
 
   return article;
@@ -493,6 +493,7 @@ function articleToTsString(a) {
     title: \`${escapeTs(a.title)}\`,
     originalUrl: '${a.originalUrl}',
     asin: '${a.asin}',
+    productName: '${a.productName}',
     category: '${a.category}',
     imageUrl: '${a.imageUrl}',
     starRating: ${a.starRating},

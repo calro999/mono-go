@@ -8,6 +8,7 @@ export interface AmazonProductArticle {
   title: string;
   originalUrl: string;
   asin: string;
+  productName?: string; // Product name for cleaner search links
   category: string; // e.g. "gadgets", "pc", "kitchen", "beauty", "fashion", "books-games"
   imageUrl: string; // Product photo URL or placeholder
   starRating: number; // e.g. 4.5
