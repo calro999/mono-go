@@ -1,0 +1,135 @@
+name: 🤖 Auto Article Generator
+
+on:
+  # 毎日 日本時間 午前9時 (UTC 00:00) に自動実行
+  schedule:
+    - cron: '0 0 * * *'
+
+  # 手動でも実行可能
+  workflow_dispatch:
+    inputs:
+      force_category:
+        description: '強制的に生成するカテゴリ (空欄 = 自動選択)'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - gadgets
+          - pc
+          - kitchen
+          - beauty
+          - fashion
+          - books-games
+
+jobs:
+  generate-article:
+    name: 記事自動生成 & コミット
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: write
+
+    steps:
+      # ─────────────────────────────────────
+      # 1. リポジトリをチェックアウト
+      # ─────────────────────────────────────
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ─────────────────────────────────────
+      # 2. Node.js セットアップ
+      # ─────────────────────────────────────
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # ─────────────────────────────────────
+      # 3. 依存パッケージインストール
+      # ─────────────────────────────────────
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      # ─────────────────────────────────────
+      # 4. 記事生成スクリプト実行
+      #    フォールバック順:
+      #      1. Gemini 2.0 Flash
+      #      2. Groq (Llama 3.3 70B) - 1日1000req無料
+      #      3. OpenRouter (Mistral-7B Free) - 無料クレジット
+      #      4. Hugging Face Serverless - 完全無料
+      # ─────────────────────────────────────
+      - name: 🤖 Generate article with LLM (Gemini → Groq → OpenRouter → HuggingFace)
+        id: generate
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
+          FORCE_CATEGORY: ${{ github.event.inputs.force_category }}
+        run: |
+          echo "🚀 記事生成開始: $(date '+%Y-%m-%d %H:%M:%S JST')"
+          node scripts/generate-article.mjs
+          echo "✅ 記事生成完了"
+
+      # ─────────────────────────────────────
+      # 5. 変更があればコミット & プッシュ
+      # ─────────────────────────────────────
+      - name: 📝 Check for changes
+        id: changes
+        run: |
+          git diff --exit-code src/data.ts || echo "HAS_CHANGES=true" >> $GITHUB_OUTPUT
+
+      - name: 🚀 Commit and push new article
+        if: steps.changes.outputs.HAS_CHANGES == 'true'
+        run: |
+          git config user.name "Amazon GO!! Bot"
+          git config user.email "bot@amazongo.auto"
+          
+          # 追記された記事タイトルを取得
+          ARTICLE_TITLE=$(git diff src/data.ts | grep "^+.*title:" | head -1 | sed "s/.*title: \`//;s/\`.*//")
+          
+          DATE=$(date '+%Y-%m-%d')
+          COMMIT_MSG="🤖 [Auto] 新記事追加: ${DATE}"
+          if [ -n "$ARTICLE_TITLE" ]; then
+            COMMIT_MSG="🤖 [Auto] ${ARTICLE_TITLE:0:60}"
+          fi
+          
+          git add src/data.ts
+          git commit -m "$COMMIT_MSG"
+          git push origin main
+          
+          echo "✅ コミット完了: $COMMIT_MSG"
+
+      # ─────────────────────────────────────
+      # 6. 変更なしの場合の通知
+      # ─────────────────────────────────────
+      - name: ℹ️ No changes detected
+        if: steps.changes.outputs.HAS_CHANGES != 'true'
+        run: |
+          echo "⚠️ src/data.ts に変更がありませんでした（重複ASIN等の可能性）"
+
+      # ─────────────────────────────────────
+      # 7. サマリーレポート
+      # ─────────────────────────────────────
+      - name: 📊 Write Job Summary
+        if: always()
+        run: |
+          echo "## 🤖 Amazon GO!! 自動記事生成レポート" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|-----|" >> $GITHUB_STEP_SUMMARY
+          echo "| 実行日時 | $(date '+%Y-%m-%d %H:%M:%S UTC') |" >> $GITHUB_STEP_SUMMARY
+          echo "| ステータス | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 変更検出 | ${{ steps.changes.outputs.HAS_CHANGES == 'true' && '✅ 新記事追加' || '⚠️ 変更なし' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### LLMフォールバック順序" >> $GITHUB_STEP_SUMMARY
+          echo "1. 🥇 Gemini 2.0 Flash (GEMINI_API_KEY)" >> $GITHUB_STEP_SUMMARY
+          echo "2. 🥈 Groq Llama 3.3 70B (GROQ_API_KEY) - 1日1000req無料" >> $GITHUB_STEP_SUMMARY
+          echo "3. 🥉 OpenRouter Mistral-7B (OPENROUTER_API_KEY) - 無料クレジット" >> $GITHUB_STEP_SUMMARY
+          echo "4. 🆓 Hugging Face Zephyr-7B (HF_API_TOKEN) - 完全無料" >> $GITHUB_STEP_SUMMARY
