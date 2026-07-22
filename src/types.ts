@@ -33,6 +33,38 @@ export interface AmazonProductArticle {
   priceRange?: string; // Reference price snippet
 }
 
+export interface AuthorProfile {
+  id: string;
+  name: string; // e.g. "タクマ @男性コスメ部長"
+  role: string; // e.g. "男性美容総合プロデューサー・メンズコスメ部長"
+  avatarUrl: string; // Circle avatar photo
+  avatarAlt: string; // alt attribute for image
+  bio: string; // Detailed bio and testing philosophy
+  qualifications: string[]; // E-E-A-T certifications/qualifications
+  specialty: string; // Primary area of expertise
+  experienceYears: number; // Real testing experience in years
+  genderTarget: 'men' | 'women' | 'unisex';
+  isDepartmentHead?: boolean; // Is コスメ部長
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  targetGender: 'men' | 'women';
+  coverImage: string;
+  authorId: string;
+  authorName: string;
+  authorRole: string;
+  authorAvatar: string;
+  createdAt: string;
+  readTimeMinutes: number;
+  introText: string;
+  recommendedAsins: string[];
+  contentMarkdown: string;
+}
+
 export interface CategorySpec {
   id: string;
   name: string;
@@ -54,6 +86,6 @@ export interface AmazonGoState {
   activeCategorySlug: string; // "all" or specific
   articles: AmazonProductArticle[];
   systemLogs: SystemLog[];
-  showAdminPanel: boolean; // Toggle between Public Store Front and Management Admin Console
-  simulatedCronActive: boolean; // Simulation of GitHub Actions 1-hour hourly runner
+  showAdminPanel: boolean;
+  simulatedCronActive: boolean;
 }
