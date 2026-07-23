@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { AmazonProductArticle } from '../types';
-import { AMAZON_CATEGORIES } from '../data';
+import { AMAZON_CATEGORIES, COMPARISON_POSTS } from '../data';
 import { handleImageError } from '../utils/imageHelper';
 import { updateSeoGeoMetadata } from '../utils/seoGeo';
 
@@ -50,6 +50,42 @@ export function ProductListPage({ articles, onNavigate }: ProductListPageProps) 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
               日焼け止め、UVケア化粧水、体臭・デオドラント、口臭ケアまで！専門のコスメ部長が本気で試した実体感レビュー。
             </p>
+          </div>
+        </div>
+
+        {/* VS Comparison Featured Grid (Ultra Long-Tail & High Retention Booster) */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl font-black text-slate-900 border-l-4 border-amber-400 pl-3">
+              ⚔️ どっちを買うべき？超ロングテールVS比較対決
+            </h2>
+            <span className="text-xs text-indigo-600 font-extrabold">
+              用途・悩み別で徹底検証
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {COMPARISON_POSTS.map((comp) => (
+              <div
+                key={comp.id}
+                onClick={() => onNavigate(`/compare/${comp.id}`)}
+                className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-5 rounded-2xl border border-indigo-500/30 shadow-md hover:shadow-xl transition cursor-pointer flex flex-col justify-between group"
+              >
+                <div className="space-y-2">
+                  <span className="inline-block px-2.5 py-0.5 bg-amber-400 text-slate-950 text-[10px] font-black rounded uppercase">
+                    {comp.targetUserCategory}
+                  </span>
+                  <h3 className="font-extrabold text-sm sm:text-base leading-snug group-hover:text-amber-300 transition line-clamp-2">
+                    {comp.title}
+                  </h3>
+                </div>
+
+                <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-slate-300 group-hover:text-white transition">
+                  <span>VS対決の勝者をチェック</span>
+                  <span>➔</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -104,7 +140,7 @@ export function ProductListPage({ articles, onNavigate }: ProductListPageProps) 
               onClick={() => onNavigate(`/articles/${art.id}`)}
               className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col cursor-pointer group"
             >
-              {/* Product Image Container */}
+              {/* Product Image Container with Text Overlay */}
               <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
                 <img
                   src={art.imageUrl}
@@ -113,10 +149,24 @@ export function ProductListPage({ articles, onNavigate }: ProductListPageProps) 
                   onError={handleImageError}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-3 left-3 px-2.5 py-1 bg-slate-900/90 text-white text-[11px] font-extrabold rounded-md backdrop-blur-sm">
+                
+                {/* Gradient Overlay for High Contrast Text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex items-end p-3.5 pointer-events-none">
+                  <span className="text-white font-black text-xs sm:text-sm leading-snug drop-shadow-md line-clamp-2">
+                    {art.productName || art.title}
+                  </span>
+                </div>
+
+                {art.asin === 'B09NPPZLN1' && (
+                  <span className="absolute top-3 left-3 px-3 py-1 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-slate-950 font-black text-xs rounded-lg shadow-lg border border-amber-200 z-10 animate-pulse">
+                    👑 編集長タクマ殿堂入りNO.1 (ワキガ・汗臭克服)
+                  </span>
+                )}
+
+                <span className={`absolute ${art.asin === 'B09NPPZLN1' ? 'top-11 left-3' : 'top-3 left-3'} px-2.5 py-1 bg-slate-900/90 text-white text-[11px] font-extrabold rounded-md backdrop-blur-sm shadow-sm`}>
                   {art.category.toUpperCase()}
                 </span>
-                <span className="absolute bottom-3 right-3 px-2 py-0.5 bg-amber-400 text-slate-950 font-black text-xs rounded-md shadow-sm">
+                <span className="absolute top-3 right-3 px-2 py-0.5 bg-amber-400 text-slate-950 font-black text-xs rounded-md shadow-md">
                   ★ {art.starRating.toFixed(1)}
                 </span>
               </div>

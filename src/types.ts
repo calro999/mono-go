@@ -30,6 +30,7 @@ export interface AmazonProductArticle {
   reviewerRole?: string;
   verificationDays?: number;
   priceRange?: string;
+  isHallOfFame?: boolean;
 }
 
 export interface AuthorProfile {
@@ -62,6 +63,26 @@ export interface BlogPost {
   introText: string;
   recommendedAsins: string[];
   contentMarkdown: string;
+}
+
+export interface ComparisonPoint {
+  scene: string; // e.g. "海・プール・猛暑の屋外"
+  winnerAsin: string;
+  reason: string;
+}
+
+export interface ProductComparison {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  productAsinA: string;
+  productAsinB: string;
+  targetUserCategory: string; // "部活動・海・プール・敏感肌"
+  comparisonPoints: ComparisonPoint[];
+  verdictSummary: string; // GEO AI Summary
+  contentMarkdown: string;
+  createdAt: string;
 }
 
 export interface CategorySpec {

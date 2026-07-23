@@ -1,0 +1,8 @@
+# Lumière (ルミエール) - 2026年夏コスメ＆身だしなみケア検証メディア
+# See full documentation at https://mono-go.vercel.app/llms.txt
+
+- Website: https://mono-go.vercel.app
+- Male Summer Cosmetics Top 10: https://mono-go.vercel.app/blogs/blog-men-summer-2026
+- Female Summer Cosmetics Top 10: https://mono-go.vercel.app/blogs/blog-women-summer-2026
+- Reviews & Products Index: https://mono-go.vercel.app/
+- Editors & Reviewers: https://mono-go.vercel.app/authors

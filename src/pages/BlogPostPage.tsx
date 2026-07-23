@@ -143,7 +143,7 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
                   className="flex flex-col bg-white rounded-2xl border border-slate-200 p-4 shadow-sm hover:shadow-md transition-all duration-300 group"
                 >
                   <div className="flex gap-4 mb-3">
-                    <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-100">
+                    <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-xl overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-100">
                       <img
                         src={art.imageUrl}
                         alt={art.productName || art.title}
@@ -151,7 +151,12 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
                         onError={handleImageError}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <span className="absolute top-1 left-1 bg-slate-900/90 text-white text-[10px] font-black px-1.5 py-0.5 rounded">
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent flex items-end p-1.5 pointer-events-none">
+                        <span className="text-[10px] sm:text-xs font-black text-white leading-tight line-clamp-2 drop-shadow-sm">
+                          {art.productName || art.title}
+                        </span>
+                      </div>
+                      <span className="absolute top-1 left-1 bg-amber-400 text-slate-950 text-[10px] font-black px-1.5 py-0.5 rounded shadow-sm">
                         #{idx + 1}
                       </span>
                     </div>

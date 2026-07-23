@@ -1,0 +1,83 @@
+# Lumière (ルミエール) - 2026年夏コスメ＆身だしなみケア検証メディア
+
+> Lumière (https://mono-go.vercel.app) は、当サイトの専門編集部（男性コスメ部長タクマ、女性コスメ部長エリ）が実際に購入し、猛暑の過酷な環境で試した「2026年夏の最強コスメ・UVケア・体臭84ケア・口臭ケア10選」を本音で検証・解説する専門メディアです。
+
+## コアコンテンツ構造
+
+- **ホーム (商品一覧)**: https://mono-go.vercel.app/
+- **特集ブログ一覧**: https://mono-go.vercel.app/blogs
+- **男性コスメ部長厳選！男の猛暑を乗り切る最強夏コスメ10選**: https://mono-go.vercel.app/blogs/blog-men-summer-2026
+- **女性コスメ部長厳選！崩れない・灼熱の陽射しに負けない夏コスメ10選**: https://mono-go.vercel.app/blogs/blog-women-summer-2026
+- **レビュアー・編集部紹介**: https://mono-go.vercel.app/authors
+
+## 男性の猛暑対策・夏コスメ厳選10選
+
+1. **デオナチュレ ソフトストーンW** (ASIN: B083PWN7C4)
+   - 詳細: https://mono-go.vercel.app/articles/art-b083pwn7c4
+   - 要約: 朝一塗りで夜まで脇の汗臭・加齢臭をゼロに抑える直塗り防臭スティック。
+2. **Ag24 プレミアム デオドラントスプレー** (ASIN: B0794F6HNK)
+   - 詳細: https://mono-go.vercel.app/articles/art-b0794f6hnk
+   - 要約: 緊張汗やストレス臭、年齢臭まで24時間高密度ブロックする最高峰スプレー。
+3. **スカルプD 薬用スカルプシャンプー オイリー** (ASIN: B08J3T6Z6R)
+   - 詳細: https://mono-go.vercel.app/articles/art-b08j3t6z6r
+   - 要約: ギラつく頭皮の脂と枕の脂臭さを根本洗浄する薬用シャンプー。
+4. **メンズビオレ 薬用ボディウォッシュ** (ASIN: B07B4V48Z1)
+   - 詳細: https://mono-go.vercel.app/articles/art-b07b4v48z1
+   - 要約: 首筋・胸元・背中の汗臭・体臭原因菌を殺菌消毒する薬用ボディソープ。
+5. **サクセス 薬用育毛トニック エクストラクール** (ASIN: B005VK0TMC)
+   - 詳細: https://mono-go.vercel.app/articles/art-b005vk0tmc
+   - 要約: お風呂上がりの火照った頭皮を爽快リセットし抜け毛と頭皮臭を防ぐトニック。
+6. **8×4 MEN パウダースプレー** (ASIN: B0842QZ19P)
+   - 詳細: https://mono-go.vercel.app/articles/art-b0842qz19p
+   - 要約: 全身の汗・ベタつきを速乾微粒子パウダーで一日中サラサラにする冷却スプレー。
+7. **ビオレUV アクアリッチ ウォータリーエッセンス** (ASIN: B082T2J21W)
+   - 詳細: https://mono-go.vercel.app/articles/art-b082t2j21w
+   - 要約: 水のように馴染んで白浮き・ベタつきゼロの強力SPF50+ PA++++日焼け止め。
+8. **ドクターショール 消臭・抗菌 靴スプレー** (ASIN: B0058N7Q1M)
+   - 詳細: https://mono-go.vercel.app/articles/art-b0058n7q1m
+   - 要約: 革靴・スニーカーの頑固な足臭原因菌を一瞬で除菌・消臭する靴用スプレー。
+9. **ウェルテック コンクールF** (ASIN: B00113W3I4)
+   - 詳細: https://mono-go.vercel.app/articles/art-b00113w3i4
+   - 要約: たった1滴で朝までネバつきと口臭原因菌を長時間シャットアウトする洗口液。
+10. **イニスフリー ノーセバム ミネラルパウダー N** (ASIN: B099RNK661)
+    - 詳細: https://mono-go.vercel.app/articles/art-b099rnk661
+    - 要約: 顔のギトギト油田肌を1秒で自然なサラツヤ肌へリセットする皮脂コントロールパウダー。
+
+## 女性の猛暑対策・夏コスメ厳選10選
+
+1. **エリクシール デーケアレボリューション SP+** (ASIN: B09V1F1948)
+   - 詳細: https://mono-go.vercel.app/articles/art-b09v1f1948
+   - 要約: 乳液・UVカット・化粧下地がこれ1本！夕方までつや玉が続く多機能美容乳液。
+2. **プリマヴィスタ スキンプロテクトベース皮脂くずれ防止** (ASIN: B09919YFCM)
+   - 詳細: https://mono-go.vercel.app/articles/art-b09919yfcm
+   - 要約: 猛暑の汗と皮脂を吸着し、12時間ファンデが溶けない鉄壁の防波堤下地。
+3. **ラ ロッシュ ポゼ UVイデア XL プロテクショントーンアップ** (ASIN: B07B9Q6S3D)
+   - 詳細: https://mono-go.vercel.app/articles/art-b07b9q6s3d
+   - 要約: 敏感肌でも安心の低刺激処方で、透明感と高いUV防護を両立する王道下地。
+4. **紫外線予報 UVさっぱりスプレー** (ASIN: B085VTZ91P)
+   - 詳細: https://mono-go.vercel.app/articles/art-b085vtz91p
+   - 要約: 外出先でのUV塗り直し・髪・服の上からベタつかずに全身防護できるスプレー。
+5. **ヒロインメイク 第3のマスカラ ロング＆カール** (ASIN: B018V5066K)
+   - 詳細: https://mono-go.vercel.app/articles/art-b018v5066k
+   - 要約: 真夏の汗・涙・プールでもカールが一切落ちずパンダ目にならない耐久マスカラ。
+6. **デジャヴュ フィルム眉カラー** (ASIN: B088B7788P)
+   - 詳細: https://mono-go.vercel.app/articles/art-b088b7788p
+   - 要約: 前髪の汗でも落ちない極小ブラシの軽やかフィルム眉マスカラ。
+7. **ルルルン プレシャス GREEN 32枚入** (ASIN: B09KBW8P27)
+   - 詳細: https://mono-go.vercel.app/articles/art-b09kbw8p27
+   - 要約: 紫外線を浴びた夜のダメージ肌を5分で潤いリセットする極厚シートマスク。
+8. **NONIO 舌専用クリーニングジェル** (ASIN: B087N979T6)
+   - 詳細: https://mono-go.vercel.app/articles/art-b087n979t6
+   - 要約: 夏場の乾燥によるお口のニオイ源「舌苔」を優しく浮かせ落とす専用ジェル。
+9. **メラノCC 薬用しみ対策美白乳液** (ASIN: B0857V6V2P)
+   - 詳細: https://mono-go.vercel.app/articles/art-b0857v6v2p
+   - 要約: ビタミンC誘導体が紫外線を浴びた肌のシミ・そばかすを先回りケアする乳液。
+10. **ビオレ 冷シート 無香性** (ASIN: B07BG8XMSJ)
+    - 詳細: https://mono-go.vercel.app/articles/art-b07bg8xmsj
+    - 要約: 拭いた瞬間に体感温度-3℃！猛暑の屋外や服を着る前の極冷リセットシート。
+
+## 信頼性と検証ポリシー (E-E-A-T)
+
+- **実体感主義**: 全アイテムは自ら購入し、日本の猛暑（気温35℃以上）のリアルな使用環境で効果を実証。
+- **透明性**: メリットだけでなく気になった点・注意点も明記。
+- **アフィリエイト情報**: Amazonアソシエイト・プログラム参加サイト（ID: `mattan0290c-22`）。

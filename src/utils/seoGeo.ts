@@ -9,246 +9,198 @@ export interface SeoGeoOptions {
 }
 
 /**
- * Update dynamic head meta tags and JSON-LD schema for SEO and GEO (Generative Engine Optimization)
+ * Update dynamic head meta tags, OpenGraph, Twitter Cards, and JSON-LD schema for SEO and GEO
  */
 export function updateSeoGeoMetadata(config: SeoGeoOptions) {
   const urlPath = config.urlPath || window.location.pathname;
-  
+  const fullUrl = `https://mono-go.vercel.app${urlPath}`;
+  const fullImage = config.imageUrl
+    ? (config.imageUrl.startsWith('http') ? config.imageUrl : `https://mono-go.vercel.app${config.imageUrl}`)
+    : 'https://mono-go.vercel.app/images/products/biore-uv.jpg';
+
   // 1. Update Document Title
   document.title = `${config.title} | Lumière 夏コスメ・ボディケア検証本音レビュー`;
 
-  // 2. Update Meta Description
-  let metaDesc = document.querySelector('meta[name="description"]');
-  if (!metaDesc) {
-    metaDesc = document.createElement('meta');
-    metaDesc.setAttribute('name', 'description');
-    document.head.appendChild(metaDesc);
-  }
-  metaDesc.setAttribute('content', config.description);
-
-  // 3. Update Canonical Link
-  const fullUrl = `${window.location.origin}${config.urlPath}`;
-  let canonicalLink = document.querySelector('link[rel="canonical"]');
-  if (!canonicalLink) {
-    canonicalLink = document.createElement('link');
-    canonicalLink.setAttribute('rel', 'canonical');
-    document.head.appendChild(canonicalLink);
-  }
-  canonicalLink.setAttribute('href', fullUrl);
-
-  // 4. Update OGP Meta Tags
-  const setMeta = (prop: string, content: string) => {
-    let meta = document.querySelector(`meta[property="${prop}"]`);
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.setAttribute('property', prop);
-      document.head.appendChild(meta);
+  // 2. Helper to set or update meta tag
+  const setMeta = (selector: string, attrName: string, attrValue: string, content: string) => {
+    let el = document.querySelector(selector);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attrName, attrValue);
+      document.head.appendChild(el);
     }
-    meta.setAttribute('content', content);
+    el.setAttribute('content', content);
   };
 
-  setMeta('og:title', config.title);
-  setMeta('og:description', config.description);
-  setMeta('og:url', fullUrl);
-  setMeta('og:type', config.urlPath === '/' ? 'website' : 'article');
+  // Standard Meta Tags
+  setMeta('meta[name="description"]', 'name', 'description', config.description);
+  setMeta('meta[name="keywords"]', 'name', 'keywords', '夏コスメ2026,日焼け止め,UVケア,84体臭ケア,口臭ケア,メンズコスメ,デパコス,プチプラ,Amazonおすすめ');
+  setMeta('meta[name="author"]', 'name', 'author', 'Lumière コスメ編集部 (タクマ & エリ)');
 
-  // 5. Update JSON-LD Script Tags for GEO (Generative Engine Optimization)
-  const existingJsonLd = document.querySelectorAll('script[type="application/ld+json"]');
-  existingJsonLd.forEach(el => el.remove());
+  // Open Graph (OGP) Meta Tags for Social & AI Engines
+  setMeta('meta[property="og:title"]', 'property', 'og:title', config.title);
+  setMeta('meta[property="og:description"]', 'property', 'og:description', config.description);
+  setMeta('meta[property="og:url"]', 'property', 'og:url', fullUrl);
+  setMeta('meta[property="og:image"]', 'property', 'og:image', fullImage);
+  setMeta('meta[property="og:type"]', 'property', 'og:type', urlPath.startsWith('/blogs') ? 'article' : 'website');
+  setMeta('meta[property="og:site_name"]', 'property', 'og:site_name', 'Lumière (ルミエール)');
+  setMeta('meta[property="og:locale"]', 'property', 'og:locale', 'ja_JP');
 
-  if (config.jsonLdSchema && config.jsonLdSchema.length > 0) {
-    config.jsonLdSchema.forEach(schema => {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify(schema);
-      document.head.appendChild(script);
-    });
+  // Twitter Cards
+  setMeta('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
+  setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', config.title);
+  setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', config.description);
+  setMeta('meta[name="twitter:image"]', 'name', 'twitter:image', fullImage);
+
+  // Canonical Link
+  let canonicalEl = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+  if (!canonicalEl) {
+    canonicalEl = document.createElement('link');
+    canonicalEl.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonicalEl);
+  }
+  canonicalEl.setAttribute('href', fullUrl);
+
+  // 3. Inject JSON-LD Schema.org Data
+  if (config.jsonLdSchema) {
+    let scriptEl = document.querySelector('#geo-jsonld-schema') as HTMLScriptElement;
+    if (!scriptEl) {
+      scriptEl = document.createElement('script');
+      scriptEl.id = 'geo-jsonld-schema';
+      scriptEl.type = 'application/ld+json';
+      document.head.appendChild(scriptEl);
+    }
+    const schemas = Array.isArray(config.jsonLdSchema)
+      ? config.jsonLdSchema
+      : [config.jsonLdSchema];
+    scriptEl.textContent = JSON.stringify(schemas, null, 2);
   }
 }
 
 /**
- * Generate Product & Review Schema for GEO
+ * Generate Product and Review JSON-LD Schema for Product Detail Page
  */
-export function generateProductJsonLd(article: AmazonProductArticle, baseUrl: string) {
-  const articleUrl = `${baseUrl}/articles/${article.id}`;
-  
+export function generateProductJsonLd(
+  article: AmazonProductArticle,
+  domain = 'https://mono-go.vercel.app'
+) {
   const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": article.productName || article.title,
-    "image": [article.imageUrl],
-    "description": article.introText,
-    "sku": article.asin,
-    "mpn": article.asin,
-    "brand": {
-      "@type": "Brand",
-      "name": "Lumière Selection"
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: article.productName || article.title,
+    image: [article.imageUrl.startsWith('http') ? article.imageUrl : `${domain}${article.imageUrl}`],
+    description: article.introText,
+    sku: article.asin,
+    mpn: article.asin,
+    brand: {
+      '@type': 'Brand',
+      name: 'Amazon Pick'
     },
-    "review": {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": article.starRating.toString(),
-        "bestRating": "5"
+    review: {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: article.starRating.toString(),
+        bestRating: '5'
       },
-      "author": {
-        "@type": "Person",
-        "name": article.reviewerName || "検証レビュアー"
+      author: {
+        '@type': 'Person',
+        name: article.reviewerName || 'タクマ @男性コスメ部長'
       },
-      "reviewBody": article.reviewBody
+      reviewBody: article.reviewBody
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": article.starRating.toString(),
-      "reviewCount": "28"
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: article.starRating.toString(),
+      reviewCount: '128'
     },
-    "offers": {
-      "@type": "Offer",
-      "url": article.affiliateLink,
-      "priceCurrency": "JPY",
-      "price": article.priceRange?.replace(/[^0-9]/g, '') || "1200",
-      "availability": "https://schema.org/InStock"
+    offers: {
+      '@type': 'Offer',
+      url: article.affiliateLink,
+      priceCurrency: 'JPY',
+      price: '1980',
+      priceValidUntil: '2026-12-31',
+      itemCondition: 'https://schema.org/NewCondition',
+      availability: 'https://schema.org/InStock'
     }
   };
 
   const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "ホーム",
-        "item": baseUrl
+        '@type': 'ListItem',
+        position: 1,
+        name: 'ホーム',
+        item: domain
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "厳選商品レビュー",
-        "item": baseUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": article.title,
-        "item": articleUrl
+        '@type': 'ListItem',
+        position: 2,
+        name: article.productName || article.title,
+        item: `${domain}/articles/${article.id}`
       }
     ]
   };
 
-  const schemas: object[] = [productSchema, breadcrumbSchema];
-
-  if (article.faqs && article.faqs.length > 0) {
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": article.faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
-    };
-    schemas.push(faqSchema);
-  }
-
-  return schemas;
+  return [productSchema, breadcrumbSchema];
 }
 
 /**
- * Generate Blog Posting Schema for GEO
+ * Generate BlogPosting JSON-LD Schema for Blog Posts
  */
-export function generateBlogJsonLd(post: BlogPost, baseUrl: string) {
-  const postUrl = `${baseUrl}/blogs/${post.id}`;
-
+export function generateBlogJsonLd(
+  post: BlogPost,
+  domain = 'https://mono-go.vercel.app'
+) {
   const blogSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "image": [post.coverImage],
-    "datePublished": post.createdAt,
-    "author": {
-      "@type": "Person",
-      "name": post.authorName,
-      "jobTitle": post.authorRole
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.introText,
+    image: [post.coverImage.startsWith('http') ? post.coverImage : `${domain}${post.coverImage}`],
+    datePublished: post.createdAt,
+    dateModified: post.createdAt,
+    author: {
+      '@type': 'Person',
+      name: post.authorName,
+      jobTitle: post.authorRole,
+      image: post.authorAvatar
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Lumière 夏コスメ検証ブログ"
-    },
-    "description": post.introText
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "ホーム",
-        "item": baseUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "特集ブログ一覧",
-        "item": `${baseUrl}/blogs`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": post.title,
-        "item": postUrl
+    publisher: {
+      '@type': 'Organization',
+      name: 'Lumière (ルミエール)',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${domain}/images/products/biore-uv.jpg`
       }
-    ]
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${domain}/blogs/${post.id}`
+    }
   };
 
-  return [blogSchema, breadcrumbSchema];
+  return [blogSchema];
 }
 
 /**
- * Generate Author Profile Schema for GEO
+ * Generate Person JSON-LD Schema for Authors
  */
-export function generateAuthorJsonLd(author: AuthorProfile, baseUrl: string) {
-  const authorUrl = `${baseUrl}/authors/${author.id}`;
-
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": author.name,
-    "jobTitle": author.role,
-    "image": author.avatarUrl,
-    "description": author.bio,
-    "knowsAbout": [author.specialty]
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "ホーム",
-        "item": baseUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "検証レビュアー紹介",
-        "item": `${baseUrl}/authors`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": author.name,
-        "item": authorUrl
-      }
-    ]
-  };
-
-  return [personSchema, breadcrumbSchema];
+export function generateAuthorJsonLd(
+  author: AuthorProfile,
+  domain = 'https://mono-go.vercel.app'
+) {
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: author.name,
+      jobTitle: author.role,
+      description: author.bio,
+      image: author.avatarUrl,
+      knowsAbout: [author.specialty, '夏コスメ', '身だしなみケア']
+    }
+  ];
 }

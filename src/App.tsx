@@ -4,6 +4,7 @@ import { ProductListPage } from './pages/ProductListPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { BlogListPage } from './pages/BlogListPage';
 import { BlogPostPage } from './pages/BlogPostPage';
+import { ProductComparisonPage } from './pages/ProductComparisonPage';
 import { AuthorListPage } from './pages/AuthorListPage';
 import { AuthorDetailPage } from './pages/AuthorDetailPage';
 import { Store, Sparkles, Users } from 'lucide-react';
@@ -66,6 +67,16 @@ export default function App() {
       return (
         <BlogPostPage
           postId={postId}
+          onNavigate={navigateTo}
+        />
+      );
+    }
+
+    if (currentPath.startsWith('/compare/')) {
+      const compareId = currentPath.replace('/compare/', '');
+      return (
+        <ProductComparisonPage
+          compareId={compareId}
           onNavigate={navigateTo}
         />
       );
