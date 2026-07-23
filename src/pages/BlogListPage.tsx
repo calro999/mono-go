@@ -30,10 +30,10 @@ export function BlogListPage({ onNavigate }: BlogListPageProps) {
               EDITORIAL BLOG & VS COMPARISONS
             </span>
             <h1 className="text-2xl sm:text-4xl font-black leading-tight mb-3">
-              検証ブログ＆超ロングテールVS比較対決
+              コスメ徹底検証ブログ＆人気アイテム対決比較
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              コスメ部長が本気で試した推し10選大特集と、海・プール・部活・敏感肌など具体的なお悩み直撃の比較検証記事です。
+              コスメ部長が本気で試した推し10選大特集と、海・プール・部活・敏感肌など具体的に悩む方へ向けた徹底比較検証記事です。
             </p>
           </div>
         </div>
@@ -124,11 +124,11 @@ export function BlogListPage({ onNavigate }: BlogListPageProps) {
             <div>
               <span className="text-xs font-black text-indigo-600 uppercase tracking-widest">VS COMPARISON SERIES</span>
               <h2 className="text-xl sm:text-2xl font-black text-slate-900">
-                ⚔️ どっちを買うべき？目的・お悩み別VS比較検証シリーズ
+                ⚔️ どっちを買うべき？目的・お悩み別アイテム対決比較
               </h2>
             </div>
             <span className="text-xs font-bold bg-indigo-100 text-indigo-900 px-3 py-1 rounded-full">
-              超ロングテール対比
+              お悩み直撃検証
             </span>
           </div>
 

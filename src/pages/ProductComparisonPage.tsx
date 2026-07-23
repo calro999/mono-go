@@ -130,7 +130,7 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
         <div className="space-y-3">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="px-3 py-1 bg-amber-400 text-slate-950 text-xs font-black rounded-full uppercase tracking-wider">
-              ⚔️ 超ロングテールVS徹底対比
+              ⚔️ 目的・悩み別ガチンコ徹底比較
             </span>
             <span className="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-extrabold rounded-full">
               ターゲット: {comparison.targetUserCategory}
@@ -147,7 +147,7 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
         {/* AI-SEO / GEO Summary Banner */}
         <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 rounded-2xl border border-indigo-500/40 shadow-lg space-y-2">
           <div className="text-amber-400 font-black text-xs uppercase tracking-wider flex items-center gap-1.5">
-            <span>⚡ AI即回答対決サマリー (AI Engine Direct Answer)</span>
+            <span>⚡ 3秒でわかる！編集部の対決結論サマリー</span>
           </div>
           <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
             {comparison.verdictSummary}

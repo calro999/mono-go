@@ -2699,53 +2699,5 @@ export const COMPARISON_POSTS: ProductComparison[] = [
     "verdictSummary": "メイク・発色・落ちにくさを重視するなら「リップモンスター」！ひび割れや紫外線ダメージの保湿ケアなら「メルティクリームリップ」が一番です。",
     "contentMarkdown": "### リップモンスター VS メルティクリームリップ 比較\n\n夏場の唇ケア＆メイクに欠かせない大人気アイテム。\n\n#### 1. 1日中落ちない美発色「リップモンスター」\n落ちないリップの金字塔。飲み会やランチ後も塗り直しいらずで美発色が続きます。\n\n#### 2. 体温でとろけて潤す「メルティクリームリップ」\n水のように唇になじみ、冷房の効いた部屋での乾燥から唇を守り抜きます。",
     "createdAt": "2026-07-23"
-  },
-  {
-    id: 'art-b0bvb89xft',
-    title: `LANCOME タンイドル ウルトラ ウェア リキッドの口コミを真顔でレビュー`,
-    originalUrl: 'https://www.amazon.co.jp/s?k=LANCOME%20%E3%82%BF%E3%83%B3%E3%82%A4%E3%83%89%E3%83%AB%20%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%20%E3%82%A6%E3%82%A7%E3%82%A2%20%E3%83%AA%E3%82%AD%E3%83%83%E3%83%89&tag=mattan0290c-22',
-    asin: 'B0BVB89XFT',
-    productName: 'LANCOME タンイドル ウルトラ ウェア リキッド',
-    category: 'makeup',
-    imageUrl: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=600',
-    starRating: 4.5,
-    introText: `毎日のメイクで疲れた肌におすすめのリキッドファンデーション`,
-    features: [`長時間のウェア`, `自然なフィニッシュ`, `肌に優しい成分`],
-    pros: [`メイクが簡単にできる`, `肌のトラブルが減った`, `見た目が明るくなる`],
-    cons: [`価格が高め`, `肌のタイプによってはあわない`],
-    reviewBody: `### LANCOME タンイドル ウルトラ ウェア リキッドを買うまで 
- 私は毎日メイクをしているのですが、リキッドファンデーションを使っています。今までいろいろな商品を使ってきましたが、完全に満足できるものにはなりませんでした。 
-### 初めて使った感想 
- その中にLANCOME タンイドル ウルトラ ウェア リキッドを知りました。まず気になったのは、長時間持続するということでした。確かにその通りで、1日中メイクが崩れずに済みます。 
-###肌の変化 
- 使い始めて1ヶ月ほど経ちましたが、肌のトラブルが減ったのが実感できます。かざり物の付かない自然な見た目になっている気がします。
-### まとめ 
- LANCOME タンイドル ウルトラ ウェア リキッドは、長時間のメイクをしたい人におすすめです。ただし、高価格帯なのでお金に余裕のある方におすすめです。`,
-    ctaTitle: `今すぐLANCOME タンイドル ウルトラ ウェア リキッドをチェック`,
-    affiliateLink: 'https://www.amazon.co.jp/s?k=LANCOME%20%E3%82%BF%E3%83%B3%E3%82%A4%E3%83%89%E3%83%AB%20%E3%82%A6%E3%83%AB%E3%83%88%E3%83%A9%20%E3%82%A6%E3%82%A7%E3%82%A2%20%E3%83%AA%E3%82%AD%E3%83%83%E3%83%89&tag=mattan0290c-22',
-    createdAt: '2026-07-23 02:06:08',
-    estimatedPV: Math.floor(Math.random() * 500) + 100,
-    clicks: Math.floor(Math.random() * 50) + 10,
-    earnings: Math.floor(Math.random() * 5000) + 500,
-    aiModelUsed: 'Groq Llama 3.3 70B',
-    summaryKeyPoints: [
-      `長時間のメイクに適している`,
-      `自然な見た目になる`,
-      `肌のトラブルが減る`
-    ],
-    faqs: [
-      {
-        question: `LANCOME タンイドル ウルトラ ウェア リキッドの価格は?`,
-        answer: `約3万〜4万円`
-      },
-      {
-        question: `LANCOME タンイドル ウルトラ ウェア リキッドの使用感は?`,
-        answer: `しっとり、肌に優しい`
-      }
-    ],
-    reviewerName: `アヤ @美容ライター`,
-    reviewerRole: `元美容部員・日本化粧品検定1級`,
-    verificationDays: 30,
-    priceRange: `約30,000〜40,000円`
   }
 ];

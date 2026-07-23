@@ -53,11 +53,11 @@ export function ProductListPage({ articles, onNavigate }: ProductListPageProps) 
           </div>
         </div>
 
-        {/* VS Comparison Featured Grid (Ultra Long-Tail & High Retention Booster) */}
+        {/* VS Comparison Featured Grid (Retention Booster) */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-black text-slate-900 border-l-4 border-amber-400 pl-3">
-              ⚔️ どっちを買うべき？超ロングテールVS比較対決
+              ⚔️ どっちを買うべき？お悩み・目的別ガチンコ比較対決
             </h2>
             <span className="text-xs text-indigo-600 font-extrabold">
               用途・悩み別で徹底検証

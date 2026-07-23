@@ -79,10 +79,10 @@ export function ProductDetailPage({ articleId, articles, onNavigate }: ProductDe
           </h1>
         </div>
 
-        {/* AI-SEO / GEO Highlight Block (Optimized for AI Engine Snippets) */}
-        <div className="bg-gradient-to-r from-indigo-900 to-slate-900 text-white p-5 rounded-2xl border border-indigo-700/50 shadow-md space-y-2">
-          <div className="flex items-center gap-2 text-amber-400 font-black text-xs uppercase tracking-wider">
-            <span>⚡ AI即答要約 (AI-SEO & GEO Optimized Summary)</span>
+        {/* Direct Answer Summary Block */}
+        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 rounded-3xl border border-indigo-500/40 shadow-xl space-y-3">
+          <div className="text-amber-400 font-black text-xs uppercase tracking-wider flex items-center gap-1.5">
+            <span>⚡ 3秒でわかる！この記事の要点＆結論</span>
           </div>
           <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
             <strong>結論:</strong> {article.introText} 猛暑環境（気温35℃以上）の実体感テストにおいて、一般的な製品と比較して防護持続力と使用感の面で最高クラスの評価を獲得。
