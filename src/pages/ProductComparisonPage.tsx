@@ -168,18 +168,20 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
                   alt={productA.productName || productA.title}
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
-                  className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover ${productA.asin === 'B09NPPZLN1' ? 'opacity-100' : 'opacity-70 group-hover:scale-105 transition-transform duration-500'}`}
                 />
                 
-                {/* Slightly Softened Overlay so Unsplash image is tastefully visible */}
-                <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex flex-col items-center justify-center p-4 text-center z-10">
-                  <span className="px-2.5 py-0.5 bg-indigo-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider mb-2 shadow-sm">
-                    ENTRY A
-                  </span>
-                  <h4 className="text-white font-black text-sm sm:text-base leading-snug tracking-tight drop-shadow-md border-b-2 border-amber-400 pb-1 max-w-[90%]">
-                    {productA.productName || productA.title}
-                  </h4>
-                </div>
+                {/* Reflea: No Overlay, All Others: Dark Overlay */}
+                {productA.asin !== 'B09NPPZLN1' && (
+                  <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex flex-col items-center justify-center p-4 text-center z-10">
+                    <span className="px-2.5 py-0.5 bg-indigo-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider mb-2 shadow-sm">
+                      ENTRY A
+                    </span>
+                    <h4 className="text-white font-black text-sm sm:text-base leading-snug tracking-tight drop-shadow-md border-b-2 border-amber-400 pb-1 max-w-[90%]">
+                      {productA.productName || productA.title}
+                    </h4>
+                  </div>
+                )}
               </div>
               <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed font-medium">
                 {productA.introText}
@@ -215,18 +217,20 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
                   alt={productB.productName || productB.title}
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
-                  className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover ${productB.asin === 'B09NPPZLN1' ? 'opacity-100' : 'opacity-70 group-hover:scale-105 transition-transform duration-500'}`}
                 />
                 
-                {/* Slightly Softened Overlay so Unsplash image is tastefully visible */}
-                <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex flex-col items-center justify-center p-4 text-center z-10">
-                  <span className="px-2.5 py-0.5 bg-purple-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider mb-2 shadow-sm">
-                    ENTRY B
-                  </span>
-                  <h4 className="text-white font-black text-sm sm:text-base leading-snug tracking-tight drop-shadow-md border-b-2 border-purple-400 pb-1 max-w-[90%]">
-                    {productB.productName || productB.title}
-                  </h4>
-                </div>
+                {/* Reflea: No Overlay, All Others: Dark Overlay */}
+                {productB.asin !== 'B09NPPZLN1' && (
+                  <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex flex-col items-center justify-center p-4 text-center z-10">
+                    <span className="px-2.5 py-0.5 bg-purple-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider mb-2 shadow-sm">
+                      ENTRY B
+                    </span>
+                    <h4 className="text-white font-black text-sm sm:text-base leading-snug tracking-tight drop-shadow-md border-b-2 border-purple-400 pb-1 max-w-[90%]">
+                      {productB.productName || productB.title}
+                    </h4>
+                  </div>
+                )}
               </div>
               <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed font-medium">
                 {productB.introText}
@@ -263,13 +267,33 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-5 bg-white p-5 rounded-2xl border border-amber-200">
-            <img
-              src={thirdRec.imageUrl}
-              alt={thirdRec.title}
-              referrerPolicy="no-referrer"
-              onError={handleImageError}
-              className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover flex-shrink-0 border border-slate-200"
-            />
+            {thirdRec.asin === 'B09NPPZLN1' ? (
+              /* Reflea Only: No Overlay, 100% Clear Photo */
+              <img
+                src={thirdRec.imageUrl}
+                alt={thirdRec.title}
+                referrerPolicy="no-referrer"
+                onError={handleImageError}
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover flex-shrink-0 border border-slate-200 shadow-sm"
+              />
+            ) : (
+              /* All Other Products: Dark Overlay to hide Unsplash photo */
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden bg-slate-900 flex-shrink-0 border border-slate-200 shadow-inner group">
+                <img
+                  src={thirdRec.imageUrl}
+                  alt={thirdRec.title}
+                  referrerPolicy="no-referrer"
+                  onError={handleImageError}
+                  className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform"
+                />
+                <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex items-center justify-center p-2 text-center z-10">
+                  <span className="text-white font-black text-[10px] leading-tight drop-shadow-md border-b border-amber-400 pb-0.5 line-clamp-3">
+                    {thirdRec.title}
+                  </span>
+                </div>
+              </div>
+            )}
+            
             <div className="flex-1 space-y-2 text-center sm:text-left">
               <h4 className="font-black text-slate-900 text-base leading-snug">
                 {thirdRec.title}

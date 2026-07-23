@@ -140,22 +140,24 @@ export function ProductListPage({ articles, onNavigate }: ProductListPageProps) 
               onClick={() => onNavigate(`/articles/${art.id}`)}
               className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col cursor-pointer group"
             >
-              {/* Product Image Container with Softened Dark Text Overlay */}
+              {/* Product Image Container: Reflea has NO Overlay, all others have Dark Text Overlay */}
               <div className="relative aspect-[4/3] bg-slate-900 overflow-hidden">
                 <img
                   src={art.imageUrl}
                   alt={art.productName || art.title}
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
-                  className="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-500"
+                  className={`w-full h-full object-cover ${art.asin === 'B09NPPZLN1' ? 'opacity-100' : 'opacity-75 group-hover:scale-105 transition-transform duration-500'}`}
                 />
                 
-                {/* Tastefully Softened Dark Overlay so photo subtle texture shows */}
-                <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex items-center justify-center p-4 text-center z-0">
-                  <span className="text-white font-black text-sm sm:text-base leading-snug drop-shadow-lg line-clamp-3 border-b-2 border-amber-400/80 pb-1">
-                    {art.productName || art.title}
-                  </span>
-                </div>
+                {/* Reflea Only: No Overlay, All Other Products: Dark Overlay with Center Text */}
+                {art.asin !== 'B09NPPZLN1' && (
+                  <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex items-center justify-center p-4 text-center z-0">
+                    <span className="text-white font-black text-sm sm:text-base leading-snug drop-shadow-lg line-clamp-3 border-b-2 border-amber-400/80 pb-1">
+                      {art.productName || art.title}
+                    </span>
+                  </div>
+                )}
 
                 {art.asin === 'B09NPPZLN1' && (
                   <span className="absolute top-3 left-3 px-3 py-1 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-slate-950 font-black text-xs rounded-lg shadow-lg border border-amber-200 z-10 animate-pulse">
