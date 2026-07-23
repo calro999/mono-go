@@ -20,7 +20,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Listen to browser Back / Forward buttons (popstate)
+  // Listen to browser Back / Forward buttons (popstate) & Track Virtual Pageviews for Google Tag
   useEffect(() => {
     const handlePopState = () => {
       setCurrentPath(window.location.pathname);
@@ -29,6 +29,16 @@ export default function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Send Google Analytics / Search Console Virtual Pageview on EVERY route change
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('config', 'G-JJQDE7L687', {
+        page_path: currentPath,
+        page_title: document.title,
+      });
+    }
+  }, [currentPath]);
 
   // Determine active tab for header highlighting
   const isArticlesTab = currentPath === '/' || currentPath.startsWith('/articles');
