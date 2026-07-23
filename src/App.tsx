@@ -145,7 +145,7 @@ export default function App() {
               }`}
             >
               <Store className="w-3.5 h-3.5 text-amber-400" />
-              <span>厳選商品レビュー (32選)</span>
+              <span>厳選商品レビュー ({INITIAL_ARTICLES.length}選)</span>
             </button>
 
             <button
