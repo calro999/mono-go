@@ -85,13 +85,57 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
         affiliateLink: 'https://www.amazon.co.jp/dp/B00113W3I4?tag=mattan0290c-22'
       };
     }
-    if (comparison.id === 'lipmonster-vs-meltylip') {
+    if (comparison.id === 'ihada-vs-vtcica') {
+      return {
+        asin: 'B088VWRMLK',
+        title: 'メラノCC 薬用しみ対策 美白化粧水 (170ml)',
+        imageUrl: '/images/products/art-b088vwrmlk.jpg',
+        badge: '👑 日焼け後の集中ビタミンCシミ予防の第3の選択肢',
+        comment: '「肌の鎮静や保湿だけでなく、日焼けした肌をシミ・ソバカスにさせないアプローチならメラノCC！角質層まで浸透するビタミンC誘導体で透明感をキープします。」',
+        articleId: 'art-b088vwrmlk',
+        affiliateLink: 'https://www.amazon.co.jp/dp/B088VWRMLK?tag=mattan0290c-22'
+      };
+    }
+    if (comparison.id === 'melanocc-vs-kanebo') {
+      return {
+        asin: 'B083PXR487',
+        title: '資生堂 IHADA (イハダ) 薬用ナイトパック (70g)',
+        imageUrl: '/images/products/art-b083pxr487.jpg',
+        badge: '👑 日焼け直後の火照り・バリア機能修復の第3の決定版',
+        comment: '「日中の予防やビタミンC補給に加えて、紫外線を浴びてダメージを受けた夜のバリア機能修復ならイハダ！塗って寝るだけで高精製ワセリンが翌朝の肌を復活させます。」',
+        articleId: 'art-b083pxr487',
+        affiliateLink: 'https://www.amazon.co.jp/dp/B083PXR487?tag=mattan0290c-22'
+      };
+    }
+    if (comparison.id === 'andhoney-vs-refa') {
+      return {
+        asin: 'B0CVWZQKZK',
+        title: 'オージュア QU クエンチ ヘアトリートメント',
+        imageUrl: '/images/products/art-b094z88ykc.jpg',
+        badge: '👑 夏の髪のパサつきサロン品質修復の第3の選択肢',
+        comment: '「日常のオイルケアだけでなく、夏の強力な紫外線で痛んだ髪をサロンクオリティで根本修復したいならオージュア！水分保持力を高めて毛先まで滑らかに導きます。」',
+        articleId: 'art-b0cvwzqkzk',
+        affiliateLink: 'https://www.amazon.co.jp/dp/B0CVWZQKZK?tag=mattan0290c-22'
+      };
+    }
+    if (comparison.id === 'gatsby-ice-vs-biore-hiyashi') {
+      return {
+        asin: 'B0073B9YJ6',
+        title: 'ギャツビー 薬用ボディペーパー 徳用36枚',
+        imageUrl: '/images/products/art-b0073b9yj6.jpg',
+        badge: '👑 破れない超厚手＆殺菌防臭の第3の決定版シート',
+        comment: '「瞬間冷却だけでなく、1枚で上半身まるごとガシガシ拭ける超厚手と除菌防臭を求めるならギャツビーボディペーパー！部活・スポーツ後の汗ダク肌を一瞬で清潔リセット。」',
+        articleId: 'art-b0073b9yj6',
+        affiliateLink: 'https://www.amazon.co.jp/dp/B0073B9YJ6?tag=mattan0290c-22'
+      };
+    }
+    if (comparison.id === 'romand-vs-kate') {
       return {
         asin: 'B0CGD5G1F4',
         title: 'キャンメイク プランプリップケアブロード 01',
         imageUrl: '/images/products/art-b0cgd5g1f4.jpg',
-        badge: '👑 縦じわ補正・ぷっくり高保湿プランパー第3の選択肢',
-        comment: '「色落ち対策だけでなく、夏の冷房で乾いた唇をぷっくりふっくら整えたいならキャンメイクのプランパー！デパコス級のツヤと清涼感で荒れた唇を一瞬でレスキューします。」',
+        badge: '👑 落ちにくさと縦じわふっくら保湿の第3の選択肢',
+        comment: '「落ちにくい高発色メイクと合わせて、夏の乾燥した唇をふっくらプランプ整えたいならキャンメイク！デパコス級の清涼感とツヤを叶えます。」',
         articleId: 'art-b0cgd5g1f4',
         affiliateLink: 'https://www.amazon.co.jp/dp/B0CGD5G1F4?tag=mattan0290c-22'
       };

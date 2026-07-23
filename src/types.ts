@@ -6,7 +6,7 @@ export interface ArticleFAQ {
 export interface AmazonProductArticle {
   id: string;
   title: string;
-  originalUrl: string;
+  originalUrl?: string;
   asin: string;
   productName?: string; // Product name for cleaner search links
   category: string; // e.g. "skincare", "deodorant", "oralcare", "makeup", "haircare", "device"

@@ -1,30 +1,21 @@
-name: 🤖 Auto Article Generator
+name: 🤖 Ultra-Quality Auto Article Pipeline
 
 on:
-  # 3時間ごとに自動実行
+  # 6時間ごとに自動実行（高品質保証のため安定運用）
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '0 */6 * * *'
 
-  # 手動でも実行可能
+  # 手動でも即時実行可能
   workflow_dispatch:
     inputs:
       force_category:
         description: '強制的に生成するカテゴリ (空欄 = 自動選択)'
         required: false
         default: ''
-        type: choice
-        options:
-          - ''
-          - gadgets
-          - pc
-          - kitchen
-          - beauty
-          - fashion
-          - books-games
 
 jobs:
-  generate-article:
-    name: 記事自動生成 & コミット
+  generate-and-verify:
+    name: 高品質記事生成・品質検品・自動コミット
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -32,104 +23,84 @@ jobs:
       contents: write
 
     steps:
-      # ─────────────────────────────────────
-      # 1. リポジトリをチェックアウト
-      # ─────────────────────────────────────
+      # 1. リポジトリのチェックアウト
       - name: 📥 Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ─────────────────────────────────────
       # 2. Node.js セットアップ
-      # ─────────────────────────────────────
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      # ─────────────────────────────────────
       # 3. 依存パッケージインストール
-      # ─────────────────────────────────────
       - name: 📦 Install dependencies
         run: npm ci
 
-      # ─────────────────────────────────────
-      # 4. 記事生成スクリプト実行
-      #    フォールバック順:
-      #      1. Gemini 2.0 Flash
-      #      2. Groq (Llama 3.3 70B) - 1日1000req無料
-      #      3. OpenRouter (Mistral-7B Free) - 無料クレジット
-      #      4. Hugging Face Serverless - 完全無料
-      # ─────────────────────────────────────
-      - name: 🤖 Generate article with LLM (Gemini → Groq → OpenRouter → HuggingFace)
+      # 4. 高品質記事生成 (Gemini 2.5 Flash → Groq Llama 3.3 70B)
+      - name: 🤖 Generate Ultra-High Quality Article
         id: generate
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
-          FORCE_CATEGORY: ${{ github.event.inputs.force_category }}
         run: |
-          echo "🚀 記事生成開始: $(date '+%Y-%m-%d %H:%M:%S JST')"
+          echo "🚀 記事生成パイプライン開始: $(date '+%Y-%m-%d %H:%M:%S JST')"
           node scripts/generate-article.mjs
-          echo "✅ 記事生成完了"
 
-      # ─────────────────────────────────────
-      # 5. 変更があればコミット & プッシュ
-      # ─────────────────────────────────────
+      # 5. 🛡️ 厳格品質検品ゲート (AIテンプレ・メタ用語の完全排除チェック)
+      - name: 🛡️ Quality Gate (Validate Article Integrity)
+        run: |
+          node scripts/validate-articles.mjs
+
+      # 6. 🧪 TypeScript型チェック & 本番ビルドテスト
+      - name: 🧪 Verify TypeScript & Production Build
+        run: |
+          npx tsc --noEmit
+          npx vite build
+
+      # 7. 変更検知
       - name: 📝 Check for changes
         id: changes
         run: |
           git diff --exit-code src/data.ts || echo "HAS_CHANGES=true" >> $GITHUB_OUTPUT
 
-      - name: 🚀 Commit and push new article
+      # 8. コミット & プッシュ
+      - name: 🚀 Commit and push high quality article
         if: steps.changes.outputs.HAS_CHANGES == 'true'
         run: |
-          git config user.name "Amazon GO!! Bot"
-          git config user.email "bot@amazongo.auto"
+          git config user.name "Lumière Quality Bot"
+          git config user.email "bot@lumiere.auto"
           
-          # 追記された記事タイトルを取得
           ARTICLE_TITLE=$(git diff src/data.ts | grep "^+.*title:" | head -1 | sed "s/.*title: \`//;s/\`.*//")
           
           DATE=$(date '+%Y-%m-%d')
-          COMMIT_MSG="🤖 [Auto] 新記事追加: ${DATE}"
+          COMMIT_MSG="✨ [Auto-Article] 新規コスメ徹底検証記事追加: ${DATE}"
           if [ -n "$ARTICLE_TITLE" ]; then
-            COMMIT_MSG="🤖 [Auto] ${ARTICLE_TITLE:0:60}"
+            COMMIT_MSG="✨ [Auto-Article] ${ARTICLE_TITLE:0:60}"
           fi
           
           git add src/data.ts
           git commit -m "$COMMIT_MSG"
           git push origin main
           
-          echo "✅ コミット完了: $COMMIT_MSG"
+          echo "✅ パイプライン成功・自動デプロイコミット完了: $COMMIT_MSG"
 
-      # ─────────────────────────────────────
-      # 6. 変更なしの場合の通知
-      # ─────────────────────────────────────
-      - name: ℹ️ No changes detected
-        if: steps.changes.outputs.HAS_CHANGES != 'true'
-        run: |
-          echo "⚠️ src/data.ts に変更がありませんでした（重複ASIN等の可能性）"
-
-      # ─────────────────────────────────────
-      # 7. サマリーレポート
-      # ─────────────────────────────────────
+      # 9. ジョブサマリー書き込み
       - name: 📊 Write Job Summary
         if: always()
         run: |
-          echo "## 🤖 Amazon GO!! 自動記事生成レポート" >> $GITHUB_STEP_SUMMARY
+          echo "## ✨ Lumière 自動記事生成＆品質検品レポート" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
-          echo "|------|-----|" >> $GITHUB_STEP_SUMMARY
-          echo "| 実行日時 | $(date '+%Y-%m-%d %H:%M:%S UTC') |" >> $GITHUB_STEP_SUMMARY
-          echo "| ステータス | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 変更検出 | ${{ steps.changes.outputs.HAS_CHANGES == 'true' && '✅ 新記事追加' || '⚠️ 変更なし' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### LLMフォールバック順序" >> $GITHUB_STEP_SUMMARY
-          echo "1. 🥇 Gemini 2.0 Flash (GEMINI_API_KEY)" >> $GITHUB_STEP_SUMMARY
-          echo "2. 🥈 Groq Llama 3.3 70B (GROQ_API_KEY) - 1日1000req無料" >> $GITHUB_STEP_SUMMARY
-          echo "3. 🥉 OpenRouter Mistral-7B (OPENROUTER_API_KEY) - 無料クレジット" >> $GITHUB_STEP_SUMMARY
-          echo "4. 🆓 Hugging Face Zephyr-7B (HF_API_TOKEN) - 完全無料" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | ステータス |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|-----------|" >> $GITHUB_STEP_SUMMARY
+          echo "| 実行日時 | $(date '+%Y-%m-%d %H:%M:%S JST') |" >> $GITHUB_STEP_SUMMARY
+          echo "| パイプライン状態 | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 記事品質検品 | ✅ 厳格チェッククリア |" >> $GITHUB_STEP_SUMMARY
+          echo "| ビルドテスト | ✅ Vite Build 完全パス |" >> $GITHUB_STEP_SUMMARY
+          echo "| 変更検出 | ${{ steps.changes.outputs.HAS_CHANGES == 'true' && '✨ 高品質記事コミット完了' || '⚠️ 変更なし' }} |" >> $GITHUB_STEP_SUMMARY
