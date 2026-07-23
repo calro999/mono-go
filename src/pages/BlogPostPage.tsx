@@ -29,16 +29,30 @@ export function BlogPostPage({ postId, onNavigate }: BlogPostPageProps) {
 
   if (!post) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-        <h2 className="text-2xl font-bold text-slate-800 mb-4">
-          指定された特集ブログ記事が見つかりませんでした。
-        </h2>
-        <button
-          onClick={() => onNavigate('/blogs')}
-          className="px-6 py-2.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition"
-        >
-          特集ブログ一覧へ戻る
-        </button>
+      <div className="min-h-screen bg-slate-50 py-16 px-4 flex items-center justify-center">
+        <div className="max-w-md w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-xl text-center space-y-4">
+          <div className="text-4xl">🔍</div>
+          <h2 className="text-xl font-black text-slate-900">
+            お探しの特集ブログ記事が見つかりませんでした
+          </h2>
+          <p className="text-xs text-slate-500 leading-relaxed">
+            URLが変更されたか、削除された可能性があります。最新の2026年夏コスメ大特集ブログ一覧からお選びください。
+          </p>
+          <div className="pt-2 flex flex-col gap-2">
+            <button
+              onClick={() => onNavigate('/blogs')}
+              className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs rounded-xl transition"
+            >
+              特集ブログ一覧を見る →
+            </button>
+            <button
+              onClick={() => onNavigate('/')}
+              className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition"
+            >
+              トップ画面へ戻る
+            </button>
+          </div>
+        </div>
       </div>
     );
   }

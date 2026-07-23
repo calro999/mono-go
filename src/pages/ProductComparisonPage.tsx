@@ -102,19 +102,26 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
               <span className="text-xs font-black text-indigo-600 bg-indigo-100 px-2.5 py-1 rounded-md">
                 ENTRY A
               </span>
-              <div className="relative aspect-square rounded-xl overflow-hidden bg-white border border-slate-200">
+              <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-inner group">
                 <img
                   src={productA.imageUrl}
                   alt={productA.productName || productA.title}
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover blur-[1px] opacity-40 scale-105"
                 />
+                
+                {/* Heavy Dark Overlay with Big Bold Title */}
+                <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[2px] flex flex-col items-center justify-center p-4 text-center z-10">
+                  <span className="px-2.5 py-0.5 bg-indigo-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider mb-2 shadow-sm">
+                    ENTRY A
+                  </span>
+                  <h4 className="text-white font-black text-sm sm:text-base leading-snug tracking-tight drop-shadow-md border-b-2 border-amber-400 pb-1 max-w-[90%]">
+                    {productA.productName || productA.title}
+                  </h4>
+                </div>
               </div>
-              <h3 className="font-extrabold text-slate-900 text-base leading-snug">
-                {productA.productName || productA.title}
-              </h3>
-              <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+              <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed font-medium">
                 {productA.introText}
               </p>
             </div>
@@ -142,19 +149,26 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
               <span className="text-xs font-black text-purple-600 bg-purple-100 px-2.5 py-1 rounded-md">
                 ENTRY B
               </span>
-              <div className="relative aspect-square rounded-xl overflow-hidden bg-white border border-slate-200">
+              <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-inner group">
                 <img
                   src={productB.imageUrl}
                   alt={productB.productName || productB.title}
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover blur-[1px] opacity-40 scale-105"
                 />
+                
+                {/* Heavy Dark Overlay with Big Bold Title */}
+                <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[2px] flex flex-col items-center justify-center p-4 text-center z-10">
+                  <span className="px-2.5 py-0.5 bg-purple-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider mb-2 shadow-sm">
+                    ENTRY B
+                  </span>
+                  <h4 className="text-white font-black text-sm sm:text-base leading-snug tracking-tight drop-shadow-md border-b-2 border-purple-400 pb-1 max-w-[90%]">
+                    {productB.productName || productB.title}
+                  </h4>
+                </div>
               </div>
-              <h3 className="font-extrabold text-slate-900 text-base leading-snug">
-                {productB.productName || productB.title}
-              </h3>
-              <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+              <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed font-medium">
                 {productB.introText}
               </p>
             </div>

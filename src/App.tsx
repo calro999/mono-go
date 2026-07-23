@@ -96,10 +96,10 @@ export default function App() {
       );
     }
 
-    // Default Fallback: Top Product List Page ( / )
+    // Safety Fallback Guard: Prevents White Screen / 404 Page Crashes
     return (
       <ProductListPage
-        articles={INITIAL_ARTICLES}
+        articles={articles}
         onNavigate={navigateTo}
       />
     );

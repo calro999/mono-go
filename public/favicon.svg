@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#312e81" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle with Border -->
+  <rect width="100" height="100" rx="28" fill="url(#bgGrad)" />
+  <rect x="2" y="2" width="96" height="96" rx="26" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-opacity="0.6" />
+
+  <!-- Monogram "L" for Lumière -->
+  <text x="36" y="70" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="58" fill="url(#goldGrad)" letter-spacing="-2">L</text>
+
+  <!-- Sparkle Accent -->
+  <path d="M 68 24 L 71 34 L 81 37 L 71 40 L 68 50 L 65 40 L 55 37 L 65 34 Z" fill="#fbbf24" />
+  <circle cx="78" cy="22" r="2.5" fill="#fef3c7" />
+</svg>

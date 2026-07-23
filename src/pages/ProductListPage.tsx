@@ -140,19 +140,19 @@ export function ProductListPage({ articles, onNavigate }: ProductListPageProps) 
               onClick={() => onNavigate(`/articles/${art.id}`)}
               className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col cursor-pointer group"
             >
-              {/* Product Image Container with Text Overlay */}
-              <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
+              {/* Product Image Container with Heavy Dark Text Overlay */}
+              <div className="relative aspect-[4/3] bg-slate-900 overflow-hidden">
                 <img
                   src={art.imageUrl}
                   alt={art.productName || art.title}
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover blur-[1px] opacity-40 group-hover:scale-105 transition-transform duration-500"
                 />
                 
-                {/* Gradient Overlay for High Contrast Text */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex items-end p-3.5 pointer-events-none">
-                  <span className="text-white font-black text-xs sm:text-sm leading-snug drop-shadow-md line-clamp-2">
+                {/* Heavy Dark Overlay for Big Center Product Name Text */}
+                <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[2px] flex items-center justify-center p-4 text-center z-0">
+                  <span className="text-white font-black text-sm sm:text-base leading-snug drop-shadow-lg line-clamp-3 border-b-2 border-amber-400/80 pb-1">
                     {art.productName || art.title}
                   </span>
                 </div>

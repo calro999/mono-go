@@ -1985,6 +1985,150 @@ export const INITIAL_ARTICLES: AmazonProductArticle[] = [
     reviewerName: 'エリ @女性コスメ部長',
     priceRange: '¥1,650前後'
   },
+  {
+    id: 'art-b0cnvdb4z7',
+    title: `輝く肌を手に入れる！POLA B.A ライト セレクターNの実感レビュー`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=POLA%20B.A%20%E3%83%A9%E3%82%A4%E3%83%88%20%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%83%BC%20N&tag=mattan0290c-22',
+    asin: 'B0CNVDB4Z7',
+    productName: 'POLA B.A ライト セレクター N',
+    category: 'skincare',
+    imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.8,
+    introText: `肌の悩みを解決したいという方のための究極の選択`,
+    features: [`高品質な成分`, `独自のセレクター技術`, `使いやすいデザイン`],
+    pros: [`使用しやすい`, `肌に負担が少ない`, `短期間で効果が表れた`],
+    cons: [`価格が高め`, `個人の肌の調子に応じて効果に差があった`],
+    reviewBody: `###POLA B.A ライト セレクターNとは
+POLAの新しいスキンケアシリーズ、B.A ライト セレクターNは、独自の技術で肌を明るく潤ませることで、美しい肌を実現することができます。
+###使用感
+実際に使用してみたところ、使用しやすく、快適な感触で肌に負担が少ないことがわかりました。
+###効果
+短期間で肌のトロトロさが増し、細かいしわもスムーズになりました。\\n###肌の変化
+30日間の使用で肌が明るくなり、透明感が増しました。`,
+    ctaTitle: `今すぐ実感してみる!`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=POLA%20B.A%20%E3%83%A9%E3%82%A4%E3%83%88%20%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%83%BC%20N&tag=mattan0290c-22',
+    createdAt: '2026-07-22 16:16:45',
+    estimatedPV: Math.floor(Math.random() * 500) + 100,
+    clicks: Math.floor(Math.random() * 50) + 10,
+    earnings: Math.floor(Math.random() * 5000) + 500,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `独自のセレクター技術が肌を明るくする`,
+      `短期間で効果が表れた`,
+      `使いやすく肌に負担が少ない`
+    ],
+    faqs: [
+      {
+        question: `肌のタイプ別に効果は変わりますか？`,
+        answer: `基本的には全ての肌タイプに効果がありますが、個人の肌の調子によっては結果に差が生じる可能性があります。`
+      },
+      {
+        question: `使用方法はどうなりますか？`,
+        answer: `基本的なスキンケアと同様に、洗顔をしてから使用します。`
+      }
+    ],
+    reviewerName: `アヤ @美容ライター`,
+    reviewerRole: `元美容部員・日本化粧品検定1級`,
+    verificationDays: 30,
+    priceRange: `約35,000円〜`
+  },
+  {
+    id: 'art-b0ct5hdkc4',
+    title: `KANEBO ヴェイル オブ デイ`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=KANEBO%20%E3%83%B4%E3%82%A7%E3%82%A4%E3%83%AB%20%E3%82%AA%E3%83%96%20%E3%83%87%E3%82%A4&tag=mattan0290c-22',
+    asin: 'B0CT5HDKC4',
+    productName: 'KANEBO ヴェイル オブ デイ',
+    category: 'skincare',
+    imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.5,
+    introText: `美しい肌とは？その答えは、KANEBO ヴェイル オブ デイにあります。`,
+    features: [`高品質なコラーゲン`, `潤いと弾力を実現`, `シンプルな使い方`],
+    pros: [`長続きする保湿感`, `簡単な使い方`, `肌のトラブル改善`],
+    cons: [`高価格帯`, `保湿成分に敏感な人向きではない`],
+    reviewBody: `### まえがき
+
+私も、美しい肌を手に入れようと、さまざまな化粧品を試してきました。しかし、肌の悩みに効くものは少ないですね。そこで、KANEBO ヴェイル オブ デイを試してみました。
+
+### 使用感
+KANEBO ヴェイル オブ デイは、シンプルな使い方で、毎日の保湿に最適です。高い保湿力で、長持ちするので、朝晩のスキンケアに最適です。
+
+### 肌の変化
+私がこの製品を使用してから、肌のトラブルが改善されました。保湿力が高いため、日中の乾燥が無くなりました。`,
+    ctaTitle: `今すぐKANEBO ヴェイル オブ デイをご購入`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=KANEBO%20%E3%83%B4%E3%82%A7%E3%82%A4%E3%83%AB%20%E3%82%AA%E3%83%96%20%E3%83%87%E3%82%A4&tag=mattan0290c-22',
+    createdAt: '2026-07-22 19:02:10',
+    estimatedPV: Math.floor(Math.random() * 500) + 100,
+    clicks: Math.floor(Math.random() * 50) + 10,
+    earnings: Math.floor(Math.random() * 5000) + 500,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `長続きする保湿力`,
+      `肌のトラブル改善`,
+      `簡単な使い方`
+    ],
+    faqs: [
+      {
+        question: `この製品は、どのような肌タイプ向けですか？`,
+        answer: `全肌タイプ向けです。`
+      },
+      {
+        question: `この製品は、敏感肌でも使用できますか？`,
+        answer: `基本的には大丈夫ですが、各個人の敏感性には差があります。ご使用になる前にパッチテストをしてください。`
+      }
+    ],
+    reviewerName: `アヤ @美容ライター`,
+    reviewerRole: `元美容部員・日本化粧品検定1級`,
+    verificationDays: 30,
+    priceRange: `約30,000円〜`
+  },
+  {
+    id: 'art-b0cpq1zj9k',
+    title: `RMK クーリングジェルでさらさらサマーモチ肌`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=RMK%20%E3%82%AF%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B8%E3%82%A7%E3%83%AB&tag=mattan0290c-22',
+    asin: 'B0CPQ1ZJ9K',
+    productName: 'RMK クーリングジェル',
+    category: 'skincare',
+    imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600',
+    starRating: 4.5,
+    introText: `夏の暑さで肌が疲れてしまったとき、クーリングジェルで心地よくさっぱりしたいと思いませんか？`,
+    features: [`クール感が長続き`, `保湿成分豊富`, `メイク下地としても適する`],
+    pros: [`即効性があり暑さを忘れる`, `乾燥肌でも安心`, `美容室レベルの品質`],
+    cons: [`チューブ式で持ち運び大変`, `夏以外の季節は使用頻度低い`],
+    reviewBody: `### クーリングジェルの導入
+夏の肌ケアに欠かせないアイテムがこちら！
+
+### 使用感
+使用した感じは、さっそく涼しい！保湿力もあるので、夏の乾燥肌にもピッタリです。
+
+### メリット
+メイク下地としても使えますし、肌に負担が少ないのもとても好印象です。`,
+    ctaTitle: `今すぐクーリングジェルで夏を乗り越えよう`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=RMK%20%E3%82%AF%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B8%E3%82%A7%E3%83%AB&tag=mattan0290c-22',
+    createdAt: '2026-07-22 21:59:51',
+    estimatedPV: Math.floor(Math.random() * 500) + 100,
+    clicks: Math.floor(Math.random() * 50) + 10,
+    earnings: Math.floor(Math.random() * 5000) + 500,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `クールな感覚`,
+      `保湿力`,
+      `メイク下地としても優秀`
+    ],
+    faqs: [
+      {
+        question: `夏以外も使って大丈夫ですか？`,
+        answer: `基本的には夏の暑さ対策用ですが、保湿成分が豊富なので通年使えるでしょう。`
+      },
+      {
+        question: `メイクを重ねる場合、使えるでしょうか？`,
+        answer: `もちろん大丈夫です。むらのない肌を作り上げてくれますよ。`
+      }
+    ],
+    reviewerName: `アヤ @美容ライター`,
+    reviewerRole: `元美容部員・日本化粧品検定1級`,
+    verificationDays: 30,
+    priceRange: `約3,500〜4,500円`
+  }
 ];
 
 export const AUTHOR_PROFILES: AuthorProfile[] = [
@@ -2427,150 +2571,6 @@ export const SPECIAL_BLOG_POSTS: BlogPost[] = [
 ぜひご自身の肌質やライフスタイルに合ったアイテムを試してみてくださいね！
 `
   },
-  {
-    id: 'art-b0cnvdb4z7',
-    title: `輝く肌を手に入れる！POLA B.A ライト セレクターNの実感レビュー`,
-    originalUrl: 'https://www.amazon.co.jp/s?k=POLA%20B.A%20%E3%83%A9%E3%82%A4%E3%83%88%20%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%83%BC%20N&tag=mattan0290c-22',
-    asin: 'B0CNVDB4Z7',
-    productName: 'POLA B.A ライト セレクター N',
-    category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600',
-    starRating: 4.8,
-    introText: `肌の悩みを解決したいという方のための究極の選択`,
-    features: [`高品質な成分`, `独自のセレクター技術`, `使いやすいデザイン`],
-    pros: [`使用しやすい`, `肌に負担が少ない`, `短期間で効果が表れた`],
-    cons: [`価格が高め`, `個人の肌の調子に応じて効果に差があった`],
-    reviewBody: `###POLA B.A ライト セレクターNとは
-POLAの新しいスキンケアシリーズ、B.A ライト セレクターNは、独自の技術で肌を明るく潤ませることで、美しい肌を実現することができます。
-###使用感
-実際に使用してみたところ、使用しやすく、快適な感触で肌に負担が少ないことがわかりました。
-###効果
-短期間で肌のトロトロさが増し、細かいしわもスムーズになりました。\\n###肌の変化
-30日間の使用で肌が明るくなり、透明感が増しました。`,
-    ctaTitle: `今すぐ実感してみる!`,
-    affiliateLink: 'https://www.amazon.co.jp/s?k=POLA%20B.A%20%E3%83%A9%E3%82%A4%E3%83%88%20%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%83%BC%20N&tag=mattan0290c-22',
-    createdAt: '2026-07-22 16:16:45',
-    estimatedPV: Math.floor(Math.random() * 500) + 100,
-    clicks: Math.floor(Math.random() * 50) + 10,
-    earnings: Math.floor(Math.random() * 5000) + 500,
-    aiModelUsed: 'Groq Llama 3.3 70B',
-    summaryKeyPoints: [
-      `独自のセレクター技術が肌を明るくする`,
-      `短期間で効果が表れた`,
-      `使いやすく肌に負担が少ない`
-    ],
-    faqs: [
-      {
-        question: `肌のタイプ別に効果は変わりますか？`,
-        answer: `基本的には全ての肌タイプに効果がありますが、個人の肌の調子によっては結果に差が生じる可能性があります。`
-      },
-      {
-        question: `使用方法はどうなりますか？`,
-        answer: `基本的なスキンケアと同様に、洗顔をしてから使用します。`
-      }
-    ],
-    reviewerName: `アヤ @美容ライター`,
-    reviewerRole: `元美容部員・日本化粧品検定1級`,
-    verificationDays: 30,
-    priceRange: `約35,000円〜`
-  },
-  {
-    id: 'art-b0ct5hdkc4',
-    title: `KANEBO ヴェイル オブ デイ`,
-    originalUrl: 'https://www.amazon.co.jp/s?k=KANEBO%20%E3%83%B4%E3%82%A7%E3%82%A4%E3%83%AB%20%E3%82%AA%E3%83%96%20%E3%83%87%E3%82%A4&tag=mattan0290c-22',
-    asin: 'B0CT5HDKC4',
-    productName: 'KANEBO ヴェイル オブ デイ',
-    category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600',
-    starRating: 4.5,
-    introText: `美しい肌とは？その答えは、KANEBO ヴェイル オブ デイにあります。`,
-    features: [`高品質なコラーゲン`, `潤いと弾力を実現`, `シンプルな使い方`],
-    pros: [`長続きする保湿感`, `簡単な使い方`, `肌のトラブル改善`],
-    cons: [`高価格帯`, `保湿成分に敏感な人向きではない`],
-    reviewBody: `### まえがき
-
-私も、美しい肌を手に入れようと、さまざまな化粧品を試してきました。しかし、肌の悩みに効くものは少ないですね。そこで、KANEBO ヴェイル オブ デイを試してみました。
-
-### 使用感
-KANEBO ヴェイル オブ デイは、シンプルな使い方で、毎日の保湿に最適です。高い保湿力で、長持ちするので、朝晩のスキンケアに最適です。
-
-### 肌の変化
-私がこの製品を使用してから、肌のトラブルが改善されました。保湿力が高いため、日中の乾燥が無くなりました。`,
-    ctaTitle: `今すぐKANEBO ヴェイル オブ デイをご購入`,
-    affiliateLink: 'https://www.amazon.co.jp/s?k=KANEBO%20%E3%83%B4%E3%82%A7%E3%82%A4%E3%83%AB%20%E3%82%AA%E3%83%96%20%E3%83%87%E3%82%A4&tag=mattan0290c-22',
-    createdAt: '2026-07-22 19:02:10',
-    estimatedPV: Math.floor(Math.random() * 500) + 100,
-    clicks: Math.floor(Math.random() * 50) + 10,
-    earnings: Math.floor(Math.random() * 5000) + 500,
-    aiModelUsed: 'Groq Llama 3.3 70B',
-    summaryKeyPoints: [
-      `長続きする保湿力`,
-      `肌のトラブル改善`,
-      `簡単な使い方`
-    ],
-    faqs: [
-      {
-        question: `この製品は、どのような肌タイプ向けですか？`,
-        answer: `全肌タイプ向けです。`
-      },
-      {
-        question: `この製品は、敏感肌でも使用できますか？`,
-        answer: `基本的には大丈夫ですが、各個人の敏感性には差があります。ご使用になる前にパッチテストをしてください。`
-      }
-    ],
-    reviewerName: `アヤ @美容ライター`,
-    reviewerRole: `元美容部員・日本化粧品検定1級`,
-    verificationDays: 30,
-    priceRange: `約30,000円〜`
-  },
-  {
-    id: 'art-b0cpq1zj9k',
-    title: `RMK クーリングジェルでさらさらサマーモチ肌`,
-    originalUrl: 'https://www.amazon.co.jp/s?k=RMK%20%E3%82%AF%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B8%E3%82%A7%E3%83%AB&tag=mattan0290c-22',
-    asin: 'B0CPQ1ZJ9K',
-    productName: 'RMK クーリングジェル',
-    category: 'skincare',
-    imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600',
-    starRating: 4.5,
-    introText: `夏の暑さで肌が疲れてしまったとき、クーリングジェルで心地よくさっぱりしたいと思いませんか？`,
-    features: [`クール感が長続き`, `保湿成分豊富`, `メイク下地としても適する`],
-    pros: [`即効性があり暑さを忘れる`, `乾燥肌でも安心`, `美容室レベルの品質`],
-    cons: [`チューブ式で持ち運び大変`, `夏以外の季節は使用頻度低い`],
-    reviewBody: `### クーリングジェルの導入
-夏の肌ケアに欠かせないアイテムがこちら！
-
-### 使用感
-使用した感じは、さっそく涼しい！保湿力もあるので、夏の乾燥肌にもピッタリです。
-
-### メリット
-メイク下地としても使えますし、肌に負担が少ないのもとても好印象です。`,
-    ctaTitle: `今すぐクーリングジェルで夏を乗り越えよう`,
-    affiliateLink: 'https://www.amazon.co.jp/s?k=RMK%20%E3%82%AF%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B8%E3%82%A7%E3%83%AB&tag=mattan0290c-22',
-    createdAt: '2026-07-22 21:59:51',
-    estimatedPV: Math.floor(Math.random() * 500) + 100,
-    clicks: Math.floor(Math.random() * 50) + 10,
-    earnings: Math.floor(Math.random() * 5000) + 500,
-    aiModelUsed: 'Groq Llama 3.3 70B',
-    summaryKeyPoints: [
-      `クールな感覚`,
-      `保湿力`,
-      `メイク下地としても優秀`
-    ],
-    faqs: [
-      {
-        question: `夏以外も使って大丈夫ですか？`,
-        answer: `基本的には夏の暑さ対策用ですが、保湿成分が豊富なので通年使えるでしょう。`
-      },
-      {
-        question: `メイクを重ねる場合、使えるでしょうか？`,
-        answer: `もちろん大丈夫です。むらのない肌を作り上げてくれますよ。`
-      }
-    ],
-    reviewerName: `アヤ @美容ライター`,
-    reviewerRole: `元美容部員・日本化粧品検定1級`,
-    verificationDays: 30,
-    priceRange: `約3,500〜4,500円`
-  }
 ];
 
 
