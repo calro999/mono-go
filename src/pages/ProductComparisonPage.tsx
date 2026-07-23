@@ -50,6 +50,66 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
     );
   }
 
+  // Contextual 3rd Editor Recommendation Item Selection
+  const getThirdRecommendation = () => {
+    if (comparison.id === 'anessa-vs-biore-uv') {
+      return {
+        asin: 'B08BRVCFMN_2',
+        title: 'キュレル 潤浸保湿 UVエッセンス SPF30 (50g)',
+        imageUrl: '/images/products/art-b08brvcfmn-2.jpg',
+        badge: '👑 敏感肌・肌荒れ予防の第3の選択肢',
+        comment: '「強力UVの刺激が心配な方や、日焼け止めで肌荒れ・赤みが出やすい乾燥敏感肌ならキュレルがベスト！紫外線吸収剤無配合(ノンケミカル)で夕方までしっとり肌を保護します。」',
+        articleId: 'art-b08brvcfmn-2',
+        affiliateLink: 'https://www.amazon.co.jp/dp/B08BRVCFMN?tag=mattan0290c-22'
+      };
+    }
+    if (comparison.id === 'primavista-vs-larocheposay') {
+      return {
+        asin: 'B08BFCW1M2',
+        title: 'ORBIS Mr.(オルビス ミスター) ベースカラー コントローラー',
+        imageUrl: '/images/products/art-b08bfcw1m2.jpg',
+        badge: '👑 男性の青ヒゲ・毛穴・猛暑テカリカバー第3の選択肢',
+        comment: '「ファンデだと塗ってる感が気になる男性や、青ヒゲ・クマ・毛穴をバレずに自然補正したいならオルビスミスター！皮脂吸着パウダー配合で真夏のテカリを一切見せません。」',
+        articleId: 'art-b08bfcw1m2',
+        affiliateLink: 'https://www.amazon.co.jp/dp/B08BFCW1M2?tag=mattan0290c-22'
+      };
+    }
+    if (comparison.id === 'concool-vs-nonio') {
+      return {
+        asin: 'B00113W3I4',
+        title: 'ウェルテック コンクールF (100ml)',
+        imageUrl: '/images/products/art-b00113w3i4.jpg',
+        badge: '👑 朝のねばつき・歯周病菌殺菌の第3の決定版',
+        comment: '「舌磨きだけでなく、お口全体のねばつきや会話時の口臭を24時間シャットアウトしたいならコンクールF！水に数滴垂らしてすすぐだけで夕方までお口スッキリ。」',
+        articleId: 'art-b00113w3i4',
+        affiliateLink: 'https://www.amazon.co.jp/dp/B00113W3I4?tag=mattan0290c-22'
+      };
+    }
+    if (comparison.id === 'lipmonster-vs-meltylip') {
+      return {
+        asin: 'B0CGD5G1F4',
+        title: 'キャンメイク プランプリップケアブロード 01',
+        imageUrl: '/images/products/art-b0cgd5g1f4.jpg',
+        badge: '👑 縦じわ補正・ぷっくり高保湿プランパー第3の選択肢',
+        comment: '「色落ち対策だけでなく、夏の冷房で乾いた唇をぷっくりふっくら整えたいならキャンメイクのプランパー！デパコス級のツヤと清涼感で荒れた唇を一瞬でレスキューします。」',
+        articleId: 'art-b0cgd5g1f4',
+        affiliateLink: 'https://www.amazon.co.jp/dp/B0CGD5G1F4?tag=mattan0290c-22'
+      };
+    }
+    // Default: Deodorant Category (deonatulle-vs-8x4men etc) -> Reflea Jar
+    return {
+      asin: 'B09NPPZLN1',
+      title: 'メンソレータム リフレア デオドラントクリーム 55g (ジャータイプ)',
+      imageUrl: '/images/products/rihurea.jpg',
+      badge: '👑 無香料・隠れワキガ＆多汗症を100%抑え込む実体感NO.1',
+      comment: '「香りの好みはあるけれど、無香料で良ければコレが僕の人生史上最高の制汗剤！隠れワキガ＋多汗症で市販品では男臭さが残っていた僕が、1日中完全に無臭になれた相性抜群の殿堂入り第1位です。指塗りだとベタつくので100均やAmazonで100円スパチュラを合わせて買うのが快適に使うコツ！」',
+      articleId: 'art-b09nppzln1',
+      affiliateLink: 'https://www.amazon.co.jp/dp/B09NPPZLN1?th=1&linkCode=ll2&tag=mattan0290c-22&linkId=37c341cdb74d0a7499016e5b318b6e0e&ref_=as_li_ss_tl'
+    };
+  };
+
+  const thirdRec = getThirdRecommendation();
+
   return (
     <div className="min-h-screen bg-slate-50 py-8 px-4 sm:px-6">
       <article className="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl space-y-8">
@@ -108,11 +168,11 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
                   alt={productA.productName || productA.title}
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
-                  className="w-full h-full object-cover blur-[1px] opacity-40 scale-105"
+                  className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500"
                 />
                 
-                {/* Heavy Dark Overlay with Big Bold Title */}
-                <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[2px] flex flex-col items-center justify-center p-4 text-center z-10">
+                {/* Slightly Softened Overlay so Unsplash image is tastefully visible */}
+                <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex flex-col items-center justify-center p-4 text-center z-10">
                   <span className="px-2.5 py-0.5 bg-indigo-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider mb-2 shadow-sm">
                     ENTRY A
                   </span>
@@ -155,11 +215,11 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
                   alt={productB.productName || productB.title}
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
-                  className="w-full h-full object-cover blur-[1px] opacity-40 scale-105"
+                  className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500"
                 />
                 
-                {/* Heavy Dark Overlay with Big Bold Title */}
-                <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[2px] flex flex-col items-center justify-center p-4 text-center z-10">
+                {/* Slightly Softened Overlay so Unsplash image is tastefully visible */}
+                <div className="absolute inset-0 bg-slate-950/65 backdrop-blur-[1px] flex flex-col items-center justify-center p-4 text-center z-10">
                   <span className="px-2.5 py-0.5 bg-purple-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider mb-2 shadow-sm">
                     ENTRY B
                   </span>
@@ -191,41 +251,41 @@ export function ProductComparisonPage({ compareId, onNavigate }: ProductComparis
           </div>
         </div>
 
-        {/* Editor Takuma Special 3rd Recommendation (Hall of Fame Feature) */}
+        {/* Editor Takuma Contextual 3rd Recommendation Feature */}
         <div className="bg-gradient-to-br from-amber-500/10 via-amber-400/5 to-slate-900/5 p-6 rounded-3xl border-2 border-amber-400/60 shadow-lg space-y-4">
           <div className="flex items-center justify-between flex-wrap gap-2">
             <span className="px-3 py-1 bg-amber-400 text-slate-950 font-black text-xs rounded-full shadow-sm">
-              👑 編集長タクマの第3の特別提案（殿堂入り決定版）
+              👑 編集長タクマの第3の特別提案（カテゴリー決定版）
             </span>
             <span className="text-xs font-bold text-amber-900">
-              無香料・隠れワキガ＆多汗症を100%抑え込む実体感NO.1
+              {thirdRec.badge}
             </span>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-5 bg-white p-5 rounded-2xl border border-amber-200">
             <img
-              src="/images/products/rihurea.jpg"
-              alt="メンソレータム リフレア デオドラントクリーム 55g ジャータイプ"
+              src={thirdRec.imageUrl}
+              alt={thirdRec.title}
               referrerPolicy="no-referrer"
               onError={handleImageError}
               className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl object-cover flex-shrink-0 border border-slate-200"
             />
             <div className="flex-1 space-y-2 text-center sm:text-left">
               <h4 className="font-black text-slate-900 text-base leading-snug">
-                メンソレータム リフレア デオドラントクリーム 55g (ジャータイプ)
+                {thirdRec.title}
               </h4>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                「香りの好みはあるけれど、無香料で良ければコレが僕の人生史上最高の制汗剤！隠れワキガ＋多汗症で市販品では男臭さが残っていた僕が、1日中完全に無臭になれた相性抜群の殿堂入り第1位です。指塗りだとベタつくので100均やAmazonで100円スパチュラを合わせて買うのが快適に使うコツ！」
+                {thirdRec.comment}
               </p>
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                 <button
-                  onClick={() => onNavigate('/articles/art-b09nppzln1')}
+                  onClick={() => onNavigate(`/articles/${thirdRec.articleId}`)}
                   className="w-full sm:w-auto py-2 px-4 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs rounded-xl transition"
                 >
-                  編集長の感動レビューを読む →
+                  編集長の検証記事を読む →
                 </button>
                 <a
-                  href="https://www.amazon.co.jp/dp/B09NPPZLN1?th=1&linkCode=ll2&tag=mattan0290c-22&linkId=37c341cdb74d0a7499016e5b318b6e0e&ref_=as_li_ss_tl"
+                  href={thirdRec.affiliateLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto py-2 px-4 bg-amber-400 hover:bg-amber-500 text-slate-950 font-black text-xs rounded-xl transition text-center shadow-sm"
