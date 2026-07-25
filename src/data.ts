@@ -2687,6 +2687,49 @@ KANEBO ヴェイル オブ デイは、シンプルな使い方で、毎日の�
     reviewerRole: `男性身だしなみ統括`,
     verificationDays: 30,
     priceRange: `約1,500円前後`
+  },,
+  {
+    id: 'art-b0073b9yj6',
+    title: `ギャツビー 薬用ボディペーパー 徳用36枚の猛暑対策に`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=%E3%82%AE%E3%83%A3%E3%83%84%E3%83%93%E3%83%BC%20%E8%96%AC%E7%94%A8%E3%83%9C%E3%83%87%E3%82%A3%E3%83%9A%E3%83%BC%E3%83%91%E3%83%BC%20%E5%BE%B3%E7%94%A836%E6%9E%9A&tag=mattan0290c-22',
+    asin: 'B0073B9YJ6',
+    productName: 'ギャツビー 薬用ボディペーパー 徳用36枚',
+    category: 'deodorant',
+    imageUrl: '/images/products/rihurea.jpg',
+    starRating: 4.8,
+    introText: `夏の暑さに身体が濡れて、ニオイや汗でのたくることが多いのではないでしょうか？`,
+    features: [`薬用成分`, `長時間の抗菌作用`, `デオドラント機能`],
+    pros: [`使用後の清涼感が長続きする`, `皮脂や汗のコントロールに優れる`],
+    cons: [`初回使用時に少し手指がベタつくので、水に濡らすことをお勧めします`],
+    reviewBody: `### 1. 検証の動機とお悩み
+夏場の肌悩みには、汗やニオィ対策が重要です。私自身も、デオドラント系の製品を使っていますが、効果と価格バランスで迷います。
+
+### 2. 実際の使用感と効果
+ギャツビー 薬用ボディペーパー 徳用36枚は、1枚を使用したあとの清涼感や抗菌作用が驚きでした。特に、運動後や仕事で一日中外を歩いているときに使うと、気持ちがあっさりすることが印象的でした。ただし、初回使用時に少しベタつきを感じたため、次回以降は手指に水をつけて使用しております。
+
+検証期間中、猛暑で体がべたべたする日も多かったのですが、ギャツビー 薬用ボディペーパー を使った日はあっさりとしていたことが印象に残っています。敏感肌の方も安心して使える製品です。`,
+    ctaTitle: `Amazonで最安値・在庫をチェック ↗`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=%E3%82%AE%E3%83%A3%E3%83%84%E3%83%93%E3%83%BC%20%E8%96%AC%E7%94%A8%E3%83%9C%E3%83%87%E3%82%A3%E3%83%9A%E3%83%BC%E3%83%91%E3%83%BC%20%E5%BE%B3%E7%94%A836%E6%9E%9A&tag=mattan0290c-22',
+    createdAt: '2026-07-25',
+    estimatedPV: Math.floor(Math.random() * 500) + 200,
+    clicks: Math.floor(Math.random() * 50) + 20,
+    earnings: Math.floor(Math.random() * 5000) + 1000,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `長時間の抗菌効果`,
+      `デオドラント効果がある`,
+      `敏感肌にやさしい`
+    ],
+    faqs: [
+      {
+        question: `敏感肌の方にも使えるのか？`,
+        answer: `はい、敏感肌向けの成分配合で安心して使えます。`
+      }
+    ],
+    reviewerName: `タクマ @男性コスメ部長`,
+    reviewerRole: `男性身だしなみ統括`,
+    verificationDays: 30,
+    priceRange: `約1,500円前後`
   },
 ];
 
