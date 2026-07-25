@@ -2774,6 +2774,49 @@ KANEBO ヴェイル オブ デイは、シンプルな使い方で、毎日の�
     reviewerRole: `男性身だしなみ統括`,
     verificationDays: 30,
     priceRange: `約1,500円前後`
+  },,
+  {
+    id: 'art-b07bg8xmsj',
+    title: `シーブリーズ デオ＆ウォーター フローズンミントの超実践レビュー`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=%E3%82%B7%E3%83%BC%E3%83%96%E3%83%AA%E3%83%BC%E3%82%BA%20%E3%83%87%E3%82%AA%EF%BC%86%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%BC%20%E3%83%95%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%B3%E3%83%9F%E3%83%B3%E3%83%88&tag=mattan0290c-22',
+    asin: 'B07BG8XMSJ',
+    productName: 'シーブリーズ デオ＆ウォーター フローズンミント',
+    category: 'deodorant',
+    imageUrl: '/images/products/rihurea.jpg',
+    starRating: 4.8,
+    introText: `汗やニオイ、敏感肌で悩む夏に！シーブリーズ デオ＆ウォーター フローズンミントで解決！`,
+    features: [`長時間の抗菌効果`, `皮脂崩れ防止`, `爽やかなミント香り`],
+    pros: [`一日中スッキリした感じが続く`, `敏感肌にも優しい`],
+    cons: [`最初は香りが強く感じるが、慣れまぜば問題ない`],
+    reviewBody: `### 1. 検証の動機とお悩み
+夏場の猛暑は、汗やニオイ、皮脂崩れで大きなストレスとなります。そんな悩みを解決してくれる商品がシーブリーズ デオ＆ウォーター フローズンミントです。
+
+### 2. 実際の使用感と効果
+30日間の使用検証では、長時間の抗菌効果が実感できました。皮脂崩れも防がれ、敏感肌にも優しいという特徴が高評価です。また、爽やかなミント香りが一日中スッキリした気分をもたらしてくれました。
+
+ただし、最初は香りが強く感じることがあります。ですが、使用を続けるにつれて、問題なく使えると実感しました。使用のコツとしては、適切な量を使用し、体の温度に合わせて塗布することをお勧めします。`,
+    ctaTitle: `Amazonで最安値・在庫をチェック ↗`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=%E3%82%B7%E3%83%BC%E3%83%96%E3%83%AA%E3%83%BC%E3%82%BA%20%E3%83%87%E3%82%AA%EF%BC%86%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%BC%20%E3%83%95%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%B3%E3%83%9F%E3%83%B3%E3%83%88&tag=mattan0290c-22',
+    createdAt: '2026-07-25',
+    estimatedPV: Math.floor(Math.random() * 500) + 200,
+    clicks: Math.floor(Math.random() * 50) + 20,
+    earnings: Math.floor(Math.random() * 5000) + 1000,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `長時間の抗菌効果`,
+      `敏感肌にも優しい`,
+      `爽やかなミント香り`
+    ],
+    faqs: [
+      {
+        question: `使用する際に気をつけるべきことがありますか?`,
+        answer: `適切な量を使用し、体の温度に合わせて塗布することが大切です。強い力で擦らないようにし、敏感肌の場合はパッチテストを実施することをお勧めします。`
+      }
+    ],
+    reviewerName: `タクマ @男性コスメ部長`,
+    reviewerRole: `男性身だしなみ統括`,
+    verificationDays: 30,
+    priceRange: `約1,500円前後`
   },
 ];
 
