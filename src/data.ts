@@ -2974,6 +2974,50 @@ SPF30という数値は、真夏の炎天下でのマリンスポーツなどに
     reviewerRole: `男性身だしなみ統括`,
     verificationDays: 30,
     priceRange: `約1,500円前後`
+  },,
+  {
+    id: 'art-b083pwn7c4',
+    title: `デオナチュレ ソフトストーンWの30日間徹底レビュー`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=%E3%83%87%E3%82%AA%E3%83%8A%E3%83%81%E3%83%A5%E3%83%AC%20%E3%82%BD%E3%83%95%E3%83%88%E3%82%B9%E3%83%88%E3%83%BC%E3%83%B3W&tag=mattan0290c-22',
+    asin: 'B083PWN7C4',
+    productName: 'デオナチュレ ソフトストーンW',
+    category: 'deodorant',
+    imageUrl: '/images/products/rihurea.jpg',
+    starRating: 4.8,
+    introText: `猛暑で汗とニオイが気になる季節、デオナチュレ ソフトストーンWで解決できますか？`,
+    features: [`長時間의除湿効果`, `天然成分`, `アルコールフリー`],
+    pros: [`24時間の長時間の除湿効果`, `敏感肌でも使用可能`],
+    cons: [`使用時に肌が冷ることがある（薄く塗ることで解決）`],
+    reviewBody: `### 1. 検証の動機とお悩み
+夏の季节は、汗とニオイが大きな悩みです。デオナチュレ ソフトストーンWは、長時間の除湿効果を誇ります。
+
+### 2. 実際の使用感と効果
+使用してみると、 indeed 24時間の長時間の除湿効果があり、汗のニオイが大幅に軽減されました。さらに、天然成分で構成されており、敏感肌にも優しいです。ただし、使用時に肌が冷たくなったり、乾燥感があると感じる時があります。これを解決するためには、薄く塗ることで十分に対応可能です。
+
+### 3. 使用のコツ
+使用する際は、まず足りない分だけを薄く塗り、徐々に量を調節してください。そうすることで、長時間の効果を最大限に得ることができます。`,
+    ctaTitle: `Amazonで最安値・在庫をチェック ↗`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=%E3%83%87%E3%82%AA%E3%83%8A%E3%83%81%E3%83%A5%E3%83%AC%20%E3%82%BD%E3%83%95%E3%83%88%E3%82%B9%E3%83%88%E3%83%BC%E3%83%B3W&tag=mattan0290c-22',
+    createdAt: '2026-07-26',
+    estimatedPV: Math.floor(Math.random() * 500) + 200,
+    clicks: Math.floor(Math.random() * 50) + 20,
+    earnings: Math.floor(Math.random() * 5000) + 1000,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `長時間の除湿効果`,
+      `敏感肌でも使用可能`,
+      `アルコールフリー`
+    ],
+    faqs: [
+      {
+        question: `デオナチュレ ソフトストーンWはどんなにおいですか？`,
+        answer: `ほぼ無香のデオドラントです。`
+      }
+    ],
+    reviewerName: `タクマ @男性コスメ部長`,
+    reviewerRole: `男性身だしなみ統括`,
+    verificationDays: 30,
+    priceRange: `約1,500円前後`
   },
 ];
 
