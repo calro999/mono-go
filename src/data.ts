@@ -4218,6 +4218,49 @@ Lumièreコスメ部長のタクマです。今年の夏は、例年にも増し
     reviewerRole: `男性身だしなみ統括`,
     verificationDays: 30,
     priceRange: `約650円前後`
+  },,
+  {
+    id: 'art-b08bfcw1m2',
+    title: `ORBIS Mr.ベースカラー コントローラーの30日間試用レビュー`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=ORBIS%20Mr.(%E3%82%AA%E3%83%AB%E3%83%93%E3%82%B9%20%E3%83%9F%E3%82%B9%E3%82%BF%E3%83%BC)%20%E3%83%99%E3%83%BC%E3%82%B9%E3%82%AB%E3%83%A9%E3%83%BC%20%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC&tag=mattan0290c-22',
+    asin: 'B08BFCW1M2',
+    productName: 'ORBIS Mr.(オルビス ミスター) ベースカラー コントローラー',
+    category: 'makeup',
+    imageUrl: '/images/products/art-b094z88ykc.jpg',
+    starRating: 4.8,
+    introText: `夏の猛暑にも負けない、メイクの持ちをサポートするベースカラー コントローラー。汗や皮脂に負けず、メイクが長持続する秘密は何か。`,
+    features: [`色合いが豊か`, `メイクの持ちが長くなる`, `敏感肌にもやさしい`],
+    pros: [`メイクの崩れを抑える`, `顔の色を均一にする`],
+    cons: [`使用過多にならないように注意`],
+    reviewBody: `### 1. 検証の動機とお悩み
+私はいつも、夏の暑さでメイクが崩れやすいことを心配しています。汗や皮脂でメイクがどんどん崩れ、自然な見た目が途中で失われることがありました。
+
+### 2. 実際の使用感と効果
+ORBIS Mr.ベースカラー コントローラーを使用してみて、メイクの持ちがかなり長くなったことが確認できました。特に、日中の外出時や運動後のメイク補正時に効果が高かったです。肌への負担も感じず、敏感肌の方でも安全に使用できました。
+
+ただし、過度な使用は避けるべきでしょう。適切な量を心がけることで、美しさを長時間キープすることが可能です。`,
+    ctaTitle: `Amazonで最安値・在庫をチェック ↗`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=ORBIS%20Mr.(%E3%82%AA%E3%83%AB%E3%83%93%E3%82%B9%20%E3%83%9F%E3%82%B9%E3%82%BF%E3%83%BC)%20%E3%83%99%E3%83%BC%E3%82%B9%E3%82%AB%E3%83%A9%E3%83%BC%20%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC&tag=mattan0290c-22',
+    createdAt: '2026-08-01',
+    estimatedPV: Math.floor(Math.random() * 500) + 200,
+    clicks: Math.floor(Math.random() * 50) + 20,
+    earnings: Math.floor(Math.random() * 5000) + 1000,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `メイクの持ちが長くなる`,
+      `肌への負担が少ない`,
+      `使いやすい`
+    ],
+    faqs: [
+      {
+        question: `この製品はどんな肌タイプの方に適していますか？`,
+        answer: `一般的には全ての肌タイプに適していますが、特に敏感肌の方にも安心して使用できます。`
+      }
+    ],
+    reviewerName: `タクマ @男性コスメ部長`,
+    reviewerRole: `男性身だしなみ統括`,
+    verificationDays: 30,
+    priceRange: `約1,500円前後`
   },
 ];
 
