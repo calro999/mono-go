@@ -747,4 +747,10 @@
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://mono-go.vercel.app/articles/art-b08bfcw1m2</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
 </urlset>
