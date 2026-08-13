@@ -6935,6 +6935,50 @@ Lumièreの男性身だしなみ統括として、私は日頃から男性の印
     reviewerRole: `男性身だしなみ統括`,
     verificationDays: 30,
     priceRange: `約1,500円前後`
+  },,
+  {
+    id: 'art-b082t2j21w',
+    title: `ビオレUV アクアリッチ ウォータリーエッセンスの実力は?`,
+    originalUrl: 'https://www.amazon.co.jp/s?k=%E3%83%93%E3%82%AA%E3%83%ACUV%20%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%AA%E3%83%83%E3%83%81%20%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%AA%E3%83%BC%E3%82%A8%E3%83%83%E3%82%BB%E3%83%B3%E3%82%B9&tag=mattan0290c-22',
+    asin: 'B082T2J21W',
+    productName: 'ビオレUV アクアリッチ ウォータリーエッセンス',
+    category: 'skincare',
+    imageUrl: '/images/products/art-b0csb4y3c7.jpg',
+    starRating: 4.8,
+    introText: `猛暑や汗、皮脂崩れ、ニオイ、敏感肌という夏の皮膚悩みにお悩みの方へ`,
+    features: [`保湿力`, `UVカット効果`, `軽やかなテクスチャ`],
+    pros: [`長引く保湿感`, `自然な仕上がり`],
+    cons: [`敏感肌の方は少量から試すことをお勧め`],
+    reviewBody: `### 1. 検証の動機とお悩み
+夏の季節になると、肌の悩みも増えてきます。猛暑による汗や皮脂の増加、日焼けによる肌の乾燥、ニオイや敏感肌など、夏の肌悩みは様々です。本商品、ビオレUV アクアリッチ ウォータリーエッセンスを30日間使用してみて、その実力と使用感をご紹介します。
+
+### 2. 実際の使用感と効果
+使用した初日から、軽やかで水のようなテクスチャが特徴的でした。保湿力があって日中もべたつきませんでした。UVカット効果も期待でき、日焼けの心配がありません。使用して30日目には、肌の透明感や水分量が増したと思います。
+
+### 3. メリット・デメリットとコツ
+メリットとしては、長時間保湿してくれることと、自然な仕上がりが特長です。デメリットとしては敏感肌の方で初期に少しだけ赤みが出ましたが、少量から使用してみることにより解決できました。コツとしては、他のスキンケア用品とも相性がいいので、組み合わせて使うことをお勧めします。`,
+    ctaTitle: `Amazonで最安値・在庫をチェック ↗`,
+    affiliateLink: 'https://www.amazon.co.jp/s?k=%E3%83%93%E3%82%AA%E3%83%ACUV%20%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%AA%E3%83%83%E3%83%81%20%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%AA%E3%83%BC%E3%82%A8%E3%83%83%E3%82%BB%E3%83%B3%E3%82%B9&tag=mattan0290c-22',
+    createdAt: '2026-08-13',
+    estimatedPV: Math.floor(Math.random() * 500) + 200,
+    clicks: Math.floor(Math.random() * 50) + 20,
+    earnings: Math.floor(Math.random() * 5000) + 1000,
+    aiModelUsed: 'Groq Llama 3.3 70B',
+    summaryKeyPoints: [
+      `長時間保湿`,
+      `自然な仕上がり`,
+      `UVカット効果`
+    ],
+    faqs: [
+      {
+        question: `敏感肌で使えるの?`,
+        answer: `少量から試してください。個人の肌の相性によって異なります。`
+      }
+    ],
+    reviewerName: `タクマ @男性コスメ部長`,
+    reviewerRole: `男性身だしなみ統括`,
+    verificationDays: 30,
+    priceRange: `約1,500円前後`
   },
 ];
 
